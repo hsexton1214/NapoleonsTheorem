@@ -1,0 +1,2439 @@
+.rotatetext {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  writing-mode: tb-rl;
+}
+.active-icon.smaller {
+  height: 15px;
+  width: 15px;
+}
+.active-icon.bigger {
+  height: 25px;
+  width: 25px;
+}
+.active-icon.big {
+  height: 30px;
+  width: 30px;
+}
+.icon.smaller.icon-navigate-back,
+.menu-icon.smaller.icon-navigate-back,
+.active-icon.smaller.icon-navigate-back {
+  background-image: url(../images/general/smaller/icon-navigate-back.png);
+  background-image: -webkit-image-set(url(../images/general/smaller/icon-navigate-back.png) 1x,url(../images/general/smaller/icon-navigate-back@2x.png) 2x);
+}
+.icon.smaller.icon-navigate-back:hover:not(.inactive):not(.nohover),
+.icon.smaller.icon-navigate-back:active:not(.inactive):not(.nohover),
+.menu-icon.smaller.icon-navigate-back:hover:not(.inactive):not(.nohover),
+.menu-icon.smaller.icon-navigate-back:active:not(.inactive):not(.nohover),
+.active-icon.smaller.icon-navigate-back:hover:not(.inactive):not(.nohover),
+.active-icon.smaller.icon-navigate-back:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/general/smaller/icon-navigate-back-hover.png);
+  background-image: -webkit-image-set(url(../images/general/smaller/icon-navigate-back-hover.png) 1x,url(../images/general/smaller/icon-navigate-back-hover@2x.png) 2x);
+}
+.icon.smaller.icon-close,
+.menu-icon.smaller.icon-close,
+.active-icon.smaller.icon-close {
+  background-image: url(../images/general/smaller/icon-close.png);
+  background-image: -webkit-image-set(url(../images/general/smaller/icon-close.png) 1x,url(../images/general/smaller/icon-close@2x.png) 2x);
+}
+.icon.smaller.icon-close:hover:not(.inactive):not(.nohover),
+.icon.smaller.icon-close:active:not(.inactive):not(.nohover),
+.menu-icon.smaller.icon-close:hover:not(.inactive):not(.nohover),
+.menu-icon.smaller.icon-close:active:not(.inactive):not(.nohover),
+.active-icon.smaller.icon-close:hover:not(.inactive):not(.nohover),
+.active-icon.smaller.icon-close:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/general/smaller/icon-close-hover.png);
+  background-image: -webkit-image-set(url(../images/general/smaller/icon-close-hover.png) 1x,url(../images/general/smaller/icon-close-hover@2x.png) 2x);
+}
+.icon.bigger.icon-sort,
+.menu-icon.bigger.icon-sort,
+.active-icon.bigger.icon-sort {
+  background-image: url(../images/general/bigger/icon-sort.png);
+  background-image: -webkit-image-set(url(../images/general/bigger/icon-sort.png) 1x,url(../images/general/bigger/icon-sort@2x.png) 2x);
+}
+.icon.bigger.icon-sort:hover:not(.inactive):not(.nohover),
+.icon.bigger.icon-sort:active:not(.inactive):not(.nohover),
+.icon.bigger.icon-sort.active,
+.menu-icon.bigger.icon-sort:hover:not(.inactive):not(.nohover),
+.menu-icon.bigger.icon-sort:active:not(.inactive):not(.nohover),
+.menu-icon.bigger.icon-sort.active,
+.active-icon.bigger.icon-sort:hover:not(.inactive):not(.nohover),
+.active-icon.bigger.icon-sort:active:not(.inactive):not(.nohover),
+.active-icon.bigger.icon-sort.active {
+  background-image: url(../images/general/bigger/icon-sort-hover.png);
+  background-image: -webkit-image-set(url(../images/general/bigger/icon-sort-hover.png) 1x,url(../images/general/bigger/icon-sort-hover@2x.png) 2x);
+}
+.icon.big.icon-new,
+.menu-icon.big.icon-new,
+.active-icon.big.icon-new {
+  background-image: url(../images/general/icon-new.png);
+  background-image: -webkit-image-set(url(../images/general/icon-new.png) 1x,url(../images/general/icon-new@2x.png) 2x);
+}
+.icon.big.icon-new:hover:not(.inactive):not(.nohover),
+.icon.big.icon-new:active:not(.inactive):not(.nohover),
+.menu-icon.big.icon-new:hover:not(.inactive):not(.nohover),
+.menu-icon.big.icon-new:active:not(.inactive):not(.nohover),
+.active-icon.big.icon-new:hover:not(.inactive):not(.nohover),
+.active-icon.big.icon-new:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/general/icon-new-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-new-hover.png) 1x,url(../images/general/icon-new-hover@2x.png) 2x);
+}
+.icon.big.icon-menu,
+.menu-icon.big.icon-menu,
+.active-icon.big.icon-menu {
+  background-image: url(../images/general/active-icons-big/icon-menu.png);
+  background-image: -webkit-image-set(url(../images/general/active-icons-big/icon-menu.png) 1x,url(../images/general/active-icons-big/icon-menu@2x.png) 2x);
+}
+.icon.big.icon-menu:hover:not(.inactive):not(.nohover),
+.icon.big.icon-menu:active:not(.inactive):not(.nohover),
+.menu-icon.big.icon-menu:hover:not(.inactive):not(.nohover),
+.menu-icon.big.icon-menu:active:not(.inactive):not(.nohover),
+.active-icon.big.icon-menu:hover:not(.inactive):not(.nohover),
+.active-icon.big.icon-menu:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/general/active-icons-big/icon-menu-hover.png);
+  background-image: -webkit-image-set(url(../images/general/active-icons-big/icon-menu-hover.png) 1x,url(../images/general/active-icons-big/icon-menu-hover@2x.png) 2x);
+}
+.icon.bigger.icon-close,
+.menu-icon.bigger.icon-close,
+.active-icon.bigger.icon-close {
+  background-image: url(../images/worksheet/header/icon-close.png);
+  background-image: -webkit-image-set(url(../images/worksheet/header/icon-close.png) 1x,url(../images/worksheet/header/icon-close@2x.png) 2x);
+}
+.icon.bigger.icon-close:hover:not(.inactive):not(.nohover),
+.icon.bigger.icon-close:active:not(.inactive):not(.nohover),
+.menu-icon.bigger.icon-close:hover:not(.inactive):not(.nohover),
+.menu-icon.bigger.icon-close:active:not(.inactive):not(.nohover),
+.active-icon.bigger.icon-close:hover:not(.inactive):not(.nohover),
+.active-icon.bigger.icon-close:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/worksheet/header/icon-close-hover.png);
+  background-image: -webkit-image-set(url(../images/worksheet/header/icon-close-hover.png) 1x,url(../images/worksheet/header/icon-close-hover@2x.png) 2x);
+}
+.icon.bigger.icon-nav-prev,
+.menu-icon.bigger.icon-nav-prev,
+.active-icon.bigger.icon-nav-prev {
+  background-image: url(../images/worksheet/header/icon-nav-prev.png);
+  background-image: -webkit-image-set(url(../images/worksheet/header/icon-nav-prev.png) 1x,url(../images/worksheet/header/icon-nav-prev@2x.png) 2x);
+}
+.icon.bigger.icon-nav-prev:hover:not(.inactive):not(.nohover),
+.icon.bigger.icon-nav-prev:active:not(.inactive):not(.nohover),
+.menu-icon.bigger.icon-nav-prev:hover:not(.inactive):not(.nohover),
+.menu-icon.bigger.icon-nav-prev:active:not(.inactive):not(.nohover),
+.active-icon.bigger.icon-nav-prev:hover:not(.inactive):not(.nohover),
+.active-icon.bigger.icon-nav-prev:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/worksheet/header/icon-nav-prev-hover.png);
+  background-image: -webkit-image-set(url(../images/worksheet/header/icon-nav-prev-hover.png) 1x,url(../images/worksheet/header/icon-nav-prev-hover@2x.png) 2x);
+}
+.icon.bigger.icon-nav-next,
+.menu-icon.bigger.icon-nav-next,
+.active-icon.bigger.icon-nav-next {
+  background-image: url(../images/worksheet/header/icon-nav-next.png);
+  background-image: -webkit-image-set(url(../images/worksheet/header/icon-nav-next.png) 1x,url(../images/worksheet/header/icon-nav-next@2x.png) 2x);
+}
+.icon.bigger.icon-nav-next:hover:not(.inactive):not(.nohover),
+.icon.bigger.icon-nav-next:active:not(.inactive):not(.nohover),
+.menu-icon.bigger.icon-nav-next:hover:not(.inactive):not(.nohover),
+.menu-icon.bigger.icon-nav-next:active:not(.inactive):not(.nohover),
+.active-icon.bigger.icon-nav-next:hover:not(.inactive):not(.nohover),
+.active-icon.bigger.icon-nav-next:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/worksheet/header/icon-nav-next-hover.png);
+  background-image: -webkit-image-set(url(../images/worksheet/header/icon-nav-next-hover.png) 1x,url(../images/worksheet/header/icon-nav-next-hover@2x.png) 2x);
+}
+.icon.bigger.icon-menu,
+.menu-icon.bigger.icon-menu,
+.active-icon.bigger.icon-menu {
+  background-image: url(../images/worksheet/header/icon-menu.png);
+  background-image: -webkit-image-set(url(../images/worksheet/header/icon-menu.png) 1x,url(../images/worksheet/header/icon-menu@2x.png) 2x);
+}
+.icon.bigger.icon-menu:hover:not(.inactive):not(.nohover),
+.icon.bigger.icon-menu:active:not(.inactive):not(.nohover),
+.menu-icon.bigger.icon-menu:hover:not(.inactive):not(.nohover),
+.menu-icon.bigger.icon-menu:active:not(.inactive):not(.nohover),
+.active-icon.bigger.icon-menu:hover:not(.inactive):not(.nohover),
+.active-icon.bigger.icon-menu:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/worksheet/header/icon-menu-hover.png);
+  background-image: -webkit-image-set(url(../images/worksheet/header/icon-menu-hover.png) 1x,url(../images/worksheet/header/icon-menu-hover@2x.png) 2x);
+}
+.icon.bigger.icon-edit,
+.menu-icon.bigger.icon-edit,
+.active-icon.bigger.icon-edit {
+  background-image: url(../images/worksheet/header/icon-edit.png);
+  background-image: -webkit-image-set(url(../images/worksheet/header/icon-edit.png) 1x,url(../images/worksheet/header/icon-edit@2x.png) 2x);
+}
+.icon.bigger.icon-edit:hover:not(.inactive):not(.nohover),
+.icon.bigger.icon-edit:active:not(.inactive):not(.nohover),
+.menu-icon.bigger.icon-edit:hover:not(.inactive):not(.nohover),
+.menu-icon.bigger.icon-edit:active:not(.inactive):not(.nohover),
+.active-icon.bigger.icon-edit:hover:not(.inactive):not(.nohover),
+.active-icon.bigger.icon-edit:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/worksheet/header/icon-edit-hover.png);
+  background-image: -webkit-image-set(url(../images/worksheet/header/icon-edit-hover.png) 1x,url(../images/worksheet/header/icon-edit-hover@2x.png) 2x);
+}
+.icon.bigger.icon-favorite,
+.menu-icon.bigger.icon-favorite,
+.active-icon.bigger.icon-favorite {
+  background-image: url(../images/worksheet/header/icon-heart.png);
+  background-image: -webkit-image-set(url(../images/worksheet/header/icon-heart.png) 1x,url(../images/worksheet/header/icon-heart@2x.png) 2x);
+}
+.icon.bigger.icon-favorite:hover:not(.inactive):not(.nohover),
+.icon.bigger.icon-favorite:active:not(.inactive):not(.nohover),
+.icon.bigger.icon-favorite.selected,
+.menu-icon.bigger.icon-favorite:hover:not(.inactive):not(.nohover),
+.menu-icon.bigger.icon-favorite:active:not(.inactive):not(.nohover),
+.menu-icon.bigger.icon-favorite.selected,
+.active-icon.bigger.icon-favorite:hover:not(.inactive):not(.nohover),
+.active-icon.bigger.icon-favorite:active:not(.inactive):not(.nohover),
+.active-icon.bigger.icon-favorite.selected {
+  background-image: url(../images/worksheet/header/icon-heart-hover.png);
+  background-image: -webkit-image-set(url(../images/worksheet/header/icon-heart-hover.png) 1x,url(../images/worksheet/header/icon-heart-hover@2x.png) 2x);
+}
+.icon.bigger.icon-is-favorite,
+.menu-icon.bigger.icon-is-favorite,
+.active-icon.bigger.icon-is-favorite {
+  background-image: url(../images/worksheet/header/icon-heart-filled.png);
+  background-image: -webkit-image-set(url(../images/worksheet/header/icon-heart-filled.png) 1x,url(../images/worksheet/header/icon-heart-filled@2x.png) 2x);
+}
+.icon.bigger.icon-is-favorite:hover:not(.inactive):not(.nohover),
+.icon.bigger.icon-is-favorite:active:not(.inactive):not(.nohover),
+.icon.bigger.icon-is-favorite.selected,
+.menu-icon.bigger.icon-is-favorite:hover:not(.inactive):not(.nohover),
+.menu-icon.bigger.icon-is-favorite:active:not(.inactive):not(.nohover),
+.menu-icon.bigger.icon-is-favorite.selected,
+.active-icon.bigger.icon-is-favorite:hover:not(.inactive):not(.nohover),
+.active-icon.bigger.icon-is-favorite:active:not(.inactive):not(.nohover),
+.active-icon.bigger.icon-is-favorite.selected {
+  background-image: url(../images/worksheet/header/icon-heart-filled-hover.png);
+  background-image: -webkit-image-set(url(../images/worksheet/header/icon-heart-filled-hover.png) 1x,url(../images/worksheet/header/icon-heart-filled-hover@2x.png) 2x);
+}
+.icon.bigger.icon-share,
+.menu-icon.bigger.icon-share,
+.active-icon.bigger.icon-share {
+  background-image: url(../images/worksheet/header/icon-share.png);
+  background-image: -webkit-image-set(url(../images/worksheet/header/icon-share.png) 1x,url(../images/worksheet/header/icon-share@2x.png) 2x);
+}
+.icon.bigger.icon-share:hover:not(.inactive):not(.nohover),
+.icon.bigger.icon-share:active:not(.inactive):not(.nohover),
+.icon.bigger.icon-share.selected,
+.menu-icon.bigger.icon-share:hover:not(.inactive):not(.nohover),
+.menu-icon.bigger.icon-share:active:not(.inactive):not(.nohover),
+.menu-icon.bigger.icon-share.selected,
+.active-icon.bigger.icon-share:hover:not(.inactive):not(.nohover),
+.active-icon.bigger.icon-share:active:not(.inactive):not(.nohover),
+.active-icon.bigger.icon-share.selected {
+  background-image: url(../images/worksheet/header/icon-share-hover.png);
+  background-image: -webkit-image-set(url(../images/worksheet/header/icon-share-hover.png) 1x,url(../images/worksheet/header/icon-share-hover@2x.png) 2x);
+}
+.icon.bigger.icon-view,
+.menu-icon.bigger.icon-view,
+.active-icon.bigger.icon-view {
+  background-image: url(../images/worksheet/header/icon-worksheet-preview.png);
+  background-image: -webkit-image-set(url(../images/worksheet/header/icon-worksheet-preview.png) 1x,url(../images/worksheet/header/icon-worksheet-preview@2x.png) 2x);
+}
+.icon.bigger.icon-view:hover:not(.inactive):not(.nohover),
+.icon.bigger.icon-view:active:not(.inactive):not(.nohover),
+.menu-icon.bigger.icon-view:hover:not(.inactive):not(.nohover),
+.menu-icon.bigger.icon-view:active:not(.inactive):not(.nohover),
+.active-icon.bigger.icon-view:hover:not(.inactive):not(.nohover),
+.active-icon.bigger.icon-view:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/worksheet/header/icon-worksheet-preview-hover.png);
+  background-image: -webkit-image-set(url(../images/worksheet/header/icon-worksheet-preview-hover.png) 1x,url(../images/worksheet/header/icon-worksheet-preview-hover@2x.png) 2x);
+}
+.icon.bigger.icon-save,
+.menu-icon.bigger.icon-save,
+.active-icon.bigger.icon-save {
+  background-image: url(../images/worksheet/header/icon-save.png);
+  background-image: -webkit-image-set(url(../images/worksheet/header/icon-save.png) 1x,url(../images/worksheet/header/icon-save@2x.png) 2x);
+}
+.icon.bigger.icon-save:hover:not(.inactive):not(.nohover),
+.icon.bigger.icon-save:active:not(.inactive):not(.nohover),
+.icon.bigger.icon-save.active,
+.menu-icon.bigger.icon-save:hover:not(.inactive):not(.nohover),
+.menu-icon.bigger.icon-save:active:not(.inactive):not(.nohover),
+.menu-icon.bigger.icon-save.active,
+.active-icon.bigger.icon-save:hover:not(.inactive):not(.nohover),
+.active-icon.bigger.icon-save:active:not(.inactive):not(.nohover),
+.active-icon.bigger.icon-save.active {
+  background-image: url(../images/worksheet/header/icon-save-hover.png);
+  background-image: -webkit-image-set(url(../images/worksheet/header/icon-save-hover.png) 1x,url(../images/worksheet/header/icon-save-hover@2x.png) 2x);
+}
+.icon.bigger.icon-check,
+.menu-icon.bigger.icon-check,
+.active-icon.bigger.icon-check {
+  background-image: url(../images/worksheet/header/icon-evaluate.png);
+  background-image: -webkit-image-set(url(../images/worksheet/header/icon-evaluate.png) 1x,url(../images/worksheet/header/icon-evaluate@2x.png) 2x);
+}
+.icon.bigger.icon-check:hover:not(.inactive):not(.nohover),
+.icon.bigger.icon-check:active:not(.inactive):not(.nohover),
+.menu-icon.bigger.icon-check:hover:not(.inactive):not(.nohover),
+.menu-icon.bigger.icon-check:active:not(.inactive):not(.nohover),
+.active-icon.bigger.icon-check:hover:not(.inactive):not(.nohover),
+.active-icon.bigger.icon-check:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/worksheet/header/icon-evaluate-hover.png);
+  background-image: -webkit-image-set(url(../images/worksheet/header/icon-evaluate-hover.png) 1x,url(../images/worksheet/header/icon-evaluate-hover@2x.png) 2x);
+}
+.icon.bigger.icon-restart,
+.menu-icon.bigger.icon-restart,
+.active-icon.bigger.icon-restart {
+  background-image: url(../images/worksheet/header/icon-refresh.png);
+  background-image: -webkit-image-set(url(../images/worksheet/header/icon-refresh.png) 1x,url(../images/worksheet/header/icon-refresh@2x.png) 2x);
+}
+.icon.bigger.icon-restart:hover:not(.inactive):not(.nohover),
+.icon.bigger.icon-restart:active:not(.inactive):not(.nohover),
+.menu-icon.bigger.icon-restart:hover:not(.inactive):not(.nohover),
+.menu-icon.bigger.icon-restart:active:not(.inactive):not(.nohover),
+.active-icon.bigger.icon-restart:hover:not(.inactive):not(.nohover),
+.active-icon.bigger.icon-restart:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/worksheet/header/icon-refresh-hover.png);
+  background-image: -webkit-image-set(url(../images/worksheet/header/icon-refresh-hover.png) 1x,url(../images/worksheet/header/icon-refresh-hover@2x.png) 2x);
+}
+.icon.icon-link,
+.menu-icon.icon-link,
+.active-icon.icon-link {
+  background-image: url(../images/general/icon-link.png);
+  background-image: -webkit-image-set(url(../images/general/icon-link.png) 1x,url(../images/general/icon-link@2x.png) 2x);
+}
+.icon.icon-link:hover:not(.inactive):not(.nohover),
+.icon.icon-link:active:not(.inactive):not(.nohover),
+.icon.icon-link.active,
+.menu-icon.icon-link:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-link:active:not(.inactive):not(.nohover),
+.menu-icon.icon-link.active,
+.active-icon.icon-link:hover:not(.inactive):not(.nohover),
+.active-icon.icon-link:active:not(.inactive):not(.nohover),
+.active-icon.icon-link.active {
+  background-image: url(../images/general/icon-link-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-link-hover.png) 1x,url(../images/general/icon-link-hover@2x.png) 2x);
+}
+.icon.icon-undo.highlight,
+.menu-icon.icon-undo.highlight,
+.active-icon.icon-undo.highlight {
+  background-image: url(../images/general/icon-undo-highlight.png);
+  background-image: -webkit-image-set(url(../images/general/icon-undo-highlight.png) 1x,url(../images/general/icon-undo-highlight@2x.png) 2x);
+}
+.icon.icon-undo.highlight:hover:not(.inactive):not(.nohover),
+.icon.icon-undo.highlight:active:not(.inactive):not(.nohover),
+.icon.icon-undo.highlight.active,
+.menu-icon.icon-undo.highlight:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-undo.highlight:active:not(.inactive):not(.nohover),
+.menu-icon.icon-undo.highlight.active,
+.active-icon.icon-undo.highlight:hover:not(.inactive):not(.nohover),
+.active-icon.icon-undo.highlight:active:not(.inactive):not(.nohover),
+.active-icon.icon-undo.highlight.active {
+  background-image: url(../images/general/icon-undo-highlight-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-undo-highlight-hover.png) 1x,url(../images/general/icon-undo-highlight-hover@2x.png) 2x);
+}
+.icon.icon-twitter,
+.menu-icon.icon-twitter,
+.active-icon.icon-twitter {
+  background-image: url(../images/general/icon-twitter.png);
+  background-image: -webkit-image-set(url(../images/general/icon-twitter.png) 1x,url(../images/general/icon-twitter@2x.png) 2x);
+}
+.icon.icon-twitter:hover:not(.inactive):not(.nohover),
+.icon.icon-twitter:active:not(.inactive):not(.nohover),
+.icon.icon-twitter.active,
+.menu-icon.icon-twitter:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-twitter:active:not(.inactive):not(.nohover),
+.menu-icon.icon-twitter.active,
+.active-icon.icon-twitter:hover:not(.inactive):not(.nohover),
+.active-icon.icon-twitter:active:not(.inactive):not(.nohover),
+.active-icon.icon-twitter.active {
+  background-image: url(../images/general/icon-twitter-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-twitter-hover.png) 1x,url(../images/general/icon-twitter-hover@2x.png) 2x);
+}
+.icon.icon-linkedIn,
+.menu-icon.icon-linkedIn,
+.active-icon.icon-linkedIn {
+  background-image: url(../images/general/icon-linkedIn.png);
+  background-image: -webkit-image-set(url(../images/general/icon-linkedIn.png) 1x,url(../images/general/icon-linkedIn@2x.png) 2x);
+}
+.icon.icon-linkedIn:hover:not(.inactive):not(.nohover),
+.icon.icon-linkedIn:active:not(.inactive):not(.nohover),
+.icon.icon-linkedIn.active,
+.menu-icon.icon-linkedIn:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-linkedIn:active:not(.inactive):not(.nohover),
+.menu-icon.icon-linkedIn.active,
+.active-icon.icon-linkedIn:hover:not(.inactive):not(.nohover),
+.active-icon.icon-linkedIn:active:not(.inactive):not(.nohover),
+.active-icon.icon-linkedIn.active {
+  background-image: url(../images/general/icon-linkedIn-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-linkedIn-hover.png) 1x,url(../images/general/icon-linkedIn-hover@2x.png) 2x);
+}
+.icon.icon-onenote,
+.menu-icon.icon-onenote,
+.active-icon.icon-onenote {
+  background-image: url(../images/general/icon-onenote.png);
+  background-image: -webkit-image-set(url(../images/general/icon-onenote.png) 1x,url(../images/general/icon-onenote@2x.png) 2x);
+}
+.icon.icon-onenote:hover:not(.inactive):not(.nohover),
+.icon.icon-onenote:active:not(.inactive):not(.nohover),
+.icon.icon-onenote.active,
+.menu-icon.icon-onenote:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-onenote:active:not(.inactive):not(.nohover),
+.menu-icon.icon-onenote.active,
+.active-icon.icon-onenote:hover:not(.inactive):not(.nohover),
+.active-icon.icon-onenote:active:not(.inactive):not(.nohover),
+.active-icon.icon-onenote.active {
+  background-image: url(../images/general/icon-onenote-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-onenote-hover.png) 1x,url(../images/general/icon-onenote-hover@2x.png) 2x);
+}
+.icon.icon-edmodo,
+.menu-icon.icon-edmodo,
+.active-icon.icon-edmodo {
+  background-image: url(../images/general/icon-edmodo.png);
+  background-image: -webkit-image-set(url(../images/general/icon-edmodo.png) 1x,url(../images/general/icon-edmodo@2x.png) 2x);
+}
+.icon.icon-edmodo:hover:not(.inactive):not(.nohover),
+.icon.icon-edmodo:active:not(.inactive):not(.nohover),
+.icon.icon-edmodo.active,
+.menu-icon.icon-edmodo:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-edmodo:active:not(.inactive):not(.nohover),
+.menu-icon.icon-edmodo.active,
+.active-icon.icon-edmodo:hover:not(.inactive):not(.nohover),
+.active-icon.icon-edmodo:active:not(.inactive):not(.nohover),
+.active-icon.icon-edmodo.active {
+  background-image: url(../images/general/icon-edmodo-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-edmodo-hover.png) 1x,url(../images/general/icon-edmodo-hover@2x.png) 2x);
+}
+.icon.icon-google-classroom,
+.menu-icon.icon-google-classroom,
+.active-icon.icon-google-classroom {
+  background-image: url(../images/general/icon-google-classroom.png);
+  background-image: -webkit-image-set(url(../images/general/icon-google-classroom.png) 1x,url(../images/general/icon-google-classroom@2x.png) 2x);
+}
+.icon.icon-google-classroom:hover:not(.inactive):not(.nohover),
+.icon.icon-google-classroom:active:not(.inactive):not(.nohover),
+.icon.icon-google-classroom.active,
+.menu-icon.icon-google-classroom:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-google-classroom:active:not(.inactive):not(.nohover),
+.menu-icon.icon-google-classroom.active,
+.active-icon.icon-google-classroom:hover:not(.inactive):not(.nohover),
+.active-icon.icon-google-classroom:active:not(.inactive):not(.nohover),
+.active-icon.icon-google-classroom.active {
+  background-image: url(../images/general/icon-google-classroom-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-google-classroom-hover.png) 1x,url(../images/general/icon-google-classroom-hover@2x.png) 2x);
+}
+.icon.icon-google-plus,
+.menu-icon.icon-google-plus,
+.active-icon.icon-google-plus {
+  background-image: url(../images/general/icon-google-plus.png);
+  background-image: -webkit-image-set(url(../images/general/icon-google-plus.png) 1x,url(../images/general/icon-google-plus@2x.png) 2x);
+}
+.icon.icon-google-plus:hover:not(.inactive):not(.nohover),
+.icon.icon-google-plus:active:not(.inactive):not(.nohover),
+.icon.icon-google-plus.active,
+.menu-icon.icon-google-plus:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-google-plus:active:not(.inactive):not(.nohover),
+.menu-icon.icon-google-plus.active,
+.active-icon.icon-google-plus:hover:not(.inactive):not(.nohover),
+.active-icon.icon-google-plus:active:not(.inactive):not(.nohover),
+.active-icon.icon-google-plus.active {
+  background-image: url(../images/general/icon-google-plus-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-google-plus-hover.png) 1x,url(../images/general/icon-google-plus-hover@2x.png) 2x);
+}
+.icon.icon-facebook,
+.menu-icon.icon-facebook,
+.active-icon.icon-facebook {
+  background-image: url(../images/general/icon-facebook.png);
+  background-image: -webkit-image-set(url(../images/general/icon-facebook.png) 1x,url(../images/general/icon-facebook@2x.png) 2x);
+}
+.icon.icon-facebook:hover:not(.inactive):not(.nohover),
+.icon.icon-facebook:active:not(.inactive):not(.nohover),
+.icon.icon-facebook.active,
+.menu-icon.icon-facebook:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-facebook:active:not(.inactive):not(.nohover),
+.menu-icon.icon-facebook.active,
+.active-icon.icon-facebook:hover:not(.inactive):not(.nohover),
+.active-icon.icon-facebook:active:not(.inactive):not(.nohover),
+.active-icon.icon-facebook.active {
+  background-image: url(../images/general/icon-facebook-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-facebook-hover.png) 1x,url(../images/general/icon-facebook-hover@2x.png) 2x);
+}
+.icon.icon-rename,
+.menu-icon.icon-rename,
+.active-icon.icon-rename {
+  background-image: url(../images/general/icon-rename.png);
+  background-image: -webkit-image-set(url(../images/general/icon-rename.png) 1x,url(../images/general/icon-rename@2x.png) 2x);
+}
+.icon.icon-rename:hover:not(.inactive):not(.nohover),
+.icon.icon-rename:active:not(.inactive):not(.nohover),
+.icon.icon-rename.active,
+.menu-icon.icon-rename:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-rename:active:not(.inactive):not(.nohover),
+.menu-icon.icon-rename.active,
+.active-icon.icon-rename:hover:not(.inactive):not(.nohover),
+.active-icon.icon-rename:active:not(.inactive):not(.nohover),
+.active-icon.icon-rename.active {
+  background-image: url(../images/general/icon-rename-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-rename-hover.png) 1x,url(../images/general/icon-rename-hover@2x.png) 2x);
+}
+.icon.icon-email,
+.menu-icon.icon-email,
+.active-icon.icon-email {
+  background-image: url(../images/general/icon-email.png);
+  background-image: -webkit-image-set(url(../images/general/icon-email.png) 1x,url(../images/general/icon-email@2x.png) 2x);
+}
+.icon.icon-email:hover:not(.inactive):not(.nohover),
+.icon.icon-email:active:not(.inactive):not(.nohover),
+.icon.icon-email.active,
+.menu-icon.icon-email:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-email:active:not(.inactive):not(.nohover),
+.menu-icon.icon-email.active,
+.active-icon.icon-email:hover:not(.inactive):not(.nohover),
+.active-icon.icon-email:active:not(.inactive):not(.nohover),
+.active-icon.icon-email.active {
+  background-image: url(../images/general/icon-email-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-email-hover.png) 1x,url(../images/general/icon-email-hover@2x.png) 2x);
+}
+.icon.icon-view,
+.menu-icon.icon-view,
+.active-icon.icon-view {
+  background-image: url(../images/general/icon-worksheet-preview.png);
+  background-image: -webkit-image-set(url(../images/general/icon-worksheet-preview.png) 1x,url(../images/general/icon-worksheet-preview@2x.png) 2x);
+}
+.icon.icon-view:hover:not(.inactive):not(.nohover),
+.icon.icon-view:active:not(.inactive):not(.nohover),
+.icon.icon-view.active,
+.menu-icon.icon-view:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-view:active:not(.inactive):not(.nohover),
+.menu-icon.icon-view.active,
+.active-icon.icon-view:hover:not(.inactive):not(.nohover),
+.active-icon.icon-view:active:not(.inactive):not(.nohover),
+.active-icon.icon-view.active {
+  background-image: url(../images/general/icon-worksheet-preview-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-worksheet-preview-hover.png) 1x,url(../images/general/icon-worksheet-preview-hover@2x.png) 2x);
+}
+.icon.icon-share,
+.menu-icon.icon-share,
+.active-icon.icon-share {
+  background-image: url(../images/general/icon-share.png);
+  background-image: -webkit-image-set(url(../images/general/icon-share.png) 1x,url(../images/general/icon-share@2x.png) 2x);
+}
+.icon.icon-share:hover:not(.inactive):not(.nohover),
+.icon.icon-share:active:not(.inactive):not(.nohover),
+.icon.icon-share.active,
+.menu-icon.icon-share:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-share:active:not(.inactive):not(.nohover),
+.menu-icon.icon-share.active,
+.active-icon.icon-share:hover:not(.inactive):not(.nohover),
+.active-icon.icon-share:active:not(.inactive):not(.nohover),
+.active-icon.icon-share.active {
+  background-image: url(../images/general/menu-icons/icon-share-hover.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/icon-share-hover.png) 1x,url(../images/general/menu-icons/icon-share-hover@2x.png) 2x);
+}
+.icon.icon-about,
+.menu-icon.icon-about,
+.active-icon.icon-about {
+  background-image: url(../images/general/icon-info.png);
+  background-image: -webkit-image-set(url(../images/general/icon-info.png) 1x,url(../images/general/icon-info@2x.png) 2x);
+}
+.icon.icon-about:hover:not(.inactive):not(.nohover),
+.icon.icon-about:active:not(.inactive):not(.nohover),
+.icon.icon-about.active,
+.menu-icon.icon-about:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-about:active:not(.inactive):not(.nohover),
+.menu-icon.icon-about.active,
+.active-icon.icon-about:hover:not(.inactive):not(.nohover),
+.active-icon.icon-about:active:not(.inactive):not(.nohover),
+.active-icon.icon-about.active {
+  background-image: url(../images/general/icon-info-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-info-hover.png) 1x,url(../images/general/icon-info-hover@2x.png) 2x);
+}
+.icon.icon-add-to-book,
+.menu-icon.icon-add-to-book,
+.active-icon.icon-add-to-book {
+  background-image: url(../images/general/icon-add-to-book.png);
+  background-image: -webkit-image-set(url(../images/general/icon-add-to-book.png) 1x,url(../images/general/icon-add-to-book@2x.png) 2x);
+}
+.icon.icon-add-to-book:hover:not(.inactive):not(.nohover),
+.icon.icon-add-to-book:active:not(.inactive):not(.nohover),
+.icon.icon-add-to-book.active,
+.menu-icon.icon-add-to-book:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-add-to-book:active:not(.inactive):not(.nohover),
+.menu-icon.icon-add-to-book.active,
+.active-icon.icon-add-to-book:hover:not(.inactive):not(.nohover),
+.active-icon.icon-add-to-book:active:not(.inactive):not(.nohover),
+.active-icon.icon-add-to-book.active {
+  background-image: url(../images/general/icon-add-to-book-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-add-to-book-hover.png) 1x,url(../images/general/icon-add-to-book-hover@2x.png) 2x);
+}
+.icon.icon-check,
+.menu-icon.icon-check,
+.active-icon.icon-check {
+  background-image: url(../images/general/icon-evaluate.png);
+  background-image: -webkit-image-set(url(../images/general/icon-evaluate.png) 1x,url(../images/general/icon-evaluate@2x.png) 2x);
+}
+.icon.icon-check:hover:not(.inactive):not(.nohover),
+.icon.icon-check:active:not(.inactive):not(.nohover),
+.icon.icon-check.active,
+.menu-icon.icon-check:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-check:active:not(.inactive):not(.nohover),
+.menu-icon.icon-check.active,
+.active-icon.icon-check:hover:not(.inactive):not(.nohover),
+.active-icon.icon-check:active:not(.inactive):not(.nohover),
+.active-icon.icon-check.active {
+  background-image: url(../images/general/icon-evaluate-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-evaluate-hover.png) 1x,url(../images/general/icon-evaluate-hover@2x.png) 2x);
+}
+.icon.icon-visible,
+.menu-icon.icon-visible,
+.active-icon.icon-visible {
+  background-image: url(../images/groups/icon-visible.png);
+  background-image: -webkit-image-set(url(../images/groups/icon-visible.png) 1x,url(../images/groups/icon-visible@2x.png) 2x);
+}
+.icon.icon-visible:hover:not(.inactive):not(.nohover),
+.icon.icon-visible:active:not(.inactive):not(.nohover),
+.menu-icon.icon-visible:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-visible:active:not(.inactive):not(.nohover),
+.active-icon.icon-visible:hover:not(.inactive):not(.nohover),
+.active-icon.icon-visible:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/groups/icon-visible-hover.png);
+  background-image: -webkit-image-set(url(../images/groups/icon-visible-hover.png) 1x,url(../images/groups/icon-visible-hover@2x.png) 2x);
+}
+.icon.icon-hidden,
+.menu-icon.icon-hidden,
+.active-icon.icon-hidden {
+  background-image: url(../images/groups/icon-hidden.png);
+  background-image: -webkit-image-set(url(../images/groups/icon-hidden.png) 1x,url(../images/groups/icon-hidden@2x.png) 2x);
+}
+.icon.icon-hidden:hover:not(.inactive):not(.nohover),
+.icon.icon-hidden:active:not(.inactive):not(.nohover),
+.menu-icon.icon-hidden:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-hidden:active:not(.inactive):not(.nohover),
+.active-icon.icon-hidden:hover:not(.inactive):not(.nohover),
+.active-icon.icon-hidden:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/groups/icon-hidden-hover.png);
+  background-image: -webkit-image-set(url(../images/groups/icon-hidden-hover.png) 1x,url(../images/groups/icon-hidden-hover@2x.png) 2x);
+}
+.icon.icon-refresh,
+.menu-icon.icon-refresh,
+.active-icon.icon-refresh {
+  background-image: url(../images/groups/icon-refresh.png);
+  background-image: -webkit-image-set(url(../images/groups/icon-refresh.png) 1x,url(../images/groups/icon-refresh@2x.png) 2x);
+}
+.icon.icon-refresh:hover:not(.inactive):not(.nohover),
+.icon.icon-refresh:active:not(.inactive):not(.nohover),
+.menu-icon.icon-refresh:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-refresh:active:not(.inactive):not(.nohover),
+.active-icon.icon-refresh:hover:not(.inactive):not(.nohover),
+.active-icon.icon-refresh:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/groups/icon-refresh-hover.png);
+  background-image: -webkit-image-set(url(../images/groups/icon-refresh-hover.png) 1x,url(../images/groups/icon-refresh-hover@2x.png) 2x);
+}
+.icon.icon-copy,
+.menu-icon.icon-copy,
+.active-icon.icon-copy {
+  background-image: url(../images/general/icon-copy.png);
+  background-image: -webkit-image-set(url(../images/general/icon-copy.png) 1x,url(../images/general/icon-copy@2x.png) 2x);
+}
+.icon.icon-copy:hover:not(.inactive):not(.nohover),
+.icon.icon-copy:active:not(.inactive):not(.nohover),
+.menu-icon.icon-copy:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-copy:active:not(.inactive):not(.nohover),
+.active-icon.icon-copy:hover:not(.inactive):not(.nohover),
+.active-icon.icon-copy:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/general/icon-copy-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-copy-hover.png) 1x,url(../images/general/icon-copy-hover@2x.png) 2x);
+}
+.icon.icon-delete,
+.menu-icon.icon-delete,
+.active-icon.icon-delete {
+  background-image: url(../images/general/icon-delete.png);
+  background-image: -webkit-image-set(url(../images/general/icon-delete.png) 1x,url(../images/general/icon-delete@2x.png) 2x);
+}
+.icon.icon-delete:hover:not(.inactive):not(.nohover),
+.icon.icon-delete:active:not(.inactive):not(.nohover),
+.menu-icon.icon-delete:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-delete:active:not(.inactive):not(.nohover),
+.active-icon.icon-delete:hover:not(.inactive):not(.nohover),
+.active-icon.icon-delete:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/general/icon-delete-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-delete-hover.png) 1x,url(../images/general/icon-delete-hover@2x.png) 2x);
+}
+.icon.icon-mute,
+.menu-icon.icon-mute,
+.active-icon.icon-mute {
+  background-image: url(../images/groups/icon-mute.png);
+  background-image: -webkit-image-set(url(../images/groups/icon-mute.png) 1x,url(../images/groups/icon-mute@2x.png) 2x);
+}
+.icon.icon-mute:hover:not(.inactive):not(.nohover),
+.icon.icon-mute:active:not(.inactive):not(.nohover),
+.menu-icon.icon-mute:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-mute:active:not(.inactive):not(.nohover),
+.active-icon.icon-mute:hover:not(.inactive):not(.nohover),
+.active-icon.icon-mute:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/groups/icon-mute-hover.png);
+  background-image: -webkit-image-set(url(../images/groups/icon-mute-hover.png) 1x,url(../images/groups/icon-mute-hover@2x.png) 2x);
+}
+.icon.icon-send-message,
+.menu-icon.icon-send-message,
+.active-icon.icon-send-message {
+  background-image: url(../images/general/icon-send-message.png);
+  background-image: -webkit-image-set(url(../images/general/icon-send-message.png) 1x,url(../images/general/icon-send-message@2x.png) 2x);
+}
+.icon.icon-send-message:hover:not(.inactive):not(.nohover),
+.icon.icon-send-message:active:not(.inactive):not(.nohover),
+.menu-icon.icon-send-message:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-send-message:active:not(.inactive):not(.nohover),
+.active-icon.icon-send-message:hover:not(.inactive):not(.nohover),
+.active-icon.icon-send-message:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/general/icon-send-message-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-send-message-hover.png) 1x,url(../images/general/icon-send-message-hover@2x.png) 2x);
+}
+.icon.icon-evaluate,
+.menu-icon.icon-evaluate,
+.active-icon.icon-evaluate {
+  background-image: url(../images/groups/icon-evaluate.png);
+  background-image: -webkit-image-set(url(../images/groups/icon-evaluate.png) 1x,url(../images/groups/icon-evaluate@2x.png) 2x);
+}
+.icon.icon-evaluate:hover:not(.inactive):not(.nohover),
+.icon.icon-evaluate:active:not(.inactive):not(.nohover),
+.menu-icon.icon-evaluate:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-evaluate:active:not(.inactive):not(.nohover),
+.active-icon.icon-evaluate:hover:not(.inactive):not(.nohover),
+.active-icon.icon-evaluate:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/groups/icon-evaluate-hover.png);
+  background-image: -webkit-image-set(url(../images/groups/icon-evaluate-hover.png) 1x,url(../images/groups/icon-evaluate-hover@2x.png) 2x);
+}
+.icon.icon-is-favorite,
+.menu-icon.icon-is-favorite,
+.active-icon.icon-is-favorite {
+  background-image: url(../images/general/menu-icons/icon-heart-filled.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/icon-heart-filled.png) 1x,url(../images/general/menu-icons/icon-heart-filled@2x.png) 2x);
+}
+.icon.icon-is-favorite:hover:not(.inactive):not(.nohover),
+.icon.icon-is-favorite:active:not(.inactive):not(.nohover),
+.icon.icon-is-favorite.active,
+.menu-icon.icon-is-favorite:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-is-favorite:active:not(.inactive):not(.nohover),
+.menu-icon.icon-is-favorite.active,
+.active-icon.icon-is-favorite:hover:not(.inactive):not(.nohover),
+.active-icon.icon-is-favorite:active:not(.inactive):not(.nohover),
+.active-icon.icon-is-favorite.active {
+  background-image: url(../images/general/menu-icons/icon-heart-filled-hover.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/icon-heart-filled-hover.png) 1x,url(../images/general/menu-icons/icon-heart-filled-hover@2x.png) 2x);
+}
+.icon.icon-favorite,
+.menu-icon.icon-favorite,
+.active-icon.icon-favorite {
+  background-image: url(../images/general/menu-icons/icon-heart.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/icon-heart.png) 1x,url(../images/general/menu-icons/icon-heart@2x.png) 2x);
+}
+.icon.icon-edit,
+.menu-icon.icon-edit,
+.active-icon.icon-edit {
+  background-image: url(../images/general/icon-edit.png);
+  background-image: -webkit-image-set(url(../images/general/icon-edit.png) 1x,url(../images/general/icon-edit@2x.png) 2x);
+}
+.icon.icon-edit:hover:not(.inactive):not(.nohover),
+.icon.icon-edit:active:not(.inactive):not(.nohover),
+.menu-icon.icon-edit:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-edit:active:not(.inactive):not(.nohover),
+.active-icon.icon-edit:hover:not(.inactive):not(.nohover),
+.active-icon.icon-edit:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/general/icon-edit-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-edit-hover.png) 1x,url(../images/general/icon-edit-hover@2x.png) 2x);
+}
+.icon.icon-filter,
+.menu-icon.icon-filter,
+.active-icon.icon-filter {
+  background-image: url(../images/groups/icon-filter.png);
+  background-image: -webkit-image-set(url(../images/groups/icon-filter.png) 1x,url(../images/groups/icon-filter@2x.png) 2x);
+}
+.icon.icon-filter:hover:not(.inactive):not(.nohover),
+.icon.icon-filter:active:not(.inactive):not(.nohover),
+.icon.icon-filter.active,
+.menu-icon.icon-filter:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-filter:active:not(.inactive):not(.nohover),
+.menu-icon.icon-filter.active,
+.active-icon.icon-filter:hover:not(.inactive):not(.nohover),
+.active-icon.icon-filter:active:not(.inactive):not(.nohover),
+.active-icon.icon-filter.active {
+  background-image: url(../images/groups/icon-filter-hover.png);
+  background-image: -webkit-image-set(url(../images/groups/icon-filter-hover.png) 1x,url(../images/groups/icon-filter-hover@2x.png) 2x);
+}
+.icon.icon-options,
+.menu-icon.icon-options,
+.active-icon.icon-options {
+  background-image: url(../images/general/icon-options.png);
+  background-image: -webkit-image-set(url(../images/general/icon-options.png) 1x,url(../images/general/icon-options@2x.png) 2x);
+}
+.icon.icon-options:hover:not(.inactive):not(.nohover),
+.icon.icon-options:active:not(.inactive):not(.nohover),
+.icon.icon-options.active,
+.menu-icon.icon-options:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-options:active:not(.inactive):not(.nohover),
+.menu-icon.icon-options.active,
+.active-icon.icon-options:hover:not(.inactive):not(.nohover),
+.active-icon.icon-options:active:not(.inactive):not(.nohover),
+.active-icon.icon-options.active {
+  background-image: url(../images/general/icon-options-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-options-hover.png) 1x,url(../images/general/icon-options-hover@2x.png) 2x);
+}
+.icon.icon-nav-next,
+.menu-icon.icon-nav-next,
+.active-icon.icon-nav-next {
+  background-image: url(../images/general/icon-nav-next.png);
+  background-image: -webkit-image-set(url(../images/general/icon-nav-next.png) 1x,url(../images/general/icon-nav-next@2x.png) 2x);
+}
+.icon.icon-nav-next:hover:not(.inactive):not(.nohover),
+.icon.icon-nav-next:active:not(.inactive):not(.nohover),
+.icon.icon-nav-next.active,
+.menu-icon.icon-nav-next:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-nav-next:active:not(.inactive):not(.nohover),
+.menu-icon.icon-nav-next.active,
+.active-icon.icon-nav-next:hover:not(.inactive):not(.nohover),
+.active-icon.icon-nav-next:active:not(.inactive):not(.nohover),
+.active-icon.icon-nav-next.active {
+  background-image: url(../images/general/icon-nav-next-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-nav-next-hover.png) 1x,url(../images/general/icon-nav-next-hover@2x.png) 2x);
+}
+.icon.icon-nav-next.highlight,
+.menu-icon.icon-nav-next.highlight,
+.active-icon.icon-nav-next.highlight {
+  background-image: url(../images/general/icon-nav-next-white.png);
+  background-image: -webkit-image-set(url(../images/general/icon-nav-next-white.png) 1x,url(../images/general/icon-nav-next-white@2x.png) 2x);
+}
+.icon.icon-nav-next.highlight:hover:not(.inactive):not(.nohover),
+.icon.icon-nav-next.highlight:active:not(.inactive):not(.nohover),
+.icon.icon-nav-next.highlight.active,
+.menu-icon.icon-nav-next.highlight:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-nav-next.highlight:active:not(.inactive):not(.nohover),
+.menu-icon.icon-nav-next.highlight.active,
+.active-icon.icon-nav-next.highlight:hover:not(.inactive):not(.nohover),
+.active-icon.icon-nav-next.highlight:active:not(.inactive):not(.nohover),
+.active-icon.icon-nav-next.highlight.active {
+  background-image: url(../images/general/icon-nav-next-white.png);
+  background-image: -webkit-image-set(url(../images/general/icon-nav-next-white.png) 1x,url(../images/general/icon-nav-next-white@2x.png) 2x);
+}
+.icon.icon-nav-prev,
+.menu-icon.icon-nav-prev,
+.active-icon.icon-nav-prev {
+  background-image: url(../images/general/icon-nav-prev.png);
+  background-image: -webkit-image-set(url(../images/general/icon-nav-prev.png) 1x,url(../images/general/icon-nav-prev@2x.png) 2x);
+}
+.icon.icon-nav-prev:hover:not(.inactive):not(.nohover),
+.icon.icon-nav-prev:active:not(.inactive):not(.nohover),
+.icon.icon-nav-prev.active,
+.menu-icon.icon-nav-prev:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-nav-prev:active:not(.inactive):not(.nohover),
+.menu-icon.icon-nav-prev.active,
+.active-icon.icon-nav-prev:hover:not(.inactive):not(.nohover),
+.active-icon.icon-nav-prev:active:not(.inactive):not(.nohover),
+.active-icon.icon-nav-prev.active {
+  background-image: url(../images/general/icon-nav-prev-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-nav-prev-hover.png) 1x,url(../images/general/icon-nav-prev-hover@2x.png) 2x);
+}
+.icon.icon-nav-prev.highlight,
+.menu-icon.icon-nav-prev.highlight,
+.active-icon.icon-nav-prev.highlight {
+  background-image: url(../images/general/icon-nav-prev-white.png);
+  background-image: -webkit-image-set(url(../images/general/icon-nav-prev-white.png) 1x,url(../images/general/icon-nav-prev-white@2x.png) 2x);
+}
+.icon.icon-nav-prev.highlight:hover:not(.inactive):not(.nohover),
+.icon.icon-nav-prev.highlight:active:not(.inactive):not(.nohover),
+.menu-icon.icon-nav-prev.highlight:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-nav-prev.highlight:active:not(.inactive):not(.nohover),
+.active-icon.icon-nav-prev.highlight:hover:not(.inactive):not(.nohover),
+.active-icon.icon-nav-prev.highlight:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/general/icon-nav-prev-white.png);
+  background-image: -webkit-image-set(url(../images/general/icon-nav-prev-white.png) 1x,url(../images/general/icon-nav-prev-white@2x.png) 2x);
+}
+.icon.icon-close,
+.menu-icon.icon-close,
+.active-icon.icon-close {
+  background-image: url(../images/general/icon-close.png);
+  background-image: -webkit-image-set(url(../images/general/icon-close.png) 1x,url(../images/general/icon-close@2x.png) 2x);
+}
+.icon.icon-close:hover:not(.inactive):not(.nohover),
+.icon.icon-close:active:not(.inactive):not(.nohover),
+.icon.icon-close.active,
+.menu-icon.icon-close:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-close:active:not(.inactive):not(.nohover),
+.menu-icon.icon-close.active,
+.active-icon.icon-close:hover:not(.inactive):not(.nohover),
+.active-icon.icon-close:active:not(.inactive):not(.nohover),
+.active-icon.icon-close.active {
+  background-image: url(../images/general/icon-close-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-close-hover.png) 1x,url(../images/general/icon-close-hover@2x.png) 2x);
+}
+.icon.icon-comment,
+.menu-icon.icon-comment,
+.active-icon.icon-comment {
+  background-image: url(../images/worksheet/new/icon-comment.png);
+  background-image: -webkit-image-set(url(../images/worksheet/new/icon-comment.png) 1x,url(../images/worksheet/new/icon-comment@2x.png) 2x);
+}
+.icon.icon-comment:hover:not(.inactive):not(.nohover),
+.icon.icon-comment:active:not(.inactive):not(.nohover),
+.icon.icon-comment.active,
+.menu-icon.icon-comment:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-comment:active:not(.inactive):not(.nohover),
+.menu-icon.icon-comment.active,
+.active-icon.icon-comment:hover:not(.inactive):not(.nohover),
+.active-icon.icon-comment:active:not(.inactive):not(.nohover),
+.active-icon.icon-comment.active {
+  background-image: url(../images/worksheet/new/icon-comment-hover.png);
+  background-image: -webkit-image-set(url(../images/worksheet/new/icon-comment-hover.png) 1x,url(../images/worksheet/new/icon-comment-hover@2x.png) 2x);
+}
+.icon.icon-comment-light,
+.menu-icon.icon-comment-light,
+.active-icon.icon-comment-light {
+  background-image: url(../images/general/comments/menu-comment.png);
+  background-image: -webkit-image-set(url(../images/general/comments/menu-comment.png) 1x,url(../images/general/comments/menu-comment@2x.png) 2x);
+}
+.icon.icon-comment-light.active,
+.menu-icon.icon-comment-light.active,
+.active-icon.icon-comment-light.active {
+  background-image: url(../images/worksheet/new/icon-comment-hover.png);
+  background-image: -webkit-image-set(url(../images/worksheet/new/icon-comment-hover.png) 1x,url(../images/worksheet/new/icon-comment-hover@2x.png) 2x);
+}
+.icon.icon-placeholder,
+.menu-icon.icon-placeholder,
+.active-icon.icon-placeholder {
+  background: none;
+  cursor: default;
+}
+.icon.icon-archive,
+.menu-icon.icon-archive,
+.active-icon.icon-archive {
+  background-image: url(../images/general/icon-archive.png);
+  background-image: -webkit-image-set(url(../images/general/icon-archive.png) 1x,url(../images/general/icon-archive@2x.png) 2x);
+}
+.icon.icon-archive:hover:not(.inactive):not(.nohover),
+.icon.icon-archive:active:not(.inactive):not(.nohover),
+.menu-icon.icon-archive:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-archive:active:not(.inactive):not(.nohover),
+.active-icon.icon-archive:hover:not(.inactive):not(.nohover),
+.active-icon.icon-archive:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/general/icon-archive-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-archive-hover.png) 1x,url(../images/general/icon-archive-hover@2x.png) 2x);
+}
+.icon.icon-book,
+.menu-icon.icon-book,
+.active-icon.icon-book {
+  background-image: url(../images/general/menu-icons/menu-book.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/menu-book.png) 1x,url(../images/general/menu-icons/menu-book@2x.png) 2x);
+}
+.icon.icon-book :hover:not(.inactive):not(.nohover),
+.icon.icon-book:active:not(.inactive):not(.nohover),
+.icon.icon-book.active,
+.menu-icon.icon-book :hover:not(.inactive):not(.nohover),
+.menu-icon.icon-book:active:not(.inactive):not(.nohover),
+.menu-icon.icon-book.active,
+.active-icon.icon-book :hover:not(.inactive):not(.nohover),
+.active-icon.icon-book:active:not(.inactive):not(.nohover),
+.active-icon.icon-book.active {
+  background-image: url(../images/general/menu-icons/icon-book-hover.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/icon-book-hover.png) 1x,url(../images/general/menu-icons/icon-book-hover@2x.png) 2x);
+}
+.icon.icon-embed,
+.menu-icon.icon-embed,
+.active-icon.icon-embed {
+  background-image: url(../images/general/icon-embed.png);
+  background-image: -webkit-image-set(url(../images/general/icon-embed.png) 1x,url(../images/general/icon-embed@2x.png) 2x);
+}
+.icon.icon-embed:hover:not(.inactive):not(.nohover),
+.icon.icon-embed:active:not(.inactive):not(.nohover),
+.menu-icon.icon-embed:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-embed:active:not(.inactive):not(.nohover),
+.active-icon.icon-embed:hover:not(.inactive):not(.nohover),
+.active-icon.icon-embed:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/general/icon-embed-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-embed-hover.png) 1x,url(../images/general/icon-embed-hover@2x.png) 2x);
+}
+.icon.icon-evaluate,
+.menu-icon.icon-evaluate,
+.active-icon.icon-evaluate {
+  background-image: url(../images/general/icon-evaluate.png);
+  background-image: -webkit-image-set(url(../images/general/icon-evaluate.png) 1x,url(../images/general/icon-evaluate@2x.png) 2x);
+}
+.icon.icon-evaluate:hover:not(.inactive):not(.nohover),
+.icon.icon-evaluate:active:not(.inactive):not(.nohover),
+.menu-icon.icon-evaluate:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-evaluate:active:not(.inactive):not(.nohover),
+.active-icon.icon-evaluate:hover:not(.inactive):not(.nohover),
+.active-icon.icon-evaluate:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/general/icon-evaluate-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-evaluate-hover.png) 1x,url(../images/general/icon-evaluate-hover@2x.png) 2x);
+}
+.icon.icon-existing-worksheet,
+.menu-icon.icon-existing-worksheet,
+.active-icon.icon-existing-worksheet {
+  background-image: url(../images/general/icon-worksheet-search-existing.png);
+  background-image: -webkit-image-set(url(../images/general/icon-worksheet-search-existing.png) 1x,url(../images/general/icon-worksheet-search-existing@2x.png) 2x);
+}
+.icon.icon-existing-worksheet:hover:not(.inactive):not(.nohover),
+.icon.icon-existing-worksheet:active:not(.inactive):not(.nohover),
+.menu-icon.icon-existing-worksheet:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-existing-worksheet:active:not(.inactive):not(.nohover),
+.active-icon.icon-existing-worksheet:hover:not(.inactive):not(.nohover),
+.active-icon.icon-existing-worksheet:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/general/icon-worksheet-search-existing-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-worksheet-search-existing-hover.png) 1x,url(../images/general/icon-worksheet-search-existing-hover@2x.png) 2x);
+}
+.icon.icon-follow,
+.menu-icon.icon-follow,
+.active-icon.icon-follow {
+  background-image: url(../images/general/menu-icons/icon-follow.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/icon-follow.png) 1x,url(../images/general/menu-icons/icon-follow@2x.png) 2x);
+}
+.icon.icon-follow:hover:not(.inactive):not(.nohover),
+.icon.icon-follow:active:not(.inactive):not(.nohover),
+.icon.icon-follow.active,
+.menu-icon.icon-follow:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-follow:active:not(.inactive):not(.nohover),
+.menu-icon.icon-follow.active,
+.active-icon.icon-follow:hover:not(.inactive):not(.nohover),
+.active-icon.icon-follow:active:not(.inactive):not(.nohover),
+.active-icon.icon-follow.active {
+  background-image: url(../images/general/menu-icons/icon-follow-hover.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/icon-follow-hover.png) 1x,url(../images/general/menu-icons/icon-follow-hover@2x.png) 2x);
+}
+.icon.icon-grid,
+.menu-icon.icon-grid,
+.active-icon.icon-grid {
+  background-image: url(../images/groups/icon-grid.png);
+  background-image: -webkit-image-set(url(../images/groups/icon-grid.png) 1x,url(../images/groups/icon-grid@2x.png) 2x);
+}
+.icon.icon-grid:hover:not(.inactive):not(.nohover),
+.icon.icon-grid:active:not(.inactive):not(.nohover),
+.menu-icon.icon-grid:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-grid:active:not(.inactive):not(.nohover),
+.active-icon.icon-grid:hover:not(.inactive):not(.nohover),
+.active-icon.icon-grid:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/groups/icon-grid-hover.png);
+  background-image: -webkit-image-set(url(../images/groups/icon-grid-hover.png) 1x,url(../images/groups/icon-grid-hover@2x.png) 2x);
+}
+.icon.icon-image,
+.menu-icon.icon-image,
+.active-icon.icon-image {
+  background-image: url(../images/general/menu-icons/icon-image.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/icon-image.png) 1x,url(../images/general/menu-icons/icon-image@2x.png) 2x);
+}
+.icon.icon-image:hover:not(.inactive):not(.nohover),
+.icon.icon-image:active:not(.inactive):not(.nohover),
+.menu-icon.icon-image:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-image:active:not(.inactive):not(.nohover),
+.active-icon.icon-image:hover:not(.inactive):not(.nohover),
+.active-icon.icon-image:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/general/menu-icons/icon-image-hover.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/icon-image-hover.png) 1x,url(../images/general/menu-icons/icon-image-hover@2x.png) 2x);
+}
+.icon.icon-list,
+.menu-icon.icon-list,
+.active-icon.icon-list {
+  background-image: url(../images/groups/icon-list.png);
+  background-image: -webkit-image-set(url(../images/groups/icon-list.png) 1x,url(../images/groups/icon-list@2x.png) 2x);
+}
+.icon.icon-list:hover:not(.inactive):not(.nohover),
+.icon.icon-list:active:not(.inactive):not(.nohover),
+.menu-icon.icon-list:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-list:active:not(.inactive):not(.nohover),
+.active-icon.icon-list:hover:not(.inactive):not(.nohover),
+.active-icon.icon-list:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/groups/icon-list-hover.png);
+  background-image: -webkit-image-set(url(../images/groups/icon-list-hover.png) 1x,url(../images/groups/icon-list-hover@2x.png) 2x);
+}
+.icon.icon-new-exercise,
+.menu-icon.icon-new-exercise,
+.active-icon.icon-new-exercise {
+  background-image: url(../images/general/icon-worksheet-new-exercise.png);
+  background-image: -webkit-image-set(url(../images/general/icon-worksheet-new-exercise.png) 1x,url(../images/general/icon-worksheet-new-exercise@2x.png) 2x);
+}
+.icon.icon-new-exercise:hover:not(.inactive):not(.nohover),
+.icon.icon-new-exercise:active:not(.inactive):not(.nohover),
+.menu-icon.icon-new-exercise:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-new-exercise:active:not(.inactive):not(.nohover),
+.active-icon.icon-new-exercise:hover:not(.inactive):not(.nohover),
+.active-icon.icon-new-exercise:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/general/icon-worksheet-new-exercise-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-worksheet-new-exercise-hover.png) 1x,url(../images/general/icon-worksheet-new-exercise-hover@2x.png) 2x);
+}
+.icon.icon-no-follow,
+.menu-icon.icon-no-follow,
+.active-icon.icon-no-follow {
+  background-image: url(../images/general/menu-icons/icon-no-follow.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/icon-no-follow.png) 1x,url(../images/general/menu-icons/icon-no-follow@2x.png) 2x);
+}
+.icon.icon-no-follow:hover:not(.inactive):not(.nohover),
+.icon.icon-no-follow:active:not(.inactive):not(.nohover),
+.icon.icon-no-follow.active,
+.menu-icon.icon-no-follow:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-no-follow:active:not(.inactive):not(.nohover),
+.menu-icon.icon-no-follow.active,
+.active-icon.icon-no-follow:hover:not(.inactive):not(.nohover),
+.active-icon.icon-no-follow:active:not(.inactive):not(.nohover),
+.active-icon.icon-no-follow.active {
+  background-image: url(../images/general/menu-icons/icon-no-follow-hover.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/icon-no-follow-hover.png) 1x,url(../images/general/menu-icons/icon-no-follow-hover@2x.png) 2x);
+}
+.icon.icon-pdf,
+.menu-icon.icon-pdf,
+.active-icon.icon-pdf {
+  background-image: url(../images/general/menu-icons/icon-pdf.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/icon-pdf.png) 1x,url(../images/general/menu-icons/icon-pdf@2x.png) 2x);
+}
+.icon.icon-pdf:hover:not(.inactive):not(.nohover),
+.icon.icon-pdf:active:not(.inactive):not(.nohover),
+.menu-icon.icon-pdf:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-pdf:active:not(.inactive):not(.nohover),
+.active-icon.icon-pdf:hover:not(.inactive):not(.nohover),
+.active-icon.icon-pdf:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/general/menu-icons/icon-pdf-hover.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/icon-pdf-hover.png) 1x,url(../images/general/menu-icons/icon-pdf-hover@2x.png) 2x);
+}
+.icon.icon-shared,
+.menu-icon.icon-shared,
+.active-icon.icon-shared {
+  background-image: url(../images/general/menu-icons/icon-shared.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/icon-shared.png) 1x,url(../images/general/menu-icons/icon-shared@2x.png) 2x);
+}
+.icon.icon-shared:hover:not(.inactive):not(.nohover),
+.icon.icon-shared:active:not(.inactive):not(.nohover),
+.icon.icon-shared.active,
+.menu-icon.icon-shared:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-shared:active:not(.inactive):not(.nohover),
+.menu-icon.icon-shared.active,
+.active-icon.icon-shared:hover:not(.inactive):not(.nohover),
+.active-icon.icon-shared:active:not(.inactive):not(.nohover),
+.active-icon.icon-shared.active {
+  background-image: url(../images/general/menu-icons/icon-shared-hover.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/icon-shared-hover.png) 1x,url(../images/general/menu-icons/icon-shared-hover@2x.png) 2x);
+}
+.icon.icon-solved-task,
+.menu-icon.icon-solved-task,
+.active-icon.icon-solved-task {
+  background-image: url(../images/general/menu-icons/icon-solved-task.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/icon-solved-task.png) 1x,url(../images/general/menu-icons/icon-solved-task@2x.png) 2x);
+}
+.icon.icon-solved-task:hover:not(.inactive):not(.nohover),
+.icon.icon-solved-task:active:not(.inactive):not(.nohover),
+.icon.icon-solved-task.active,
+.menu-icon.icon-solved-task:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-solved-task:active:not(.inactive):not(.nohover),
+.menu-icon.icon-solved-task.active,
+.active-icon.icon-solved-task:hover:not(.inactive):not(.nohover),
+.active-icon.icon-solved-task:active:not(.inactive):not(.nohover),
+.active-icon.icon-solved-task.active {
+  background-image: url(../images/general/menu-icons/icon-solved-task-hover.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/icon-solved-task-hover.png) 1x,url(../images/general/menu-icons/icon-solved-task-hover@2x.png) 2x);
+}
+.icon.icon-sort,
+.menu-icon.icon-sort,
+.active-icon.icon-sort {
+  background-image: url(../images/general/icon-sort.png);
+  background-image: -webkit-image-set(url(../images/general/icon-sort.png) 1x,url(../images/general/icon-sort@2x.png) 2x);
+}
+.icon.icon-sort:hover:not(.inactive):not(.nohover),
+.icon.icon-sort:active:not(.inactive):not(.nohover),
+.icon.icon-sort.active,
+.menu-icon.icon-sort:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-sort:active:not(.inactive):not(.nohover),
+.menu-icon.icon-sort.active,
+.active-icon.icon-sort:hover:not(.inactive):not(.nohover),
+.active-icon.icon-sort:active:not(.inactive):not(.nohover),
+.active-icon.icon-sort.active {
+  background-image: url(../images/general/icon-sort-hover.png);
+  background-image: -webkit-image-set(url(../images/general/icon-sort-hover.png) 1x,url(../images/general/icon-sort-hover@2x.png) 2x);
+}
+.icon.icon-video,
+.menu-icon.icon-video,
+.active-icon.icon-video {
+  background-image: url(../images/general/menu-icons/icon-video.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/icon-video.png) 1x,url(../images/general/menu-icons/icon-video@2x.png) 2x);
+}
+.icon.icon-video:hover:not(.inactive):not(.nohover),
+.icon.icon-video:active:not(.inactive):not(.nohover),
+.menu-icon.icon-video:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-video:active:not(.inactive):not(.nohover),
+.active-icon.icon-video:hover:not(.inactive):not(.nohover),
+.active-icon.icon-video:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/general/menu-icons/icon-video-hover.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/icon-video-hover.png) 1x,url(../images/general/menu-icons/icon-video-hover@2x.png) 2x);
+}
+.icon.icon-worksheet,
+.menu-icon.icon-worksheet,
+.active-icon.icon-worksheet {
+  background-image: url(../images/general/menu-icons/menu-worksheet.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/menu-worksheet.png) 1x,url(../images/general/menu-icons/menu-worksheet@2x.png) 2x);
+}
+.icon.icon-worksheet:hover:not(.inactive):not(.nohover),
+.icon.icon-worksheet:active:not(.inactive):not(.nohover),
+.icon.icon-worksheet.active,
+.menu-icon.icon-worksheet:hover:not(.inactive):not(.nohover),
+.menu-icon.icon-worksheet:active:not(.inactive):not(.nohover),
+.menu-icon.icon-worksheet.active,
+.active-icon.icon-worksheet:hover:not(.inactive):not(.nohover),
+.active-icon.icon-worksheet:active:not(.inactive):not(.nohover),
+.active-icon.icon-worksheet.active {
+  background-image: url(../images/general/menu-icons/menu-worksheet-hover.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/menu-worksheet-hover.png) 1x,url(../images/general/menu-icons/menu-worksheet-hover@2x.png) 2x);
+}
+html body .icon.right-side,
+html body .menu-icon.right-side {
+  padding-right: 30px;
+  padding-left: 0px;
+  margin-right: -3px;
+  background-position: right center;
+}
+html body .icon.standalone,
+html body .menu-icon.standalone {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  padding: 0px 5px;
+  vertical-align: middle;
+  background-position: center center;
+}
+html body .icon.hover-active,
+html body .menu-icon.hover-active {
+  cursor: pointer;
+}
+html body .icon.smaller,
+html body .menu-icon.smaller {
+  width: auto;
+  padding-left: 20px;
+}
+html body .icon.bigger,
+html body .menu-icon.bigger {
+  min-height: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 35px;
+}
+html body .icon.bigger.icon-video,
+html body .menu-icon.bigger.icon-video {
+  background-image: url(../images/worksheet/icon-video.png);
+  background-image: -webkit-image-set(url(../images/worksheet/icon-video.png) 1x,url(../images/worksheet/icon-video@2x.png) 2x);
+}
+html body .icon.bigger.icon-image,
+html body .menu-icon.bigger.icon-image {
+  background-image: url(../images/worksheet/icon-image.png);
+  background-image: -webkit-image-set(url(../images/worksheet/icon-image.png) 1x,url(../images/worksheet/icon-image@2x.png) 2x);
+}
+html body .icon.big,
+html body .menu-icon.big {
+  min-height: 30px;
+  padding-left: 40px;
+}
+html body .icon.big.icon-new,
+html body .menu-icon.big.icon-new {
+  background-image: url(../images/general/create-post/menu-new.png);
+  background-image: -webkit-image-set(url(../images/general/create-post/menu-new.png) 1x,url(../images/general/create-post/menu-new@2x.png) 2x);
+}
+html body .icon.smaller.icon-worksheet,
+html body .menu-icon.smaller.icon-worksheet {
+  background-image: url(../images/general/smaller/menu-worksheet.png);
+  background-image: -webkit-image-set(url(../images/general/smaller/menu-worksheet.png) 1x,url(../images/general/smaller/menu-worksheet@2x.png) 2x);
+}
+html body .icon.icon-link,
+html body .menu-icon.icon-link {
+  background-image: url(../images/general/menu-link.png);
+  background-image: -webkit-image-set(url(../images/general/menu-link.png) 1x,url(../images/general/menu-link@2x.png) 2x);
+}
+html body .icon.icon-twitter,
+html body .menu-icon.icon-twitter {
+  background-image: url(../images/general/menu-twitter.png);
+  background-image: -webkit-image-set(url(../images/general/menu-twitter.png) 1x,url(../images/general/menu-twitter@2x.png) 2x);
+}
+html body .icon.icon-linkedIn,
+html body .menu-icon.icon-linkedIn {
+  background-image: url(../images/general/menu-linkedIn.png);
+  background-image: -webkit-image-set(url(../images/general/menu-linkedIn.png) 1x,url(../images/general/menu-linkedIn@2x.png) 2x);
+}
+html body .icon.icon-onenote,
+html body .menu-icon.icon-onenote {
+  background-image: url(../images/general/menu-onenote.png);
+  background-image: -webkit-image-set(url(../images/general/menu-onenote.png) 1x,url(../images/general/menu-onenote@2x.png) 2x);
+}
+html body .icon.icon-edmodo,
+html body .menu-icon.icon-edmodo {
+  background-image: url(../images/general/menu-edmodo.png);
+  background-image: -webkit-image-set(url(../images/general/menu-edmodo.png) 1x,url(../images/general/menu-edmodo@2x.png) 2x);
+}
+html body .icon.icon-google-classroom,
+html body .menu-icon.icon-google-classroom {
+  background-image: url(../images/general/menu-google-classroom.png);
+  background-image: -webkit-image-set(url(../images/general/menu-google-classroom.png) 1x,url(../images/general/menu-google-classroom@2x.png) 2x);
+}
+html body .icon.icon-google-plus,
+html body .menu-icon.icon-google-plus {
+  background-image: url(../images/general/menu-google-plus.png);
+  background-image: -webkit-image-set(url(../images/general/menu-google-plus.png) 1x,url(../images/general/menu-google-plus@2x.png) 2x);
+}
+html body .icon.icon-facebook,
+html body .menu-icon.icon-facebook {
+  background-image: url(../images/general/menu-facebook.png);
+  background-image: -webkit-image-set(url(../images/general/menu-facebook.png) 1x,url(../images/general/menu-facebook@2x.png) 2x);
+}
+html body .icon.icon-rename,
+html body .menu-icon.icon-rename {
+  background-image: url(../images/general/menu-rename.png);
+  background-image: -webkit-image-set(url(../images/general/menu-rename.png) 1x,url(../images/general/menu-rename@2x.png) 2x);
+}
+html body .icon.icon-email,
+html body .menu-icon.icon-email {
+  background-image: url(../images/general/menu-email.png);
+  background-image: -webkit-image-set(url(../images/general/menu-email.png) 1x,url(../images/general/menu-email@2x.png) 2x);
+}
+html body .icon.icon-view,
+html body .menu-icon.icon-view {
+  background-image: url(../images/general/menu-worksheet-preview.png);
+  background-image: -webkit-image-set(url(../images/general/menu-worksheet-preview.png) 1x,url(../images/general/menu-worksheet-preview@2x.png) 2x);
+}
+html body .icon.icon-add-to-book,
+html body .menu-icon.icon-add-to-book {
+  background-image: url(../images/general/menu-icons/menu-add-to-book.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/menu-add-to-book.png) 1x,url(../images/general/menu-icons/menu-add-to-book@2x.png) 2x);
+}
+html body .icon.icon-shared,
+html body .menu-icon.icon-shared {
+  background-image: url(../images/general/menu-icons/menu-shared.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/menu-shared.png) 1x,url(../images/general/menu-icons/menu-shared@2x.png) 2x);
+}
+html body .icon.icon-solved-task,
+html body .menu-icon.icon-solved-task {
+  background-image: url(../images/general/menu-icons/menu-solved-task.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/menu-solved-task.png) 1x,url(../images/general/menu-icons/menu-solved-task@2x.png) 2x);
+}
+html body .icon.icon-favorite,
+html body .menu-icon.icon-favorite {
+  background-image: url(../images/general/menu-icons/menu-heart.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/menu-heart.png) 1x,url(../images/general/menu-icons/menu-heart@2x.png) 2x);
+}
+html body .icon.icon-follow,
+html body .menu-icon.icon-follow {
+  background-image: url(../images/general/menu-icons/menu-follow.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/menu-follow.png) 1x,url(../images/general/menu-icons/menu-follow@2x.png) 2x);
+}
+html body .icon.icon-no-follow,
+html body .menu-icon.icon-no-follow {
+  background-image: url(../images/general/menu-icons/menu-no-follow.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/menu-no-follow.png) 1x,url(../images/general/menu-icons/menu-no-follow@2x.png) 2x);
+}
+html body .icon.icon-is-favorite,
+html body .menu-icon.icon-is-favorite {
+  background-image: url(../images/general/menu-icons/menu-heart-filled.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/menu-heart-filled.png) 1x,url(../images/general/menu-icons/menu-heart-filled@2x.png) 2x);
+}
+html body .icon.icon-tooltip,
+html body .menu-icon.icon-tooltip {
+  background-image: url(../images/general/menu-tooltip.png);
+  background-image: -webkit-image-set(url(../images/general/menu-tooltip.png) 1x,url(../images/general/menu-tooltip@2x.png) 2x);
+}
+html body .icon.icon-tool,
+html body .menu-icon.icon-tool {
+  background-image: url(../images/general/menu-icons/menu-editor-symbols.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/menu-editor-symbols.png) 1x,url(../images/general/menu-icons/menu-editor-symbols@2x.png) 2x);
+}
+html body .icon.icon-tool.hover-active:hover:not(.inactive),
+html body .icon.icon-tool.hover-active:active:not(.inactive),
+html body .icon.icon-tool.hover-active.active,
+html body .menu-icon.icon-tool.hover-active:hover:not(.inactive),
+html body .menu-icon.icon-tool.hover-active:active:not(.inactive),
+html body .menu-icon.icon-tool.hover-active.active {
+  background-image: url(../images/general/menu-icons/icon-editor-symbols-hover.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/icon-editor-symbols-hover.png) 1x,url(../images/general/menu-icons/icon-editor-symbols-hover@2x.png) 2x);
+}
+html body .icon.icon-book,
+html body .menu-icon.icon-book {
+  background-image: url(../images/general/menu-icons/menu-book.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/menu-book.png) 1x,url(../images/general/menu-icons/menu-book@2x.png) 2x);
+}
+html body .icon.icon-worksheet,
+html body .menu-icon.icon-worksheet {
+  background-image: url(../images/general/menu-icons/menu-worksheet.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/menu-worksheet.png) 1x,url(../images/general/menu-icons/menu-worksheet@2x.png) 2x);
+}
+html body .icon.icon-applet,
+html body .menu-icon.icon-applet {
+  background-image: url(../images/general/menu-icons/icon-applet.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/icon-applet.png) 1x,url(../images/general/menu-icons/icon-applet@2x.png) 2x);
+}
+html body .icon.icon-applet:hover:not(.inactive),
+html body .icon.icon-applet:active:not(.inactive),
+html body .icon.icon-applet.active,
+html body .menu-icon.icon-applet:hover:not(.inactive),
+html body .menu-icon.icon-applet:active:not(.inactive),
+html body .menu-icon.icon-applet.active {
+  background-image: url(../images/general/menu-icons/icon-applet-hover.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/icon-applet-hover.png) 1x,url(../images/general/menu-icons/icon-applet-hover@2x.png) 2x);
+}
+html body .icon.icon-task,
+html body .menu-icon.icon-task {
+  background-image: url(../images/general/menu-icons/menu-task.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/menu-task.png) 1x,url(../images/general/menu-icons/menu-task@2x.png) 2x);
+}
+html body .icon.icon-task.hover-active:hover:not(.inactive),
+html body .icon.icon-task.hover-active:active:not(.inactive),
+html body .icon.icon-task.hover-active.active,
+html body .menu-icon.icon-task.hover-active:hover:not(.inactive),
+html body .menu-icon.icon-task.hover-active:active:not(.inactive),
+html body .menu-icon.icon-task.hover-active.active {
+  background-image: url(../images/general/menu-icons/icon-task-hover.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/icon-task-hover.png) 1x,url(../images/general/menu-icons/icon-task-hover@2x.png) 2x);
+}
+html body .icon.icon-check,
+html body .menu-icon.icon-check {
+  background-image: url(../images/general/menu-icons/menu-evaluate.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/menu-evaluate.png) 1x,url(../images/general/menu-icons/menu-evaluate@2x.png) 2x);
+}
+html body .icon.icon-copy,
+html body .menu-icon.icon-copy {
+  background-image: url(../images/general/menu-copy.png);
+  background-image: -webkit-image-set(url(../images/general/menu-copy.png) 1x,url(../images/general/menu-copy@2x.png) 2x);
+}
+html body .icon.icon-delete,
+html body .menu-icon.icon-delete {
+  background-image: url(../images/general/menu-delete.png);
+  background-image: -webkit-image-set(url(../images/general/menu-delete.png) 1x,url(../images/general/menu-delete@2x.png) 2x);
+}
+html body .icon.icon-edit,
+html body .menu-icon.icon-edit {
+  background-image: url(../images/general/menu-edit.png);
+  background-image: -webkit-image-set(url(../images/general/menu-edit.png) 1x,url(../images/general/menu-edit@2x.png) 2x);
+}
+html body .icon.icon-exit,
+html body .menu-icon.icon-exit {
+  background-image: url(../images/general/menu-sign-out.png);
+  background-image: -webkit-image-set(url(../images/general/menu-sign-out.png) 1x,url(../images/general/menu-sign-out@2x.png) 2x);
+}
+html body .icon.icon-archive,
+html body .menu-icon.icon-archive {
+  background-image: url(../images/general/menu-archive.png);
+  background-image: -webkit-image-set(url(../images/general/menu-archive.png) 1x,url(../images/general/menu-archive@2x.png) 2x);
+}
+html body .icon.icon-send-message,
+html body .menu-icon.icon-send-message {
+  background-image: url(../images/general/menu-send-message.png);
+  background-image: -webkit-image-set(url(../images/general/menu-send-message.png) 1x,url(../images/general/menu-send-message@2x.png) 2x);
+}
+html body .icon.icon-evaluate,
+html body .menu-icon.icon-evaluate {
+  background-image: url(../images/groups/icon-evaluate.png);
+  background-image: -webkit-image-set(url(../images/groups/icon-evaluate.png) 1x,url(../images/groups/icon-evaluate@2x.png) 2x);
+}
+html body .icon.icon-list,
+html body .menu-icon.icon-list {
+  background-image: url(../images/groups/menu-list.png);
+  background-image: -webkit-image-set(url(../images/groups/menu-list.png) 1x,url(../images/groups/menu-list@2x.png) 2x);
+}
+html body .icon.icon-grid,
+html body .menu-icon.icon-grid {
+  background-image: url(../images/groups/menu-grid.png);
+  background-image: -webkit-image-set(url(../images/groups/menu-grid.png) 1x,url(../images/groups/menu-grid@2x.png) 2x);
+}
+html body .icon.icon-share,
+html body .menu-icon.icon-share {
+  background-image: url(../images/general/menu-share.png);
+  background-image: -webkit-image-set(url(../images/general/menu-share.png) 1x,url(../images/general/menu-share@2x.png) 2x);
+}
+html body .icon.icon-embed,
+html body .menu-icon.icon-embed {
+  background-image: url(../images/general/menu-embed.png);
+  background-image: -webkit-image-set(url(../images/general/menu-embed.png) 1x,url(../images/general/menu-embed@2x.png) 2x);
+}
+html body .icon.icon-about,
+html body .menu-icon.icon-about {
+  background-image: url(../images/general/menu-about.png);
+  background-image: -webkit-image-set(url(../images/general/menu-about.png) 1x,url(../images/general/menu-about@2x.png) 2x);
+}
+html body .icon.icon-login,
+html body .menu-icon.icon-login {
+  background-image: url(../images/general/menu-sign-in.png);
+  background-image: -webkit-image-set(url(../images/general/menu-sign-in.png) 1x,url(../images/general/menu-sign-in@2x.png) 2x);
+}
+html body .icon.icon-teacher-evaluation,
+html body .menu-icon.icon-teacher-evaluation {
+  background-image: url(../images/groups/menu-teacher-feedback.png);
+  background-image: -webkit-image-set(url(../images/groups/menu-teacher-feedback.png) 1x,url(../images/groups/menu-teacher-feedback@2x.png) 2x);
+}
+html body .icon.icon-new-exercise,
+html body .menu-icon.icon-new-exercise {
+  background-image: url(../images/general/menu-worksheet-new-exercise.png);
+  background-image: -webkit-image-set(url(../images/general/menu-worksheet-new-exercise.png) 1x,url(../images/general/menu-worksheet-new-exercise@2x.png) 2x);
+}
+html body .icon.icon-new-question,
+html body .menu-icon.icon-new-question {
+  background-image: url(../images/general/menu-worksheet-new-question.png);
+  background-image: -webkit-image-set(url(../images/general/menu-worksheet-new-question.png) 1x,url(../images/general/menu-worksheet-new-question@2x.png) 2x);
+}
+html body .icon.icon-existing-worksheet,
+html body .menu-icon.icon-existing-worksheet {
+  background-image: url(../images/general/menu-worksheet-search-existing.png);
+  background-image: -webkit-image-set(url(../images/general/menu-worksheet-search-existing.png) 1x,url(../images/general/menu-worksheet-search-existing@2x.png) 2x);
+}
+html body .icon.icon-new-chapter,
+html body .menu-icon.icon-new-chapter {
+  background-image: url(../images/general/menu-chapter-new.png);
+  background-image: -webkit-image-set(url(../images/general/menu-chapter-new.png) 1x,url(../images/general/menu-chapter-new@2x.png) 2x);
+}
+html body .icon.icon-existing-chapter,
+html body .menu-icon.icon-existing-chapter {
+  background-image: url(../images/general/menu-chapter-existing.png);
+  background-image: -webkit-image-set(url(../images/general/menu-chapter-existing.png) 1x,url(../images/general/menu-chapter-existing@2x.png) 2x);
+}
+html body .icon.icon-refresh,
+html body .menu-icon.icon-refresh {
+  background-image: url(../images/general/menu-refresh.png);
+  background-image: -webkit-image-set(url(../images/general/menu-refresh.png) 1x,url(../images/general/menu-refresh@2x.png) 2x);
+}
+html body .icon.icon-save,
+html body .menu-icon.icon-save {
+  background-image: url(../images/general/menu-save.png);
+  background-image: -webkit-image-set(url(../images/general/menu-save.png) 1x,url(../images/general/menu-save@2x.png) 2x);
+}
+html body .icon.icon-evaluate,
+html body .menu-icon.icon-evaluate {
+  background-image: url(../images/general/menu-evaluate.png);
+  background-image: -webkit-image-set(url(../images/general/menu-evaluate.png) 1x,url(../images/general/menu-evaluate@2x.png) 2x);
+}
+html body .icon.icon-new,
+html body .menu-icon.icon-new {
+  background-image: url(../images/general/menu-icons/menu-new.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/menu-new.png) 1x,url(../images/general/menu-icons/menu-new@2x.png) 2x);
+}
+html body .icon.icon-new.hover-active:hover:not(.inactive),
+html body .icon.icon-new.hover-active:active:not(.inactive),
+html body .icon.icon-new.hover-active.active,
+html body .menu-icon.icon-new.hover-active:hover:not(.inactive),
+html body .menu-icon.icon-new.hover-active:active:not(.inactive),
+html body .menu-icon.icon-new.hover-active.active {
+  background-image: url(../images/general/menu-icons/icon-new-hover.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/icon-new-hover.png) 1x,url(../images/general/menu-icons/icon-new-hover@2x.png) 2x);
+}
+html body .icon.icon-new.highlight,
+html body .menu-icon.icon-new.highlight {
+  background-image: url(../images/general/menu-icons/icon-new-white.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/icon-new-white.png) 1x,url(../images/general/menu-icons/icon-new-white@2x.png) 2x);
+}
+html body .icon.icon-new.highlight:hover:not(.inactive):not(.nohover),
+html body .icon.icon-new.highlight:active:not(.inactive):not(.nohover),
+html body .menu-icon.icon-new.highlight:hover:not(.inactive):not(.nohover),
+html body .menu-icon.icon-new.highlight:active:not(.inactive):not(.nohover) {
+  background-image: url(../images/general/menu-icons/icon-new-white.png);
+  background-image: -webkit-image-set(url(../images/general/menu-icons/icon-new-white.png) 1x,url(../images/general/menu-icons/icon-new-white@2x.png) 2x);
+}
+html body .icon.icon-header-logo,
+html body .menu-icon.icon-header-logo {
+  background-image: url(../images/worksheet/header/logo.png);
+  background-image: -webkit-image-set(url(../images/worksheet/header/logo.png) 1x,url(../images/worksheet/header/logo@2x.png) 2x);
+}
+@media screen and (max-width: 480px) {
+  html body .icon.icon-header-logo,
+  html body .menu-icon.icon-header-logo {
+    background-image: url(../images/worksheet/header/logo-phone.png);
+    background-image: -webkit-image-set(url(../images/worksheet/header/logo-phone.png) 1x,url(../images/worksheet/header/logo-phone@2x.png) 2x);
+  }
+}
+html body .icon.arrow-small-right,
+html body .menu-icon.arrow-small-right {
+  background-image: url(../images/general/arrow-small-right.png);
+  background-image: -webkit-image-set(url(../images/general/arrow-small-right.png) 1x,url(../images/general/arrow-small-right@2x.png) 2x);
+}
+html body .icon.arrow-small-up,
+html body .menu-icon.arrow-small-up {
+  background-image: url(../images/general/arrow-small-up.png);
+  background-image: -webkit-image-set(url(../images/general/arrow-small-up.png) 1x,url(../images/general/arrow-small-up@2x.png) 2x);
+}
+html body .icon.arrow-small-down,
+html body .menu-icon.arrow-small-down {
+  background-image: url(../images/general/arrow-small-down.png);
+  background-image: -webkit-image-set(url(../images/general/arrow-small-down.png) 1x,url(../images/general/arrow-small-down@2x.png) 2x);
+}
+#ggbNotifications {
+  width: 50px;
+  height: 37px;
+  margin-top: 5px;
+  margin-left: 50px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 13px;
+  cursor: pointer;
+}
+.notification.unread {
+  background-image: url(../images/general/notification-unread.png);
+  background-image: -webkit-image-set(url(../images/general/notification-unread.png) 1x,url(../images/general/notification-unread@2x.png) 2x);
+}
+.notification.unread span {
+  color: #FFF;
+  font-weight: bold;
+  text-decoration: none;
+}
+.notification.read {
+  background-image: url(../images/general/notification-read.png);
+  background-image: -webkit-image-set(url(../images/general/notification-read.png) 1x,url(../images/general/notification-read@2x.png) 2x);
+}
+a {
+  cursor: pointer;
+}
+.inactive {
+  opacity: 0.3;
+  filter: alpha(opacity=30);
+  cursor: default !important;
+}
+@media screen and (max-width: 480px) {
+  .hide-editmode {
+    display: none !important;
+  }
+}
+h1 .active-icon.icon-navigate-back {
+  margin-top: -5px;
+  margin-right: 10px;
+}
+#comment-template {
+  display: none;
+}
+#comment-editor {
+  display: none;
+  z-index: 1000;
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+  padding: 10px;
+  right: 0px;
+  bottom: 50px;
+  position: absolute;
+  margin-top: 1em;
+  background-color: #FFFFFF;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid #DCDCDC;
+}
+#comment-editor #comment-editor-search {
+  display: block;
+  box-sizing: border-box;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  height: 30px;
+  top: 0px;
+  width: 88%;
+  margin: 10px;
+}
+#comment-editor #search-results {
+  display: none;
+}
+#comment-editor #comment-editor-content {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  top: 50px;
+  overflow: auto;
+  margin: 10px;
+}
+#comment-editor #comment-editor-content img {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+#comment-editor #comment-editor-content img:hover {
+  opacity: 0.8;
+}
+.comments.post-comments {
+  margin-top: 1em;
+  background-color: #FFFFFF;
+  -webkit-border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  border-bottom-left-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  -moz-border-radius-bottomright: 10px;
+  border-bottom-right-radius: 10px;
+}
+.comments .toggle-comments-list,
+.comments .load-more-comments {
+  text-align: center;
+  border-top: 1px solid #DCDCDC;
+  background-color: #FFFFFF;
+}
+.comments .toggle-comments-list.nodisplay,
+.comments .load-more-comments.nodisplay {
+  display: none;
+}
+.comments .toggle-comments-list.nodisplay .toggle-comments,
+.comments .load-more-comments.nodisplay .toggle-comments {
+  height: 10px;
+}
+.comments .toggle-comments-list .toggle-comments,
+.comments .toggle-comments-list .load-comments,
+.comments .load-more-comments .toggle-comments,
+.comments .load-more-comments .load-comments {
+  font-size: 0.8em;
+  margin: 0px 10px;
+  padding-right: 30px;
+  background-image: url(../images/general/comments/menu-comment.png);
+  background-image: -webkit-image-set(url(../images/general/comments/menu-comment.png) 1x,url(../images/general/comments/menu-comment@2x.png) 2x);
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+.comments .comments-list {
+  background-color: #FFFFFF;
+  display: table;
+  width: 100%;
+  -webkit-border-bottom-right-radius: 10px;
+  -moz-border-radius-bottomright: 10px;
+  border-bottom-right-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  border-bottom-left-radius: 10px;
+}
+.comments .comments-list .comment {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border-top: 1px solid #DCDCDC;
+  min-height: 50px;
+}
+.comments .comments-list .comment.noborder {
+  border-top: none;
+  min-height: auto;
+}
+.comments .comments-list .comment > div {
+  vertical-align: top;
+  text-align: left;
+  padding: 5px;
+}
+.comments .comments-list .comment .comment-user {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 0px;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-position: center center;
+  background-size: 40px auto;
+  -webkit-background-size: 40px auto;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.comments .comments-list .comment .comment-content {
+  flex-grow: 1;
+  -webkit-flex-grow: 1;
+  padding-left: 50px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  line-height: 130%;
+}
+.comments .comments-list .comment .comment-content .comment-name {
+  color: #333333;
+}
+.comments .comments-list .comment .comment-content .comment-date {
+  font-size: 0.8em;
+  white-space: nowrap;
+}
+.comments .comments-list .comment .comment-content .comment-text {
+  white-space: pre-line;
+}
+.comments .comments-list .comment .comment-content .edit-comment-text {
+  width: 100%;
+  line-height: 16px;
+  height: 16px;
+  resize: vertical;
+  padding-right: 30px;
+}
+.comments .comments-list .comment .comment-content .edit-comment-text:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+.comments .comments-list .comment .comment-content .edit-comment-text:focus:-moz-placeholder {
+  color: transparent;
+}
+.comments .comments-list .comment .comment-content .edit-comment-text:focus::-moz-placeholder {
+  color: transparent;
+}
+.comments .comments-list .comment .comment-content .edit-comment-text:focus:-ms-input-placeholder {
+  color: transparent;
+}
+.comments .comments-list .comment .comment-content .edit-comment-text-wrapper {
+  position: relative;
+}
+.comments .comments-list .comment .comment-content .edit-comment-text-wrapper .emoibutton {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 2px;
+  right: 4px;
+  opacity: 0.5;
+}
+.comments .comments-list .comment .comment-content .edit-comment-text-wrapper .emoibutton img {
+  width: 100%;
+  height: 100%;
+}
+.comments .comments-list .comment .comment-content .edit-comment-text-wrapper .emoibutton:hover,
+.comments .comments-list .comment .comment-content .edit-comment-text-wrapper .emoibutton:active {
+  opacity: 1;
+}
+.comments .comments-list .comment .comment-options {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 20px;
+  padding: 0px;
+}
+.comments .comments-list .comment .comment-menu-button {
+  background-color: transparent;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(../images/general/comments/icon-menu.png);
+  background-image: -webkit-image-set(url(../images/general/comments/icon-menu.png) 1x,url(../images/general/comments/icon-menu@2x.png) 2x);
+  height: 20px;
+  width: 20px;
+  display: block;
+}
+.comments .comments-list .comment .comment-menu-button:hover,
+.comments .comments-list .comment .comment-menu-button.active {
+  background-image: url(../images/general/comments/icon-menu-hover.png);
+  background-image: -webkit-image-set(url(../images/general/comments/icon-menu-hover.png) 1x,url(../images/general/comments/icon-menu-hover@2x.png) 2x);
+}
+.comments .comments-list .comment.new-comment {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  position: relative;
+}
+.comments .comments-list .comment.new-comment .comment-content {
+  padding-right: 5px;
+}
+.comments .comments-list .comment.new-comment .comment-content .comment-name,
+.comments .comments-list .comment.new-comment .comment-content .comment-date,
+.comments .comments-list .comment.new-comment .comment-content .comment-text {
+  display: none;
+}
+.comments .comments-list .comment.new-comment .comment-content .new-comment-text {
+  display: block;
+  height: 40px;
+  width: 100%;
+}
+.comments .comments-list .comment.new-comment .comment-content .new-comment-text:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+.comments .comments-list .comment.new-comment .comment-content .new-comment-text:focus:-moz-placeholder {
+  color: transparent;
+}
+.comments .comments-list .comment.new-comment .comment-content .new-comment-text:focus::-moz-placeholder {
+  color: transparent;
+}
+.comments .comments-list .comment.new-comment .comment-content .new-comment-text:focus:-ms-input-placeholder {
+  color: transparent;
+}
+.comments .comments-list .comment.new-comment .comment-menu-button {
+  display: none;
+}
+.comments .comments-list .comment.new-comment .emoibutton {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 7px;
+  right: 7px;
+  opacity: 0.5;
+}
+.comments .comments-list .comment.new-comment .emoibutton img {
+  width: 100%;
+  height: 100%;
+}
+.comments .comments-list .comment.new-comment .emoibutton:hover,
+.comments .comments-list .comment.new-comment .emoibutton:active {
+  opacity: 1;
+}
+.comments .comments-list .comment-menu {
+  -ms-transform: scale(0.8,0.8);
+  -webkit-transform: scale(0.8,0.8);
+  transform: scale(0.8,0.8);
+  bottom: 0px;
+}
+p.smallmargin {
+  margin-bottom: 0.5em;
+}
+p.nomargin {
+  margin-bottom: 0px;
+}
+fieldset.formbox {
+  border: none;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+  display: block;
+  background-color: #FFFFFF;
+}
+fieldset.formbox.border {
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+fieldset.formbox legend {
+  font-size: 1.2em;
+  border-bottom: 1px solid #DCDCDC;
+  padding: 5px 15px;
+  width: 100%;
+  margin-left: -15px;
+  margin-bottom: 15px;
+}
+@media screen and (max-width: 480px) {
+  fieldset.formbox legend {
+    padding: 5px 10px;
+    margin-left: -10px;
+  }
+}
+fieldset.formbox legend + * {
+  padding-top: ;
+}
+.formbox {
+  display: flex;
+  flex-direction: column;
+}
+.formbox label,
+.formbox span.label {
+  margin: 0px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding-top: 0px;
+  font-weight: normal;
+  display: inline-block;
+}
+.formbox input[type="radio"] {
+  margin-top: -3px;
+}
+.formbox input[type="checkbox"] {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+.formbox input[type="date"] {
+  padding-left: 28px;
+  background: url(../images/groups/icon-calendar.png) no-repeat 6px center #FFFFFF;
+}
+.formbox textarea {
+  resize: vertical;
+  -moz-resize: vertical;
+}
+.formbox .helptext {
+  font-size: 0.8em;
+}
+.formbox .error {
+  color: #cb331b;
+}
+.formbox .formline {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+.formbox .formline > * {
+  margin-right: 15px;
+  margin-bottom: 0.5em;
+}
+.formbox .formline > :last-child {
+  margin-right: 0px;
+}
+.formbox .formline .inline-element {
+  display: inline;
+}
+.formbox .formline .formelement {
+  margin-bottom: 1em;
+}
+.formbox .formline .formelement > label {
+  margin-right: 15px;
+}
+.formbox .formline .leftPart {
+  float: left;
+  text-align: right;
+  flex-basis: 150px;
+  flex-grow: 0;
+}
+.formbox .formline .leftPart.wider {
+  flex-basis: 200px;
+}
+@media screen and (max-width: 480px) {
+  .formbox .formline .leftPart {
+    text-align: left;
+  }
+}
+.formbox .formline .centerPart {
+  flex-grow: 1;
+  flex-shrink: 2;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  justify-content: space-between;
+}
+.formbox .formline .centerPart > input[type="text"],
+.formbox .formline .centerPart > input[type="email"],
+.formbox .formline .centerPart > input[type="password"],
+.formbox .formline .centerPart > textarea,
+.formbox .formline .centerPart > select {
+  width: 100%;
+  max-width: 500px;
+}
+.formbox .formline .centerPart.rows {
+  flex-direction: column;
+}
+.formbox .formline .centerPart.columns {
+  flex-direction: row;
+}
+.formbox .formline .centerPart.alignRight {
+  justify-content: flex-end;
+}
+.formbox .formline .centerPart.alignRight > * {
+  margin-left: 5px;
+}
+.formbox .formline .rightPart {
+  flex-basis: 55px;
+  flex-grow: 0;
+}
+.formbox .formline.columns {
+  flex-direction: row;
+}
+.formbox .formline.columns > input[type="text"],
+.formbox .formline.columns > input[type="email"],
+.formbox .formline.columns > input[type="password"],
+.formbox .formline.columns > textarea,
+.formbox .formline.columns > select {
+  width: 100%;
+  max-width: 500px;
+}
+.formbox .formline.rows {
+  flex-direction: column;
+}
+.formbox .formline.alignRight {
+  justify-content: flex-end;
+}
+.formbox .formline.smallmargin {
+  margin-bottom: 0.5em;
+}
+.formbox .formline.nomargin {
+  margin-bottom: 0px;
+}
+.formbox .formline.nomargin > * {
+  margin-bottom: 0px;
+}
+@media screen and (max-width: 480px) {
+  .formbox .formline {
+    flex-direction: column;
+  }
+  .formbox .formline:not(.columns) > * {
+    margin-right: 0px;
+  }
+  .formbox .formline .leftPart,
+  .formbox .formline .rightPart,
+  .formbox .formline .centerPart {
+    flex-basis: auto !important;
+  }
+}
+.formbox .sNotification-slider-help {
+  height: 100px;
+  padding-top: 10px;
+}
+#main {
+  min-height: 100%;
+}
+.button.headerbutton {
+  font-size: 1.0em;
+}
+.message-box {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.message-box .messages {
+  position: relative;
+}
+.message-box .messages ul {
+  list-style: none;
+  display: inline-block;
+  border: 1px solid #6161FF;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  background-color: ;
+  box-shadow: 0px 0px 2px 1px rgba(102,102,102,0.3);
+  margin: 0 0 1em 0;
+  padding: 0px;
+}
+.message-box .messages ul li {
+  padding: 0.75em 1.5em;
+  margin: 0;
+}
+.message-box .messages ul li.green {
+  color: #666666;
+}
+.message-box .messages ul li.red {
+  color: #666666;
+}
+.message-box .messages .message-arrow {
+  background: url('../images/new-images/message-arrow.png') no-repeat center top;
+  position: absolute;
+  bottom: -1px;
+  height: 17px;
+  width: 100%;
+}
+h2.inline,
+h3.inline,
+h4.inline,
+h5.inline,
+h6.inline {
+  display: inline;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-bottom: 0.4em;
+}
+#columns {
+  overflow: auto;
+  position: relative;
+}
+#columns #content-container {
+  width: 100%;
+  float: left;
+  margin-right: -180px;
+}
+#columns #content {
+  margin-right: 180px;
+}
+#columns #sidebar {
+  width: 180px;
+  float: right;
+}
+textarea {
+  width: 99%;
+}
+input.text {
+  width: 80%;
+}
+label {
+  display: block;
+  font-weight: bold;
+  margin: 1em 0 0.1em 0;
+}
+label.inline {
+  display: inline;
+}
+body.simple {
+  padding: 0 1em;
+}
+body.simple h1 {
+  margin: 1.3em 0 0.2em 0;
+  padding: 0;
+}
+body.ajax-load,
+body.ajax-load * {
+  cursor: wait;
+}
+body.ajax-load .jShowMore,
+body.ajax-load * .jShowMore {
+  cursor: wait;
+}
+.ggbPageContent ul.grid {
+  padding-left: 0px;
+}
+.grid {
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 99.99996%;
+}
+.grid .first {
+  margin-left: 0 !important;
+}
+.grid .last {
+  margin-right: 0 !important;
+}
+.grid .box_1,
+.grid .box_2,
+.grid .box_3,
+.grid .box_4,
+.grid .box_5,
+.grid .box_6,
+.grid .box_7,
+.grid .box_8,
+.grid .box_9,
+.grid .box_10,
+.grid .box_11,
+.grid .box_12 {
+  display: inline;
+  float: left;
+  position: relative;
+  margin-right: 0.5%;
+  max-width: 100%;
+}
+.grid .box_1 {
+  width: 7.33333%;
+}
+.grid .box_2 {
+  width: 15.66666%;
+}
+.grid .box_3 {
+  width: 23.99999%;
+}
+.grid .box_4 {
+  width: 32.33332%;
+  min-width: 250px;
+}
+.grid .box_5 {
+  width: 40.66665%;
+}
+.grid .box_6 {
+  width: 48.99998%;
+  min-width: 250px;
+}
+.grid .box_7 {
+  width: 57.33331%;
+}
+.grid .box_8 {
+  width: 65.66664%;
+  min-width: 250px;
+}
+.grid .box_9 {
+  width: 73.99997%;
+}
+.grid .box_10 {
+  width: 82.3333%;
+}
+.grid .box_11 {
+  width: 90.66663%;
+}
+.grid .box_12 {
+  width: 98.99996%;
+}
+.grid .clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+* html  .clearfix {
+  height: 1%;
+}
+.clearfix {
+  display: block;
+}
+#content .grid h2 {
+  margin-top: 0.3em;
+}
+#content .grid h2 .editsection,
+#content .grid h3 .editsection {
+  display: none;
+}
+.grid ul {
+  margin-left: 0;
+  margin-top: 0;
+}
+#timeschedule_list li {
+  display: block;
+}
+#timeschedule_list #timeschedule-header {
+  border-bottom: 1px solid #DCDCDC;
+}
+#ggt-popup-overlay {
+  background-color: #ffffff;
+}
+#ggt-popup-stored {
+  display: none;
+}
+#ggt-popup {
+  display: none;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: rgba(255,255,255,0.9);
+  box-shadow: 0px 0px 2px 1px rgba(102,102,102,0.3);
+  width: 680px;
+  max-width: 90%;
+  max-height: 90%;
+  z-index: 3100 !important;
+}
+#ggt-popup #ggt-popup-header h5 {
+  padding: 0px 30px 5px 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-size: 1.3em;
+  font-weight: normal;
+  border-bottom: 1px solid #DCDCDC;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#ggt-popup #ggt-popup-header #ggt-popup-search {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+#ggt-popup #ggt-popup-content {
+  line-height: 170%;
+}
+#ggt-popup #ggt-popup-content #ggt-popup-search-results {
+  height: 420px;
+  overflow: auto;
+  margin-top: 20px;
+}
+#ggt-popup #ggt-popup-content #ggt-popup-search-results #coll-addlist-loading {
+  margin: 3em;
+}
+#ggt-popup a.modalCloseImg {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  z-index: 2010;
+  cursor: pointer;
+  background: url('../images/worksheet/icon-close.png') no-repeat;
+}
+#ggt-popup a.modalCloseImg:hover {
+  background: url('../images/worksheet/icon-close-active.png') no-repeat;
+}
+#ggt-popup .users {
+  list-style-type: none;
+}
+#ggt-popup .users .avatar {
+  width: 60px;
+  float: left;
+}
+#ggt-popup .users .meta,
+#ggt-popup .users h4 {
+  margin-left: 70px;
+}
+#ggt-popup #ggt-popup-wrapper {
+  position: relative;
+}
+#ggt-popup #ggt-popup-footer {
+  padding: 10px;
+  text-align: center;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  border-radius: 4px;
+  color: white;
+  overflow: auto;
+}
+#ggt-popup #ggt-popup-footer #popup-button-close {
+  float: right;
+}
+.options-dialog {
+  width: auto;
+  height: auto;
+  padding: 15px 30px 10px 30px;
+  display: none;
+  position: relative;
+}
+.options-dialog .close {
+  text-align: right;
+}
+.options-dialog .dialog-error {
+  visibility: hidden;
+  color: #cb331b;
+  padding-bottom: 5px;
+}
+.options-dialog .button-bar {
+  display: block;
+  text-align: right;
+}
+.options-dialog .button-bar > * {
+  margin-left: 10px;
+}
+.options-dialog .button-bar .button {
+  margin-right: 5px;
+}
+.message-dialog {
+  width: auto;
+  height: auto;
+  padding: 15px 30px 10px 30px;
+  display: none;
+  position: relative;
+  padding: 0;
+}
+.message-dialog .close {
+  text-align: right;
+}
+.message-dialog .dialog-error {
+  visibility: hidden;
+  color: #cb331b;
+  padding-bottom: 5px;
+}
+.message-dialog .button-bar {
+  display: block;
+  text-align: right;
+}
+.message-dialog .button-bar > * {
+  margin-left: 10px;
+}
+.message-dialog .button-bar .button {
+  margin-right: 5px;
+}
+#popup-yesno {
+  max-width: 500px;
+}
+.popup {
+  position: relative;
+}
+.popup.sInitial {
+  position: static;
+}
+.popup .popup-body {
+  display: table-cell;
+  position: absolute;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: rgba(255,255,255,0.9);
+  box-shadow: 0px 0px 2px 1px rgba(102,102,102,0.3);
+  z-index: 500;
+}
+.popup .popup-body ul {
+  padding-left: 0px;
+  margin-bottom: 0px;
+}
+.popup .popup-body ul li {
+  list-style: none;
+  line-height: 2em;
+}
+.popup .popup-body ul li > :hover img {
+  border-color: #6161FF;
+}
+.popup .popup-body ul li img {
+  vertical-align: middle;
+  border-radius: 5px;
+  margin-right: 5px;
+  border: 1px solid #DCDCDC;
+  width: 24px;
+  height: 24px;
+  padding: 3px;
+  background-color: #FFFFFF;
+}
+.popup .popup-btn {
+  margin: 5px;
+}
+body.noscroll {
+  position: fixed;
+  overflow-y: scroll;
+  width: 100%;
+}
+#wsf-comments-list {
+  list-style-type: none;
+}
+#wsf-comments-list .comment-content {
+  font-weight: normal;
+}
+#wsf-comments-list .comment-content.unread {
+  font-weight: bold;
+}

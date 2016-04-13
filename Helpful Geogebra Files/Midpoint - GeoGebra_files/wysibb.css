@@ -1,0 +1,46 @@
+.wysibb {
+  position: relative;
+}
+.wysibb .wysibb-toolbar {
+  border-bottom: none;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  width: 50px;
+  overflow: visible;
+  margin: 0px;
+  padding: 10px 0px 10px 0px;
+  border-right: 1px solid #ddd;
+}
+.wysibb .wysibb-toolbar >.wysibb-toolbar-container {
+  border-right: none;
+}
+.wysibb .wysibb-toolbar >.wysibb-toolbar-container .wysibb-maintool {
+  width: 40px;
+  box-sizing: border-box;
+}
+.wysibb .wysibb-toolbar >.wysibb-toolbar-container .btn-math {
+  background: url('/images/wysibb/icon-editor-math-symbol.png') no-repeat center center;
+}
+.wysibb .wysibb-toolbar >.wysibb-toolbar-container .btn-math:hover {
+  background-image: url('/images/wysibb/icon-editor-math-symbol-hover.png');
+}
+.wysibb .wysibb-toolbar >.wysibb-toolbar-container .btn-text {
+  background: url('/images/wysibb/icon-editor-text.png') no-repeat center center;
+}
+.wysibb .wysibb-toolbar >.wysibb-toolbar-container .btn-text:hover {
+  background-image: url('/images/wysibb/icon-editor-text-hover.png');
+}
+.wysibb .wysibb-toolbar .wysibb-toolbar-container-group {
+  width: 700px;
+}
+.wysibb .wysibb-toolbar .wysibb-toolbar-container-group .btn-icons {
+  background: url('/images/wysibb/icon-editor-symbol.png') no-repeat center center;
+}
+.wysibb .wysibb-text {
+  margin-left: 50px;
+}
+.wysibb .wysibb-body:empty::before {
+  content: attr(data-placeholder);
+  opacity: 0.6;
+}
