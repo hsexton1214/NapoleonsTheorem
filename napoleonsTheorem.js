@@ -5,7 +5,7 @@
  */
 
 var gl;
-var points;
+
 
 function canvasMain() {
     var canvas = document.getElementById("gl-canvas");
@@ -22,7 +22,7 @@ function canvasMain() {
     
     ///draw object
     var objColor =[.5,.5,.5,1];
-    drawObject(gl,program,drawCircle(0,0,0,1),objColor,gl.TRIANGLE__FAN);
+    drawObject(gl,program,drawCircle(0,0,0,1),objColor,gl.TRIANGLE_FAN);
     
 };//canvas main
 

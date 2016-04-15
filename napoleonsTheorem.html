@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <!--
-Author: Hannah Sexton
-Assignment 2
-Multiple Objects on Canvas
+Hannah Sexton
+Natalie Leatherman
+Napoleon's Theorem
 -->
 <html>
     <head>
-        <title>Assignment 2</title>
+        <title>Napoleon's Theorem</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script id="vertex-shader" type="x-shader/x-vertex">
-            attribute vec4 vPosition;
-            void main()
-            {
-                gl_Position = vPosition;
-            }
+       attribute vec4 vPosition;
+       void main()
+       {
+           gl_Position = vPosition;
+       }
         </script>
         <script id="fragment-shader" type="x-shader/x-fragment">
             precision mediump float;
@@ -23,17 +23,16 @@ Multiple Objects on Canvas
                 gl_FragColor = uColor;
             }
         </script>
-        
-        <script type="text/javascript" src="http://arden.cs.unca.edu/~cameron/Angel/SourceCode/Common/webgl-utils.js"></script>
+          <script type="text/javascript" src="http://arden.cs.unca.edu/~cameron/Angel/SourceCode/Common/webgl-utils.js"></script>
         <script type="text/javascript" src="http://arden.cs.unca.edu/~cameron/Angel/SourceCode/Common/initShaders.js"></script>
         <script type="text/javascript" src="http://arden.cs.unca.edu/~cameron/Angel/SourceCode/Common/MV.js"></script>
         <script type="text/javascript" src="napoleonsTheorem.js"></script>
-
+    
     </head>
     <body onload="canvasMain()">
         <div>
             <canvas id="gl-canvas" width="512" height="512">
-                oops... your browser doesn't support the HTML canvas element
+                oops... your browser doesn't support the HTML canvas element hddfsafkj
             </canvas>
         </div>
     </body>
