@@ -43,7 +43,13 @@ function drawCircle(x1,y1,x2,y2){
     return circleVertices;
 };//drawCircle
 function drawLine(x1,y1,x2,y2){
+    var lineVertices = [];
+    var inc = 1 / 50;
     
+    for (var a = 0; a <1; a += inc){
+        lineVertices.push(vec2(a*x1+(1-a)*x2, (a*y1+(1-a)*y2)));
+    }
+    return lineVertices;
 };//drawLine
 
 function drawPoint(x,y){};//drawPoint
