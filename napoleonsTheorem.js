@@ -5,7 +5,8 @@
  */
 
 var gl;
-
+//var program;
+var mouseClick;
 
 function canvasMain() {
     var canvas = document.getElementById("gl-canvas");
@@ -14,22 +15,28 @@ function canvasMain() {
         alert("WebGL isn't available");
     }
     gl.viewport(0, 0, canvas.width, canvas.height);
-    gl.clearColor(1.0, 1.0, 1.0, 1.0);
+    gl.clearColor(0.0, 0.0, 0.0, 1.0);
 
-    var program = initShaders(gl, "vertex-shader", "fragment-shader");
+    program = initShaders(gl, "vertex-shader", "fragment-shader");
     gl.useProgram(program);
     gl.clear(gl.COLOR_BUFFER_BIT);
+  //  mouseClick = false;
 
     ///draw object
     var circleColor = [.5, .5, .5, 1];
     drawObject(gl, program, drawCircle(0, 0, 0, 1), circleColor, gl.TRIANGLE_FAN);
-    var pointColor = [0.0,1.0,0.0,1.0];
-    drawObject(gl, program, drawPoint(0, 0), pointColor, gl.TRIANGLE_FAN);
+   // if (mouseClick === true) {
+   //     mouseClick = false;
+        var pointColor = [0.0, 1.0, 0.0, 1.0];
+        drawObject(gl, program, drawPoint(0, 0), pointColor, gl.TRIANGLE_FAN);
+  //  }
 }
 ;//canvas main
-function mouseUp(){
-  gl.clearColor(1.0,1.0,1.0,1.0);  
-};
+function mouseUp(event) {
+    var pointColor = [0.0, 0.0, 0.0, 1.0];
+    drawObject(gl, program, drawPoint(event.clientX, event.clientY), pointColor, gl.TRIANGLE_FAN);
+}
+;
 
 function drawTriangle(x1, y1, x2, y2, x3, y3) {
 }
@@ -62,13 +69,15 @@ function drawLine(x1, y1, x2, y2) {
 }
 ;//drawLine
 
-function drawPoint(x,y) {
+function drawPoint(event) {
+    var x = event.clientX;
+    var y = event.clientY;
     var pointSize = .02;
     var pointVertices = [
-        vec2(x-pointSize,y),
-        vec2(x,y+pointSize),
-        vec2(x+pointSize,y),
-        vec2(x,y-pointSize)
+        vec2(x - pointSize, y),
+        vec2(x, y + pointSize),
+        vec2(x + pointSize, y),
+        vec2(x, y - pointSize)
     ];
     return pointVertices;
     //gl.clearColor(1.0,1.0,1.0,1.0);
