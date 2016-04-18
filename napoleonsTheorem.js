@@ -24,13 +24,15 @@ function canvasMain() {
 
     ///draw object
     var circleColor = [.5, .5, .5, 1];
-    drawObject(gl, program, drawCircle(0, 0, 0, 1), circleColor, gl.TRIANGLE_FAN);
+    drawObject(gl, program, drawCircle(0, 0, 0, 1), circleColor, gl.LINE_LOOP);
+    var lineColor = [.5, .5, .5, 1];
+    drawObject(gl, program, drawLine(0, 1, 0, -1), lineColor, gl.LINE_STRIP);
     // if (mouseClick === true) {
     //     mouseClick = false;
    // var pointColor = [0.0, 1.0, 0.0, 1.0];
    // drawObject(gl, program, drawPoint(0, 0), pointColor, gl.TRIANGLE_FAN);
-        drawInitialTriangle(0,0,-.25,.25,.25,.25);
-        drawMidpoint(-.5,.5,-.25,.5);
+        //drawInitialTriangle(0,0,-.25,.25,.25,.25);
+        //drawMidpoint(-.5,.5,-.25,.5);
     //  }
 }
 ;//canvas main
