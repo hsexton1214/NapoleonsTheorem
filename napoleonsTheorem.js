@@ -35,8 +35,9 @@ function canvasMain() {
     var circleColor = [.5, .5, .5, 1];
     drawObject(gl, program, drawCircle(0, 0, 0, 1), circleColor, gl.LINE_LOOP);
     var lineColor = [.5, .5, .5, 1];
-    drawObject(gl, program, drawLine(0, 1, 0, -1), lineColor, gl.LINE_STRIP);
-    
+    drawObject(gl, program, drawPoint(-.5,.5), pointColor, gl.TRIANGLE_FAN);
+    drawObject(gl, program, drawLine(-.5, .5, .5, -.5), lineColor, gl.LINE_STRIP);
+    drawObject(gl, program, drawPoint(.5, -.5), pointColor, gl.TRIANGLE_FAN);
     
     drawObject(gl, program, drawPoint(0, 0), pointColor, gl.TRIANGLE_FAN);
     drawInitialTriangle(0, 0, -.25, .25, .25, .25);
@@ -100,11 +101,9 @@ function drawCircle(x1, y1, x2, y2) {
 ;//drawCircle
 function drawLine(x1, y1, x2, y2) {
     var lineVertices = [];
-    var inc = 1 / 50;
-
-    for (var a = 0; a < 1; a += inc) {
-        lineVertices.push(vec2(a * x1 + (1 - a) * x2, (a * y1 + (1 - a) * y2)));
-    }
+    
+    lineVertices.push(vec2(x1,y1));
+    lineVertices.push(vec2(x2,y2));
     return lineVertices;
 }
 ;//drawLine
