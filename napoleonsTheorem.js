@@ -58,10 +58,14 @@ function canvasMain() {
 ;
 
 function drawInitialTriangle(x1, y1, x2, y2, x3, y3) {
-    
-    drawObject(gl, program, drawPoint(x1, y1), pointColor, gl.TRIANGLE_FAN);
-    drawObject(gl, program, drawPoint(x2, y2), pointColor, gl.TRIANGLE_FAN);
-    drawObject(gl, program, drawPoint(x3, y3), pointColor, gl.TRIANGLE_FAN);
+    var pointColor2 = [1.0,0.0,0.0,1.0];
+    var lineColor = [0.0,1.0,0.0,1.0];
+    drawObject(gl, program, drawPoint(x1, y1), pointColor2, gl.TRIANGLE_FAN);
+    drawObject(gl, program, drawPoint(x2, y2), pointColor2, gl.TRIANGLE_FAN);
+    drawObject(gl, program, drawPoint(x3, y3), pointColor2, gl.TRIANGLE_FAN);
+    drawObject(gl, program, drawLine(x1, y1, x2, y2), lineColor, gl.LINE_STRIP);
+    drawObject(gl, program, drawLine(x2, y2, x3, y3), lineColor, gl.LINE_STRIP);
+    drawObject(gl, program, drawLine(x1, y1, x3, y3), lineColor, gl.LINE_STRIP);
 }
 ;//drawTriangle
 
