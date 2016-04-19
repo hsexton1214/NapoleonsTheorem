@@ -7,7 +7,7 @@
 var gl;
 var program;
 
-var pointColor = [0.0,0.0,0.0,1.0];
+var pointColor = [1.0,1.0,1.0,1.0];
 
 function canvasMain() {
     var canvas = document.getElementById("gl-canvas");
@@ -16,41 +16,36 @@ function canvasMain() {
         alert("WebGL isn't available");
     }
     gl.viewport(0, 0, canvas.width, canvas.height);
-    gl.clearColor(1.0, 1.0, 1.0, 1.0);
+    gl.clearColor(0.0, 0.0, 0.0, 1.0);
 
-//    canvas.addEventListener("mousedown", function (event) {
-//         var x = 2*event.clientX/canvas.width-1;
-//         var y = 2*(canvas.height-event.clientY)/canvas.height-1;
-//         y = y /2.0;
-//         var pointColor = [0.0, 0.0, 0.0, 1.0];
-//    drawObject(gl, program, drawPoint(x, y), pointColor, gl.TRIANGLE_FAN);
-//    });
-// 
     program = initShaders(gl, "vertex-shader", "fragment-shader");
     gl.useProgram(program);
     gl.clear(gl.COLOR_BUFFER_BIT);
    
-
     ///draw object
-    var circleColor = [.5, .5, .5, 1];
-    drawObject(gl, program, drawCircle(0, 0, 0, 1), circleColor, gl.LINE_LOOP);
-    var lineColor = [.5, .5, .5, 1];
-    drawObject(gl, program, drawLine(0, 1, 0, -1), lineColor, gl.LINE_STRIP);
     
     
-    drawObject(gl, program, drawPoint(0, 0), pointColor, gl.TRIANGLE_FAN);
-    drawInitialTriangle(0, 0, -.25, .25, .25, .25);
-    //  drawMidpoint(-.5,.5,-.25,.5);
+//    var circleColor = [.5, .5, .5, 1];
+//    drawObject(gl, program, drawCircle(0, 0, 0, 1), circleColor, gl.LINE_LOOP);
+//    var lineColor = [.5, .5, .5, 1];
+//    drawObject(gl, program, drawLine(0, 1, 0, -1), lineColor, gl.LINE_STRIP);
+//    
+//    
+//    drawObject(gl, program, drawPoint(0, 0), pointColor, gl.TRIANGLE_FAN);
+//    drawInitialTriangle(0, 0, -.25, .25, .25, .25);
+//    drawMidpoint(-.5,.5,-.25,.5);
+//    
+//    
+//    canvas.addEventListener("mousedown", function (event) {
+//         var x = 2*event.clientX/canvas.width-1;
+//         var y = 2*(canvas.height-event.clientY)/canvas.height-1;
+//         y = y /2.0;
+//        
+//    drawObject(gl, program, drawPoint(x, y), pointColor, gl.TRIANGLE_FAN);
+//    });
     
-    
-    canvas.addEventListener("mousedown", function (event) {
-         var x = 2*event.clientX/canvas.width-1;
-         var y = 2*(canvas.height-event.clientY)/canvas.height-1;
-         y = y /2.0;
-        
-    drawObject(gl, program, drawPoint(x, y), pointColor, gl.TRIANGLE_FAN);
-    });
-    
+    drawInitialTriangle(-.5,-.25,0,.5,.5,-.25);
+    drawCenteroids(-.5,-.25,0,.5,.5,-.25);
 }
 ;
 
@@ -62,10 +57,7 @@ function drawInitialTriangle(x1, y1, x2, y2, x3, y3) {
 }
 ;//drawTriangle
 
-function drawEqTriangle(x1, y1, x2, y2) {
 
-}
-;
 
 //endpoints of the line segment
 function drawMidpoint(x1, y1, x2, y2) {
@@ -79,12 +71,13 @@ function drawMidpoint(x1, y1, x2, y2) {
 ;//drawMidpoint
 
 //assumes the circles have the same radius
-function findIntersections(a, b, c, d) {
 
-}
-;
 
+//initial Triangle
 function drawCenteroids(x1, y1, x2, y2, x3, y3) {
+    drawMidpoint(x1,y1,x2,y2);
+    drawMidpoint(x2,y2,x3,y3);
+    drawMidpoint(x1,y1,x3,y3);
 }
 ;
 function drawCircle(x1, y1, x2, y2) {
