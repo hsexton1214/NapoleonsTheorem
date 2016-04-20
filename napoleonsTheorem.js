@@ -7,7 +7,7 @@
 var gl;
 var program;
 
-var pointColor = [1.0,1.0,1.0,1.0];
+var pointColor = [0.0, 0.0, 0.0, 1.0];
 
 function canvasMain() {
     var canvas = document.getElementById("gl-canvas");
@@ -16,23 +16,18 @@ function canvasMain() {
         alert("WebGL isn't available");
     }
     gl.viewport(0, 0, canvas.width, canvas.height);
-    gl.clearColor(0.0, 0.0, 0.0, 1.0);
+    gl.clearColor(1.0, 1.0, 1.0, 1.0);
 
     program = initShaders(gl, "vertex-shader", "fragment-shader");
     gl.useProgram(program);
     gl.clear(gl.COLOR_BUFFER_BIT);
-   
+
     ///draw object
 
-    var circleColor = [.5, .5, .5, 1];
-    drawObject(gl, program, drawCircle(0, 0, 0, 1), circleColor, gl.LINE_LOOP);
-    var lineColor = [.5, .5, .5, 1];
-    drawObject(gl, program, drawPoint(-.5,.5), pointColor, gl.TRIANGLE_FAN);
-    drawObject(gl, program, drawLine(-.5, .5, .5, -.5), lineColor, gl.LINE_STRIP);
-    drawObject(gl, program, drawPoint(.5, -.5), pointColor, gl.TRIANGLE_FAN);
+    
 
-    
-    
+
+
 //    var circleColor = [.5, .5, .5, 1];
 //    drawObject(gl, program, drawCircle(0, 0, 0, 1), circleColor, gl.LINE_LOOP);
 //    var lineColor = [.5, .5, .5, 1];
@@ -44,22 +39,23 @@ function canvasMain() {
 //    drawMidpoint(-.5,.5,-.25,.5);
 //    
 //    
-//    canvas.addEventListener("mousedown", function (event) {
-//         var x = 2*event.clientX/canvas.width-1;
-//         var y = 2*(canvas.height-event.clientY)/canvas.height-1;
-//         y = y /2.0;
-//        
-//    drawObject(gl, program, drawPoint(x, y), pointColor, gl.TRIANGLE_FAN);
-//    });
-    
-    drawInitialTriangle(-.5,-.25,0,.5,.5,-.25);
-    drawCenteroids(-.5,-.25,0,.5,.5,-.25);
+    canvas.addEventListener("mousedown", function (event) {
+        var x = 2 * event.clientX / canvas.width - 1;
+        var y = 2 * (canvas.height - event.clientY) / canvas.height - 1;
+        y = y / 2.0;
+
+        drawObject(gl, program, drawPoint(x, y), pointColor, gl.TRIANGLE_FAN);
+      
+    });
+
+ drawInitialTriangle(-.5, -.25, 0, .5, .5, -.25);
+        drawCenteroids(-.5, -.25, 0, .5, .5, -.25);
 }
 ;
 
 function drawInitialTriangle(x1, y1, x2, y2, x3, y3) {
-    var pointColor2 = [1.0,0.0,0.0,1.0];
-    var lineColor = [0.0,1.0,0.0,1.0];
+    var pointColor2 = [1.0, 0.0, 0.0, 1.0];
+    var lineColor = [0.0, 1.0, 0.0, 1.0];
     drawObject(gl, program, drawPoint(x1, y1), pointColor2, gl.TRIANGLE_FAN);
     drawObject(gl, program, drawPoint(x2, y2), pointColor2, gl.TRIANGLE_FAN);
     drawObject(gl, program, drawPoint(x3, y3), pointColor2, gl.TRIANGLE_FAN);
@@ -69,16 +65,28 @@ function drawInitialTriangle(x1, y1, x2, y2, x3, y3) {
 }
 ;//drawTriangle
 
-
+function calculateIntersection(a, b, c, d) {
+    var r = Math.sqrt((c - a) * (c - a) + (d - b) * (d - b));
+    var xDenomenator = 2*(a * a - 2 * a * c + b * b - 2 * b * d + c * c + d * d);
+    var xRoot1 = a * a - 2 * a * c + b * b - 2 * b * d + c * c + d * d;
+    var xRoot2 = a * a - 2 * a * c + b * b - 2 * b * d + c * c + d * d - 4 * r * r;
+    var xNumOutSqrt = a * a * c + a * b * b - 2 * a * b * d - a * c * c + a * d * d + b * b * c - 2 * b * c * d + c * c * c + c * d * d;
+    var x = ((a * a * a - Math.sqrt(-1 * (b - d) * (b - d) * xRoot1 * xRoot2)) - xNumOutSqrt) / xDenomenator;
+    var y = Math.sqrt(r * r - (x - a) * (x - a)) + b;
+    drawObject(gl, program, drawPoint(x, y), [0.5,0.5,0.5,1.0], gl.TRIANGLE_FAN);
+}
+;
 
 //endpoints of the line segment
 function drawMidpoint(x1, y1, x2, y2) {
     var circleColor = [1.0, 0.0, 0.0, 1.0];
     drawObject(gl, program, drawCircle(x1, y1, x2, y2), circleColor, gl.LINE_LOOP);
     drawObject(gl, program, drawCircle(x2, y2, x1, y1), circleColor, gl.LINE_LOOP);
-    var midpointX = (x1+x2)/2;
-    var midpointY = (y1+y2)/2;
+      calculateIntersection(x1,y1,x2,y2);
+    var midpointX = (x1 + x2) / 2;
+    var midpointY = (y1 + y2) / 2;
     drawObject(gl, program, drawPoint(midpointX, midpointY), pointColor, gl.TRIANGLE_FAN);
+    return vec2(midpointX, midpointY);
 }
 ;//drawMidpoint
 
@@ -87,9 +95,13 @@ function drawMidpoint(x1, y1, x2, y2) {
 
 //initial Triangle
 function drawCenteroids(x1, y1, x2, y2, x3, y3) {
-    drawMidpoint(x1,y1,x2,y2);
-    drawMidpoint(x2,y2,x3,y3);
-    drawMidpoint(x1,y1,x3,y3);
+    var midPoint1 = drawMidpoint(x1, y1, x2, y2);
+    drawObject(gl, program, drawLine(midPoint1[0], midPoint1[1], x3, y3), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
+//    var midPoint2 = drawMidpoint(x2, y2, x3, y3);
+//    drawObject(gl, program, drawLine(midPoint2[0], midPoint2[1], x1, y1), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
+//    var midPoint3 = drawMidpoint(x1, y1, x3, y3);
+//    drawObject(gl, program, drawLine(midPoint3[0], midPoint3[1], x2, y2), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
+
 }
 ;
 function drawCircle(x1, y1, x2, y2) {
@@ -105,9 +117,9 @@ function drawCircle(x1, y1, x2, y2) {
 ;//drawCircle
 function drawLine(x1, y1, x2, y2) {
     var lineVertices = [];
-    
-    lineVertices.push(vec2(x1,y1));
-    lineVertices.push(vec2(x2,y2));
+
+    lineVertices.push(vec2(x1, y1));
+    lineVertices.push(vec2(x2, y2));
     return lineVertices;
 }
 ;//drawLine
