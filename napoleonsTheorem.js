@@ -67,13 +67,16 @@ function drawInitialTriangle(x1, y1, x2, y2, x3, y3) {
 
 function calculateIntersection(a, b, c, d) {
     var r = Math.sqrt((c - a) * (c - a) + (d - b) * (d - b));
-    var xDenomenator = 2*(a * a - 2 * a * c + b * b - 2 * b * d + c * c + d * d);
-    var xRoot1 = a * a - 2 * a * c + b * b - 2 * b * d + c * c + d * d;
-    var xRoot2 = a * a - 2 * a * c + b * b - 2 * b * d + c * c + d * d - 4 * r * r;
-    var xNumOutSqrt = a * a * c + a * b * b - 2 * a * b * d - a * c * c + a * d * d + b * b * c - 2 * b * c * d + c * c * c + c * d * d;
-    var x = ((a * a * a - Math.sqrt(-1 * (b - d) * (b - d) * xRoot1 * xRoot2)) - xNumOutSqrt) / xDenomenator;
-    var y = Math.sqrt(r * r - (x - a) * (x - a)) + b;
-    drawObject(gl, program, drawPoint(x, y), [0.5,0.5,0.5,1.0], gl.TRIANGLE_FAN);
+    var midpoint = (c+a) /2;
+    var initialX = midpoint;
+    var initialY = Math.sqrt(r*r-initialX*initialX);
+    var changeX = c-a;
+    var changeY = d-b;
+    var finalX = (changeX/r)*initialX+(changeY/r)*initialX;
+    var finalY = (-changeY/r)*initialY+(changeX/r)*initialY;
+   
+   
+    drawObject(gl, program, drawPoint(finalX, finalY), [0.5,0.5,0.5,1.0], gl.TRIANGLE_FAN);
 }
 ;
 
