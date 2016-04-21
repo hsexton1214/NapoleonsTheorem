@@ -1,7 +1,7 @@
 /* 
  * Hannah Sexton
  * Natalie Leatherman
- * 
+ * sdfdfsd
  */
 
 var gl;
@@ -39,17 +39,19 @@ function canvasMain() {
 //    drawMidpoint(-.5,.5,-.25,.5);
 //    
 //    
-    canvas.addEventListener("mousedown", function (event) {
-        var x = 2 * event.clientX / canvas.width - 1;
-        var y = 2 * (canvas.height - event.clientY) / canvas.height - 1;
-        y = y / 2.0;
-
-        drawObject(gl, program, drawPoint(x, y), pointColor, gl.TRIANGLE_FAN);
-      
-    });
-
+//    canvas.addEventListener("mousedown", function (event) {
+//        var x = 2 * event.clientX / canvas.width - 1;
+//        var y = 2 * (canvas.height - event.clientY) / canvas.height - 1;
+//        y = y / 2.0;
+//
+//        drawObject(gl, program, drawPoint(x, y), pointColor, gl.TRIANGLE_FAN);
+//      
+//    });
+ drawObject(gl, program, drawCircle(0, 0, 1, 1), [0.0,0.0,1.0,1.0], gl.LINE_LOOP);
  drawInitialTriangle(-.5, -.25, 0, .5, .5, -.25);
         drawCenteroids(-.5, -.25, 0, .5, .5, -.25);
+        drawObject(gl, program, drawPoint(0, 0), [0.0,0.0,1.0,1.0], gl.TRIANGLE_FAN);
+        
 }
 ;
 
@@ -67,25 +69,28 @@ function drawInitialTriangle(x1, y1, x2, y2, x3, y3) {
 
 function calculateIntersection(a, b, c, d) {
     var r = Math.sqrt((c - a) * (c - a) + (d - b) * (d - b));
-    var midpoint = (c+a) /2;
-    var initialX = midpoint;
-    var initialY = Math.sqrt(r*r-initialX*initialX);
+    var midpointX = (c+a) /2;
+    var midpointY = (b+d)/2;
+    var initialX = midpointX;
+    var initialY = Math.sqrt(r*r-(initialX/2)*(initialX/2));
     var changeX = c-a;
     var changeY = d-b;
-    var finalX = (changeX/r)*initialX+(changeY/r)*initialX;
-    var finalY = (-changeY/r)*initialY+(changeX/r)*initialY;
+    var finalX = initialX-midpointX +((changeX/r)*initialX-(changeY/r)*initialY)+ midpointX;
+    var finalY = initialY-midpointY+((changeY/r)*initialX+(changeX/r)*initialY)+midpointY;
    
-   
-    drawObject(gl, program, drawPoint(finalX, finalY), [0.5,0.5,0.5,1.0], gl.TRIANGLE_FAN);
+ // drawObject(gl, program, drawPoint(a, 0), [0.0,0.5,0.0,1.0], gl.TRIANGLE_FAN);
+ //  drawObject(gl, program, drawPoint(c, 0), [0.0,0.5,0.0,1.0], gl.TRIANGLE_FAN);
+  // drawObject(gl, program, drawPoint(initialX, initialY), [0.0,0.5,0.0,1.0], gl.TRIANGLE_FAN);
+    drawObject(gl, program, drawPoint(finalX, finalY), [0.0,1.0,0.0,1.0], gl.TRIANGLE_FAN);
 }
 ;
 
-//endpoints of the line segment
+//endpoints of the line segmentdfgdfgfgjlkfd
 function drawMidpoint(x1, y1, x2, y2) {
     var circleColor = [1.0, 0.0, 0.0, 1.0];
     drawObject(gl, program, drawCircle(x1, y1, x2, y2), circleColor, gl.LINE_LOOP);
     drawObject(gl, program, drawCircle(x2, y2, x1, y1), circleColor, gl.LINE_LOOP);
-      calculateIntersection(x1,y1,x2,y2);
+    calculateIntersection(x1,y1,x2,y2);
     var midpointX = (x1 + x2) / 2;
     var midpointY = (y1 + y2) / 2;
     drawObject(gl, program, drawPoint(midpointX, midpointY), pointColor, gl.TRIANGLE_FAN);
