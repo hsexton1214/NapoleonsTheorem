@@ -1,13 +1,18 @@
 /* 
  * Hannah Sexton
  * Natalie Leatherman
- * sdfdfsd
  */
 
 var gl;
 var program;
 
 var pointColor = [0.0, 0.0, 0.0, 1.0];
+var triX1,triY1,triX2,triY2,triX3,triY3;
+//var triangle = [x1,y1,x2,y2,x3,y3];
+
+var mouseDown;
+var lastMouseX;
+var lastMouseY; 
 
 function canvasMain() {
     var canvas = document.getElementById("gl-canvas");
@@ -22,6 +27,7 @@ function canvasMain() {
     gl.useProgram(program);
     gl.clear(gl.COLOR_BUFFER_BIT);
 
+<<<<<<< HEAD
     ///draw object
 
     
@@ -51,12 +57,55 @@ function canvasMain() {
  drawInitialTriangle(-.5, -.25, 0, .5, .5, -.25);
         drawCenteroids(-.5, -.25, 0, .5, .5, -.25);
         drawObject(gl, program, drawPoint(0, 0), [0.0,0.6,0.2,1.0], gl.TRIANGLE_FAN);
+=======
+  canvas.addEventListener("mousedown", function (event) {
+        var x = 2 * event.clientX / canvas.width - 1;
+        var y = 2 * (canvas.height - event.clientY) / canvas.height - 1;
+        y = y / 2.0;
+
+       // drawObject(gl, program, drawPoint(x, y), pointColor, gl.TRIANGLE_FAN);sfsdfdsfs
+        console.log(x,y);     
+    });
+ triX1=-.5;triY1= -.25;triX2= .2;triY2= .5;triX3= .5;triY3= -.25;
+ drawInitialTriangle(triX1,triY1,triX2,triY2,triX3,triY3);
+        drawCenteroids(triX1,triY1,triX2,triY2,triX3,triY3);
+        drawObject(gl, program, drawPoint(0, 0), [0.0,0.0,1.0,1.0], gl.TRIANGLE_FAN);
+>>>>>>> origin/master
         
 }
 ;
 
+<<<<<<< HEAD
 function drawInitialTriangle(x1, y1, x2, y2, x3, y3) {
     var pointColor2 = [0.0, 0.8, 1.0, 1.0];
+=======
+function handleMouseDown(event){
+    mouseDown = true;
+    var threshold = 0.1;
+    lastMouseX = event.clientX;
+    lastMouseY = event.clientY;
+};
+
+function handleMouseUp(event){
+    mouseDown = false;
+};
+
+function handleMouseMove(event){
+  if(!mouseDown){
+      return;
+  }  
+  
+};
+
+function drawInitialTriangle(x1,y1,x2,y2,x3,y3) {
+//    var x1 = vector[0];
+//    var y1 = vector[1];
+//    var x2 = vector[2];
+//    var y2 = vector[3];
+//    var x3 = vector[4];
+//    var y3 = vector[5];
+    var pointColor2 = [1.0, 0.0, 0.0, 1.0];
+>>>>>>> origin/master
     var lineColor = [0.0, 1.0, 0.0, 1.0];
     drawObject(gl, program, drawPoint(x1, y1), pointColor2, gl.TRIANGLE_FAN);
     drawObject(gl, program, drawPoint(x2, y2), pointColor2, gl.TRIANGLE_FAN);
@@ -65,7 +114,7 @@ function drawInitialTriangle(x1, y1, x2, y2, x3, y3) {
     drawObject(gl, program, drawLine(x2, y2, x3, y3), [0.0,0.0,1.0,1.0], gl.LINE_STRIP);
     drawObject(gl, program, drawLine(x1, y1, x3, y3), [0.8,0.6,0.0,1.0], gl.LINE_STRIP);
 }
-;//drawTriangle
+;//drawTriangle sdfdf
 
 function calculateIntersection(a, b, c, d) {
     var r = Math.sqrt((c - a) * (c - a) + (d - b) * (d - b));
@@ -98,7 +147,7 @@ function drawMidpoint(x1, y1, x2, y2) {
 }
 ;//drawMidpoint
 
-//assumes the circles have the same radius
+//assumes the circles have the same radiusdfsf
 
 
 //initial Triangle
@@ -162,4 +211,14 @@ function drawObject(gl, program, vertices, color, glType) {
 
     gl.uniform4f(colorLocation, color[0], color[1], color[2], color[3]);
     gl.drawArrays(glType, 0, vertices.length);
-}//drawObject
+};//drawObject
+
+function render(){
+    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+    
+    theta[axis] += 1.0;
+    gl.uniform3fv(thetaLoc, theta);
+    
+    gl.drawElements(gl.TRIANGLES,elementCount, gl.UNSIGNED_SHORT, 0);
+    requestAnimFrame(render);
+}//render
