@@ -30,7 +30,7 @@ function canvasMain() {
     canvas.addEventListener("mousedown", function (event) {
         var x = 2 * event.clientX / canvas.width - 1;
         var y = 2 * (canvas.height - event.clientY) / canvas.height - 1;
-        y = y / 2.0;
+       // y = y / 2.0;
         // drawObject(gl, program, drawPoint(x, y), pointColor, gl.TRIANGLE_FAN);
         console.log(x, y);
     });
@@ -228,11 +228,8 @@ function drawObject(gl, program, vertices, color, glType) {
 
 function render() {
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-
-    theta[axis] += 1.0;
-    gl.uniform3fv(thetaLoc, theta);
-
-    gl.drawElements(gl.TRIANGLES, elementCount, gl.UNSIGNED_SHORT, 0);
+    if(current){}
+    
     requestAnimFrame(render);
 }//render
 
