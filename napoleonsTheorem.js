@@ -39,10 +39,11 @@ function canvasMain() {
     gl.useProgram(program);
     gl.clear(gl.COLOR_BUFFER_BIT);
     canvas.addEventListener("mousedown", function (event) {
-        var x = 2 * event.clientX / canvas.width - 1;
-        var y = 2 * (canvas.height - event.clientY) / canvas.height - 1;
+        var x = 2 * (event.clientX-8) / canvas.width - 1;
+        var y = 2 * (canvas.height - (event.clientY-80)) / canvas.height - 1;
+        console.log(event.clientX,event.clientY);
        // y = y / 2.0;
-        // drawObject(gl, program, drawPoint(x, y), pointColor, gl.TRIANGLE_FAN);
+     //    drawObject(gl, program, drawPoint(x, y), pointColor, gl.TRIANGLE_FAN);
         console.log(x, y);
     });
     triX1 = -.5;
@@ -62,8 +63,8 @@ function handleMouseDown(event) {
 
     mouseDown = true;
     var threshold = 0.1;
-    var lastMouseX = 2 * event.clientX / canvas.width - 1;
-    var lastMouseY = 2 * (canvas.height - event.clientY) / canvas.height - 1;
+    var lastMouseX = 2 * (event.clientX-8) / canvas.width - 1;
+    var lastMouseY = 2 * (canvas.height - (event.clientY-80)) / canvas.height - 1;
     var p1thres = false;
     var p2thres = false;
     var p3thres = false;
