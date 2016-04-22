@@ -213,12 +213,12 @@ function drawObject(gl, program, vertices, color, glType) {
     gl.drawArrays(glType, 0, vertices.length);
 };//drawObject
 
-function render(){
-    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+//function render(){
+    //gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
     
-    theta[axis] += 1.0;
-    gl.uniform3fv(thetaLoc, theta);
+   // theta[axis] += 1.0;
+    //gl.uniform3fv(thetaLoc, theta);
     
-    gl.drawElements(gl.TRIANGLES,elementCount, gl.UNSIGNED_SHORT, 0);
-    requestAnimFrame(render);
+    //gl.drawElements(gl.TRIANGLES,elementCount, gl.UNSIGNED_SHORT, 0);
+    //requestAnimFrame(render);
 }//render
