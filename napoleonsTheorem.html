@@ -29,17 +29,24 @@ Napoleon's Theorem
         <script type="text/javascript" src="napoleonsTheorem.js"></script>
     
     </head>
-    <body onload="canvasMain()">
+    <body onload="canvasMain()">        
         <div>
-            <h1>Napoleon's Theorem</h1>
-            <canvas id="gl-canvas" width="512" height="512">
+            <h1>Napoleon's Theorem</h1>             
+            <canvas id="gl-canvas" width="512" height="512" style="border:1px solid #000000;float:left">
                 oops... your browser doesn't support the HTML canvas element
-            </canvas>
+            </canvas>           
+        </div>          
+        <div>
+            <p style="float:left">
+                This is a test<br>
+                to see if this method works.
+            </p>
         </div>
         <div>
             <button id= "previousStep"><<</button>
             <button id= "previousInstruction">Back</button>
             <button id= "nextInstruction">Next</button>
             <button id= "nextStep">>></button>
+        </div>       
     </body>
 </html>
