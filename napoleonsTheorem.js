@@ -15,6 +15,17 @@ var mouseDown;
 //var lastMouseX;
 //var lastMouseY; 
 
+var lineColor = [0.8, 0.2, 1.0, 1.0];
+var verticesColor = [0.0, 0.8, 1.0, 1.0];
+var midpointColor = [1.0, 0.0, 1.0, 1.0];
+var centroidColor = [0.0, 0.6, 0.2, 1.0];
+var triColor1 = [0.0, 1.0, 0.0, 1.0]; //also use for intersection point of circle1
+var circleColor1 = [1.0, 0.0, 0.0, 1.0];
+var triColor2 = [0.0, 0.0, 1.0, 1.0]; //also use for intersection point of circle2
+var circleColor2 = [1.0, 0.4, 0.0, 1.0];
+var triColor3 = [0.8, 0.6, 0.0, 1.0]; //also use for intersection point of circle3
+var circleColor3 = [0.4, 0.0, 0.4, 1.0];
+
 function canvasMain() {
 
     canvas = document.getElementById("gl-canvas");
@@ -23,7 +34,7 @@ function canvasMain() {
         alert("WebGL isn't available");
     }
     gl.viewport(0, 0, canvas.width, canvas.height);
-    gl.clearColor(1.0, 1.0, 1.0, 1.0);
+    gl.clearColor(1.0, 1.0, 0.8, 1.0);
     program = initShaders(gl, "vertex-shader", "fragment-shader");
     gl.useProgram(program);
     gl.clear(gl.COLOR_BUFFER_BIT);
