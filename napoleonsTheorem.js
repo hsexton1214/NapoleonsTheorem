@@ -29,7 +29,41 @@ function canvasMain() {
     gl.useProgram(program);
     gl.clear(gl.COLOR_BUFFER_BIT);
 
+
     canvas.addEventListener("mousedown", function (event) {
+
+    ///draw object
+
+    
+
+
+
+//    var circleColor = [.5, .5, .5, 1];
+//    drawObject(gl, program, drawCircle(0, 0, 0, 1), circleColor, gl.LINE_LOOP);
+//    var lineColor = [.5, .5, .5, 1];
+//    drawObject(gl, program, drawLine(0, 1, 0, -1), lineColor, gl.LINE_STRIP);
+//    
+//    
+//    drawObject(gl, program, drawPoint(0, 0), pointColor, gl.TRIANGLE_FAN);
+//    drawInitialTriangle(0, 0, -.25, .25, .25, .25);
+//    drawMidpoint(-.5,.5,-.25,.5);
+//    
+//    
+//    canvas.addEventListener("mousedown", function (event) {
+//        var x = 2 * event.clientX / canvas.width - 1;
+//        var y = 2 * (canvas.height - event.clientY) / canvas.height - 1;
+//        y = y / 2.0;
+//
+//        drawObject(gl, program, drawPoint(x, y), pointColor, gl.TRIANGLE_FAN);
+//      
+//    });
+ drawObject(gl, program, drawCircle(0, 0, 1, 1), [0.0,0.0,1.0,1.0], gl.LINE_LOOP);
+ drawInitialTriangle(-.5, -.25, 0, .5, .5, -.25);
+        drawCenteroids(-.5, -.25, 0, .5, .5, -.25);
+        drawObject(gl, program, drawPoint(0, 0), [0.0,0.6,0.2,1.0], gl.TRIANGLE_FAN);
+
+  canvas.addEventListener("mousedown", function (event) {
+
         var x = 2 * event.clientX / canvas.width - 1;
         var y = 2 * (canvas.height - event.clientY) / canvas.height - 1;
         y = y / 2.0;
@@ -51,6 +85,21 @@ function canvasMain() {
 ;
 
 function handleMouseDown(event) {
+
+ triX1=-.5;triY1= -.25;triX2= .2;triY2= .5;triX3= .5;triY3= -.25;
+ drawInitialTriangle(triX1,triY1,triX2,triY2,triX3,triY3);
+        drawCenteroids(triX1,triY1,triX2,triY2,triX3,triY3);
+        drawObject(gl, program, drawPoint(0, 0), [0.0,0.0,1.0,1.0], gl.TRIANGLE_FAN);
+
+        
+}
+;
+
+function drawInitialTriangle(x1, y1, x2, y2, x3, y3) {
+    var pointColor2 = [0.0, 0.8, 1.0, 1.0];
+
+function handleMouseDown(event){
+
     mouseDown = true;
     var threshold = 0.1;
     var lastMouseX = 2 * event.clientX / canvas.width - 1;
@@ -120,13 +169,14 @@ function drawInitialTriangle(x1, y1, x2, y2, x3, y3) {
 //    var x3 = vector[4];
 //    var y3 = vector[5];
     var pointColor2 = [1.0, 0.0, 0.0, 1.0];
+
     var lineColor = [0.0, 1.0, 0.0, 1.0];
     drawObject(gl, program, drawPoint(x1, y1), pointColor2, gl.TRIANGLE_FAN);
     drawObject(gl, program, drawPoint(x2, y2), pointColor2, gl.TRIANGLE_FAN);
     drawObject(gl, program, drawPoint(x3, y3), pointColor2, gl.TRIANGLE_FAN);
     drawObject(gl, program, drawLine(x1, y1, x2, y2), lineColor, gl.LINE_STRIP);
-    drawObject(gl, program, drawLine(x2, y2, x3, y3), lineColor, gl.LINE_STRIP);
-    drawObject(gl, program, drawLine(x1, y1, x3, y3), lineColor, gl.LINE_STRIP);
+    drawObject(gl, program, drawLine(x2, y2, x3, y3), [0.0,0.0,1.0,1.0], gl.LINE_STRIP);
+    drawObject(gl, program, drawLine(x1, y1, x3, y3), [0.8,0.6,0.0,1.0], gl.LINE_STRIP);
 }
 ;//drawTriangle sdfdf
 
