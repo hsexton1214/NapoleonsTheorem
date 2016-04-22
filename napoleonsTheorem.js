@@ -5,17 +5,19 @@
 
 var gl;
 var program;
+var canvas;
 
 var pointColor = [0.0, 0.0, 0.0, 1.0];
-var triX1,triY1,triX2,triY2,triX3,triY3;
+var triX1, triY1, triX2, triY2, triX3, triY3;
 //var triangle = [x1,y1,x2,y2,x3,y3];
 
 var mouseDown;
-var lastMouseX;
-var lastMouseY; 
+//var lastMouseX;
+//var lastMouseY; 
 
 function canvasMain() {
-    var canvas = document.getElementById("gl-canvas");
+
+     canvas = document.getElementById("gl-canvas");
     gl = WebGLUtils.setupWebGL(canvas);
     if (!gl) {
         alert("WebGL isn't available");
@@ -26,6 +28,10 @@ function canvasMain() {
     program = initShaders(gl, "vertex-shader", "fragment-shader");
     gl.useProgram(program);
     gl.clear(gl.COLOR_BUFFER_BIT);
+
+
+
+    canvas.addEventListener("mousedown", function (event) {
 
 
     ///draw object
@@ -59,13 +65,29 @@ function canvasMain() {
         drawObject(gl, program, drawPoint(0, 0), [0.0,0.6,0.2,1.0], gl.TRIANGLE_FAN);
 
   canvas.addEventListener("mousedown", function (event) {
+
         var x = 2 * event.clientX / canvas.width - 1;
         var y = 2 * (canvas.height - event.clientY) / canvas.height - 1;
         y = y / 2.0;
 
-       // drawObject(gl, program, drawPoint(x, y), pointColor, gl.TRIANGLE_FAN);sfsdfdsfs
-        console.log(x,y);     
+        // drawObject(gl, program, drawPoint(x, y), pointColor, gl.TRIANGLE_FAN);sfsdfdsfs
+        console.log(x, y);
     });
+    triX1 = -.5;
+    triY1 = -.25;
+    triX2 = .2;
+    triY2 = .5;
+    triX3 = .5;
+    triY3 = -.25;
+    drawInitialTriangle(triX1, triY1, triX2, triY2, triX3, triY3);
+    drawCenteroids(triX1, triY1, triX2, triY2, triX3, triY3);
+    drawObject(gl, program, drawPoint(0, 0), [0.0, 0.0, 1.0, 1.0], gl.TRIANGLE_FAN);
+    canvas.onmousedown = handleMouseDown;
+}
+;
+
+function handleMouseDown(event) {
+
  triX1=-.5;triY1= -.25;triX2= .2;triY2= .5;triX3= .5;triY3= -.25;
  drawInitialTriangle(triX1,triY1,triX2,triY2,triX3,triY3);
         drawCenteroids(triX1,triY1,triX2,triY2,triX3,triY3);
@@ -80,24 +102,69 @@ function drawInitialTriangle(x1, y1, x2, y2, x3, y3) {
     var pointColor2 = [0.0, 0.8, 1.0, 1.0];
 
 function handleMouseDown(event){
+
     mouseDown = true;
     var threshold = 0.1;
-    lastMouseX = event.clientX;
-    lastMouseY = event.clientY;
-};
+    var lastMouseX = 2 * event.clientX / canvas.width - 1;
+    var lastMouseY = 2 * (canvas.height - event.clientY) / canvas.height - 1;
+    var p1thres = false;
+    var p2thres = false;
+    var p3thres = false;
+    var pointCount = 0;
+//    if (((lastMouseX - threshold) < triX1) && (triX1 < (lastMouseX + threshold)) && ((lastMouseY - threshold)< triY1) && (triY1 < (lastMouseY + threshold))) {
+//        p1thres = true;
+//        pointCount++;fsdfdsvdfdsfddfsdfklsdjfsljdkf
+//    }
+//    if (((lastMouseX - threshold) < triX2) && (triX2 < (lastMouseX + threshold)) && ((lastMouseY - threshold) < triY2) && (triY2 < (lastMouseY + threshold))) {
+//        p2thres = true;
+//        pointCount++;
+//    }
+//    if (((lastMouseX - threshold) < triX3) && (triX3 < (lastMouseX + threshold)) && ((lastMouseY - threshold) < triY3) && (triY3 < (lastMouseY + threshold))) {
+//        p3thres = true;
+//        pointCount++;
+//    }
+    if(((lastMouseX-triX1)*(lastMouseX-triX1) + (lastMouseY-triY1)*(lastMouseY-triY1)) < (threshold*threshold)){
+        p1thres = true;
+        pointCount++;
+    }
+    if(((lastMouseX-triX2)*(lastMouseX-triX2) + (lastMouseY-triY2)*(lastMouseY-triY2)) < (threshold*threshold)){
+        p2thres = true;
+        pointCount++;
+    }
+    if(((lastMouseX-triX3)*(lastMouseX-triX3) + (lastMouseY-triY3)*(lastMouseY-triY3)) < (threshold*threshold)){
+        p3thres = true;
+        pointCount++;
+    }
+    
+    if (pointCount === 0) {
+        console.log("not on point");
+        console.log(lastMouseX+", "+lastMouseY);
+    } else if (pointCount === 1) {
+        console.log("1 point");
+    } else {
+        console.log("multiple points");
+        console.log(triX1 + ", " + triY1 + "," + triX2 + "," + triY2 + ", " + triX3 + ", " + triY3);
+        console.log(pointCount);
+    }
 
-function handleMouseUp(event){
+    // pick the point
+}
+;
+
+function handleMouseUp(event) {
     mouseDown = false;
-};
+}
+;
 
-function handleMouseMove(event){
-  if(!mouseDown){
-      return;
-  }  
-  
-};
+function handleMouseMove(event) {
+    if (!mouseDown) {
+        return;
+    }
 
-function drawInitialTriangle(x1,y1,x2,y2,x3,y3) {
+}
+;
+
+function drawInitialTriangle(x1, y1, x2, y2, x3, y3) {
 //    var x1 = vector[0];
 //    var y1 = vector[1];
 //    var x2 = vector[2];
@@ -118,19 +185,19 @@ function drawInitialTriangle(x1,y1,x2,y2,x3,y3) {
 
 function calculateIntersection(a, b, c, d) {
     var r = Math.sqrt((c - a) * (c - a) + (d - b) * (d - b));
-    var midpointX = (c+a) /2;
-    var midpointY = (b+d)/2;
+    var midpointX = (c + a) / 2;
+    var midpointY = (b + d) / 2;
     var initialX = midpointX;
-    var initialY = Math.sqrt(r*r-(initialX/2)*(initialX/2));
-    var changeX = c-a;
-    var changeY = d-b;
-    var finalX = (changeX/r)*initialX -(changeY/r)*initialY - (changeX/r)*midpointX + (changeY/r)*midpointY + midpointX;
-    var finalY = (changeY/r)*initialX+(changeX/r)*initialY -(changeY/r)*midpointX - (changeX/r)*midpointY + midpointY;
-   
- // drawObject(gl, program, drawPoint(a, 0), [0.0,0.5,0.0,1.0], gl.TRIANGLE_FAN);
- //  drawObject(gl, program, drawPoint(c, 0), [0.0,0.5,0.0,1.0], gl.TRIANGLE_FAN);
-  // drawObject(gl, program, drawPoint(initialX, initialY), [0.0,0.5,0.0,1.0], gl.TRIANGLE_FAN);
-    drawObject(gl, program, drawPoint(finalX, finalY), [0.0,1.0,0.0,1.0], gl.TRIANGLE_FAN);
+    var initialY = Math.sqrt(r * r - (initialX / 2) * (initialX / 2));
+    var changeX = c - a;
+    var changeY = d - b;
+    var finalX = (changeX / r) * initialX - (changeY / r) * initialY - (changeX / r) * midpointX + (changeY / r) * midpointY + midpointX;
+    var finalY = (changeY / r) * initialX + (changeX / r) * initialY - (changeY / r) * midpointX - (changeX / r) * midpointY + midpointY;
+
+    // drawObject(gl, program, drawPoint(a, 0), [0.0,0.5,0.0,1.0], gl.TRIANGLE_FAN);
+    //  drawObject(gl, program, drawPoint(c, 0), [0.0,0.5,0.0,1.0], gl.TRIANGLE_FAN);
+    // drawObject(gl, program, drawPoint(initialX, initialY), [0.0,0.5,0.0,1.0], gl.TRIANGLE_FAN);
+    drawObject(gl, program, drawPoint(finalX, finalY), [0.0, 1.0, 0.0, 1.0], gl.TRIANGLE_FAN);
 }
 ;
 
@@ -139,7 +206,7 @@ function drawMidpoint(x1, y1, x2, y2) {
     var circleColor = [1.0, 0.0, 0.0, 1.0];
     drawObject(gl, program, drawCircle(x1, y1, x2, y2), circleColor, gl.LINE_LOOP);
     drawObject(gl, program, drawCircle(x2, y2, x1, y1), circleColor, gl.LINE_LOOP);
-    calculateIntersection(x1,y1,x2,y2);
+    calculateIntersection(x1, y1, x2, y2);
     var midpointX = (x1 + x2) / 2;
     var midpointY = (y1 + y2) / 2;
     drawObject(gl, program, drawPoint(midpointX, midpointY), pointColor, gl.TRIANGLE_FAN);
@@ -211,6 +278,7 @@ function drawObject(gl, program, vertices, color, glType) {
 
     gl.uniform4f(colorLocation, color[0], color[1], color[2], color[3]);
     gl.drawArrays(glType, 0, vertices.length);
+
 };//drawObject
 
 //function render(){
@@ -222,3 +290,17 @@ function drawObject(gl, program, vertices, color, glType) {
     //gl.drawElements(gl.TRIANGLES,elementCount, gl.UNSIGNED_SHORT, 0);
     //requestAnimFrame(render);
 }//render
+
+}
+;//drawObject
+//
+//function render(){
+//    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+//    
+//    theta[axis] += 1.0;
+//    gl.uniform3fv(thetaLoc, theta);
+//    
+//    gl.drawElements(gl.TRIANGLES,elementCount, gl.UNSIGNED_SHORT, 0);
+//    requestAnimFrame(render);
+//}//render
+
