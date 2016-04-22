@@ -75,8 +75,8 @@ function calculateIntersection(a, b, c, d) {
     var initialY = Math.sqrt(r*r-(initialX/2)*(initialX/2));
     var changeX = c-a;
     var changeY = d-b;
-    var finalX = initialX-midpointX +((changeX/r)*initialX-(changeY/r)*initialY)+ midpointX;
-    var finalY = initialY-midpointY+((changeY/r)*initialX+(changeX/r)*initialY)+midpointY;
+    var finalX = (changeX/r)*initialX -(changeY/r)*initialY - (changeX/r)*midpointX + (changeY/r)*midpointY + midpointX;
+    var finalY = (changeY/r)*initialX+(changeX/r)*initialY -(changeY/r)*midpointX - (changeX/r)*midpointY + midpointY;
    
  // drawObject(gl, program, drawPoint(a, 0), [0.0,0.5,0.0,1.0], gl.TRIANGLE_FAN);
  //  drawObject(gl, program, drawPoint(c, 0), [0.0,0.5,0.0,1.0], gl.TRIANGLE_FAN);
