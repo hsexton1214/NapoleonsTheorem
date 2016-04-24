@@ -39,11 +39,11 @@ function canvasMain() {
     gl.useProgram(program);
     gl.clear(gl.COLOR_BUFFER_BIT);
     canvas.addEventListener("mousedown", function (event) {
-        var x = 2 * (event.clientX-8) / canvas.width - 1;
-        var y = 2 * (canvas.height - (event.clientY-80)) / canvas.height - 1;
-        console.log(event.clientX,event.clientY);
-       // y = y / 2.0;
-     //    drawObject(gl, program, drawPoint(x, y), pointColor, gl.TRIANGLE_FAN);
+        var x = 2 * (event.clientX - 8) / canvas.width - 1;
+        var y = 2 * (canvas.height - (event.clientY - 80)) / canvas.height - 1;
+        console.log(event.clientX, event.clientY);
+        // y = y / 2.0;
+        //    drawObject(gl, program, drawPoint(x, y), pointColor, gl.TRIANGLE_FAN);
         console.log(x, y);
     });
     triX1 = -.5;
@@ -54,8 +54,10 @@ function canvasMain() {
     triY3 = -.25;
     drawInitialTriangle(triX1, triY1, triX2, triY2, triX3, triY3);
     drawCenteroids(triX1, triY1, triX2, triY2, triX3, triY3);
-    drawObject(gl, program, drawPoint(0, 0), [0.0, 0.0, 1.0, 1.0], gl.TRIANGLE_FAN);
+    // drawObject(gl, program, drawPoint(0, 0), [0.0, 0.0, 1.0, 1.0], gl.TRIANGLE_FAN);
     canvas.onmousedown = handleMouseDown;
+    canvas.onmouseup = handleMouseUp;
+    canvas.onmousemove = handleMouseMove;
 }
 ; //canvasMain
 
@@ -63,8 +65,8 @@ function handleMouseDown(event) {
 
     mouseDown = true;
     var threshold = 0.1;
-    var lastMouseX = 2 * (event.clientX-8) / canvas.width - 1;
-    var lastMouseY = 2 * (canvas.height - (event.clientY-80)) / canvas.height - 1;
+    var lastMouseX = 2 * (event.clientX - 8) / canvas.width - 1;
+    var lastMouseY = 2 * (canvas.height - (event.clientY - 80)) / canvas.height - 1;
     var p1thres = false;
     var p2thres = false;
     var p3thres = false;
@@ -101,11 +103,11 @@ function handleMouseDown(event) {
     } else if (pointCount === 1) {
         console.log("1 point");
         if (p1thres === true) {
-            currentPoint = 0;
-        } else if (p2thres === true) {
             currentPoint = 1;
-        } else if (p3thres === true) {
+        } else if (p2thres === true) {
             currentPoint = 2;
+        } else if (p3thres === true) {
+            currentPoint = 3;
         }
     } else {
         console.log("multiple points");
@@ -118,13 +120,35 @@ function handleMouseDown(event) {
 ;
 function handleMouseUp(event) {
     mouseDown = false;
+    currentPoint = -1;
 }
 ;
 function handleMouseMove(event) {
-    if (!mouseDown) {
-        return;
-    }
+    if (mouseDown) {
+        if (currentPoint === 1) {
+            triX1 = 2 * (event.clientX - 8) / canvas.width - 1;
+            triY1 = 2 * (canvas.height - (event.clientY - 80)) / canvas.height - 1;
+            drawInitialTriangle(triX1, triY1, triX2, triY2, triX3, triY3);
+            drawCenteroids(triX1, triY1, triX2, triY2, triX3, triY3);
 
+        } else if (currentPoint === 2) {
+            triX2 = 2 * (event.clientX - 8) / canvas.width - 1;
+            triY2 = 2 * (canvas.height - (event.clientY - 80)) / canvas.height - 1;
+            drawInitialTriangle(triX1, triY1, triX2, triY2, triX3, triY3);
+            drawCenteroids(triX1, triY1, triX2, triY2, triX3, triY3);
+        } else if (currentPoint === 3) {
+            triX3 = 2 * (event.clientX - 8) / canvas.width - 1;
+            triY3 = 2 * (canvas.height - (event.clientY - 80)) / canvas.height - 1;
+            drawInitialTriangle(triX1, triY1, triX2, triY2, triX3, triY3);
+            drawCenteroids(triX1, triY1, triX2, triY2, triX3, triY3);
+        } else if (currentPoint === -1) {
+            drawInitialTriangle(triX1, triY1, triX2, triY2, triX3, triY3);
+            drawCenteroids(triX1, triY1, triX2, triY2, triX3, triY3);
+        }
+    }else{
+        drawInitialTriangle(triX1, triY1, triX2, triY2, triX3, triY3);
+            drawCenteroids(triX1, triY1, triX2, triY2, triX3, triY3);
+    }
 }
 ;
 function drawInitialTriangle(x1, y1, x2, y2, x3, y3) {
@@ -182,10 +206,10 @@ function drawMidpoint(x1, y1, x2, y2) {
 function drawCenteroids(x1, y1, x2, y2, x3, y3) {
     var midPoint1 = drawMidpoint(x1, y1, x2, y2);
     drawObject(gl, program, drawLine(midPoint1[0], midPoint1[1], x3, y3), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
-//    var midPoint2 = drawMidpoint(x2, y2, x3, y3);
+    //   var midPoint2 = drawMidpoint(x2, y2, x3, y3);
 //    drawObject(gl, program, drawLine(midPoint2[0], midPoint2[1], x1, y1), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
 //    var midPoint3 = drawMidpoint(x1, y1, x3, y3);
-//    drawObject(gl, program, drawLine(midPoint3[0], midPoint3[1], x2, y2), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
+    //   drawObject(gl, program, drawLine(midPoint3[0], midPoint3[1], x2, y2), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
 
 }
 ;
@@ -234,15 +258,42 @@ function drawObject(gl, program, vertices, color, glType) {
     gl.enableVertexAttribArray(vPosition);
     gl.uniform4f(colorLocation, color[0], color[1], color[2], color[3]);
     gl.drawArrays(glType, 0, vertices.length);
+  //  render();
 }
-; //drawObject
-
-
-function render() {
-    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-    if(current){}
-    
-    requestAnimFrame(render);
-}//render
-
-
+//; //drawObject
+//
+//
+//function render() {
+//    //  gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+//  //  gl.clear( gl.COLOR_BUFFER_BIT );
+//
+//    if (mouseDown) {
+//        if (currentPoint === 1) {
+//            triX1 = 2 * (event.clientX - 8) / canvas.width - 1;
+//            triY1 = 2 * (canvas.height - (event.clientY - 80)) / canvas.height - 1;
+//            drawInitialTriangle(triX1, triY1, triX2, triY2, triX3, triY3);
+//            drawCenteroids(triX1, triY1, triX2, triY2, triX3, triY3);
+//
+//        } else if (currentPoint === 2) {
+//            triX2 = 2 * (event.clientX - 8) / canvas.width - 1;
+//            triY2 = 2 * (canvas.height - (event.clientY - 80)) / canvas.height - 1;
+//            drawInitialTriangle(triX1, triY1, triX2, triY2, triX3, triY3);
+//            drawCenteroids(triX1, triY1, triX2, triY2, triX3, triY3);
+//        } else if (currentPoint === 3) {
+//            triX3 = 2 * (event.clientX - 8) / canvas.width - 1;
+//            triY3 = 2 * (canvas.height - (event.clientY - 80)) / canvas.height - 1;
+//            drawInitialTriangle(triX1, triY1, triX2, triY2, triX3, triY3);
+//            drawCenteroids(triX1, triY1, triX2, triY2, triX3, triY3);
+//        } else if (currentPoint === -1) {
+//            drawInitialTriangle(triX1, triY1, triX2, triY2, triX3, triY3);
+//            drawCenteroids(triX1, triY1, triX2, triY2, triX3, triY3);
+//        }
+//    }//else{
+//   //     drawInitialTriangle(triX1, triY1, triX2, triY2, triX3, triY3);
+//   //         drawCenteroids(triX1, triY1, triX2, triY2, triX3, triY3);
+//   // }
+//
+//    requestAnimFrame(render);
+//}//render
+//
+//
