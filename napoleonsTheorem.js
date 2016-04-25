@@ -35,14 +35,6 @@ function canvasMain() {
     program = initShaders(gl, "vertex-shader", "fragment-shader");
     gl.useProgram(program);
     gl.clear(gl.COLOR_BUFFER_BIT);
-    canvas.addEventListener("mousedown", function (event) {
-        var x = 2 * (event.clientX - 8) / canvas.width - 1;
-        var y = 2 * (canvas.height - (event.clientY - 80)) / canvas.height - 1;
-        console.log(event.clientX, event.clientY);
-        // y = y / 2.0;
-        //    drawObject(gl, program, drawPoint(x, y), pointColor, gl.TRIANGLE_FAN);
-        console.log(x, y);
-    });
     triX1 = -.5;
     triY1 = -.25;
     triX2 = .2;
@@ -51,7 +43,6 @@ function canvasMain() {
     triY3 = -.25;
     drawInitialTriangle(triX1, triY1, triX2, triY2, triX3, triY3);
     drawCenteroids(triX1, triY1, triX2, triY2, triX3, triY3);
-    // drawObject(gl, program, drawPoint(0, 0), [0.0, 0.0, 1.0, 1.0], gl.TRIANGLE_FAN);
     canvas.onmousedown = handleMouseDown;
     canvas.onmouseup = handleMouseUp;
     canvas.onmousemove = handleMouseMove;
@@ -98,18 +89,18 @@ function handleMouseDown(event) {
         var actualp1Thres;
         var actualp2Thres;
         var actualp3Thres;
-        if(p1thres){
-            actualp1Thres = (lastMouseX - triX1) * (lastMouseX - triX1) + (lastMouseY - triY1) * (lastMouseY - triY1);
-        }
-        if(p2thres){
-            actualp2Thres = (lastMouseX - triX1) * (lastMouseX - triX1) + (lastMouseY - triY1) * (lastMouseY - triY1);
-        }
-        if(p3thres){
-            actualp3Thres = (lastMouseX - triX1) * (lastMouseX - triX1) + (lastMouseY - triY1) * (lastMouseY - triY1);
-        }
+        actualp1Thres = (lastMouseX - triX1) * (lastMouseX - triX1) + (lastMouseY - triY1) * (lastMouseY - triY1);
+        actualp2Thres = (lastMouseX - triX1) * (lastMouseX - triX1) + (lastMouseY - triY1) * (lastMouseY - triY1);
+        actualp3Thres = (lastMouseX - triX1) * (lastMouseX - triX1) + (lastMouseY - triY1) * (lastMouseY - triY1);
         //pick the point with the least distance
-        
-        
+        if (actualp1Thres <= actualp2Thres && actualp1Thres <= actualp3Thres) {
+            currentPoint = 1;
+        } else if (actualp2Thres <= actualp1Thres && actualp2Thres <= actualp3Thres) {
+            currentPoint = 2;
+        } else if (actualp3Thres <= actualp1Thres && actualp3Thres <= actualp2Thres) {
+            currentPoint = 3;
+        }
+
         console.log("multiple points");
         console.log(triX1 + ", " + triY1 + "," + triX2 + "," + triY2 + ", " + triX3 + ", " + triY3);
         console.log(pointCount);
@@ -163,7 +154,7 @@ function drawInitialTriangle(x1, y1, x2, y2, x3, y3) {
 
 
 
-function calculateIntersection(a, b, c, d) {
+function calculateCircleIntersection(a, b, c, d, genInterColor) {
     var r = Math.sqrt((c - a) * (c - a) + (d - b) * (d - b));
     var midpointX = (c + a) / 2;
     var midpointY = (b + d) / 2;
@@ -171,20 +162,20 @@ function calculateIntersection(a, b, c, d) {
     var initialY = Math.sqrt(r * r - (initialX / 2) * (initialX / 2));
     var changeX = c - a;
     var changeY = d - b;
-    var finalX = (changeX / r) * initialX - (changeY / r) * initialY - (changeX / r) * midpointX + (changeY / r) * midpointY + midpointX;
-    var finalY = (changeY / r) * initialX + (changeX / r) * initialY - (changeY / r) * midpointX - (changeX / r) * midpointY + midpointY;
+    var finalX = (changeX / r) * initialX - (changeY / r) * initialY + (changeX / r) * midpointX - (changeY / r) * midpointY - midpointX;
+    var finalY = (changeY / r) * initialX + (changeX / r) * initialY + (changeY / r) * midpointX + (changeX / r) * midpointY - midpointY;
     // drawObject(gl, program, drawPoint(a, 0), [0.0,0.5,0.0,1.0], gl.TRIANGLE_FAN);
     //  drawObject(gl, program, drawPoint(c, 0), [0.0,0.5,0.0,1.0], gl.TRIANGLE_FAN);
     // drawObject(gl, program, drawPoint(initialX, initialY), [0.0,0.5,0.0,1.0], gl.TRIANGLE_FAN);
-    drawObject(gl, program, drawPoint(finalX, finalY), [0.0, 1.0, 0.0, 1.0], gl.TRIANGLE_FAN);
+    drawObject(gl, program, drawPoint(finalX, finalY), genInterColor, gl.TRIANGLE_FAN);
 }
 ;
-//endpoints of the line segmentdfgdfgfgjlkfd
-function drawMidpoint(x1, y1, x2, y2, color) {
+//endpoints of the line 
+function drawMidpoint(x1, y1, x2, y2, genCircleColor, genInterColor) {
     // var circleColor = [1.0, 0.0, 0.0, 1.0];
-    drawObject(gl, program, drawCircle(x1, y1, x2, y2), color, gl.LINE_LOOP);
-    drawObject(gl, program, drawCircle(x2, y2, x1, y1), color, gl.LINE_LOOP);
-    calculateIntersection(x1, y1, x2, y2);
+    drawObject(gl, program, drawCircle(x1, y1, x2, y2), genCircleColor, gl.LINE_LOOP);
+    drawObject(gl, program, drawCircle(x2, y2, x1, y1), genCircleColor, gl.LINE_LOOP);
+    calculateCircleIntersection(x1, y1, x2, y2, genInterColor);
     var midpointX = (x1 + x2) / 2;
     var midpointY = (y1 + y2) / 2;
     drawObject(gl, program, drawPoint(midpointX, midpointY), midpointColor, gl.TRIANGLE_FAN);
@@ -196,19 +187,20 @@ function drawMidpoint(x1, y1, x2, y2, color) {
 
 
 function drawCenteroids(x1, y1, x2, y2, x3, y3) {
-    var midPoint1 = drawMidpoint(x1, y1, x2, y2, circleColor1);
+    var midPoint1 = drawMidpoint(x1, y1, x2, y2, circleColor1, triColor1);
     drawObject(gl, program, drawLine(midPoint1[0], midPoint1[1], x3, y3), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
-    var midPoint2 = drawMidpoint(x2, y2, x3, y3, circleColor2);
+    var midPoint2 = drawMidpoint(x2, y2, x3, y3, circleColor2, triColor2);
     drawObject(gl, program, drawLine(midPoint2[0], midPoint2[1], x1, y1), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
-    var midPoint3 = drawMidpoint(x1, y1, x3, y3, circleColor3);
+    var midPoint3 = drawMidpoint(x1, y1, x3, y3, circleColor3, triColor3);
     drawObject(gl, program, drawLine(midPoint3[0], midPoint3[1], x2, y2), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
 
 }
 ;
 
-function lineIntersection(x1,y1,x2,y2,x3,y3,x4,y4){
-    
-};
+function lineIntersection(x1, y1, x2, y2, x3, y3, x4, y4) {
+
+}
+;
 
 function drawCircle(x1, y1, x2, y2) {
     var circleVertices = [];
@@ -229,9 +221,6 @@ function drawLine(x1, y1, x2, y2) {
 ; //drawLine
 
 function drawPoint(x, y) {
-    //may change to event
-    // var x = event.clientX;
-    // var y = event.clientY;
     var pointSize = .02;
     var pointVertices = [
         vec2(x - pointSize, y),
@@ -240,7 +229,6 @@ function drawPoint(x, y) {
         vec2(x, y - pointSize)
     ];
     return pointVertices;
-    //gl.clearColor(1.0,1.0,1.0,1.0);
 }
 ; //drawPoint
 
@@ -255,5 +243,4 @@ function drawObject(gl, program, vertices, color, glType) {
     gl.enableVertexAttribArray(vPosition);
     gl.uniform4f(colorLocation, color[0], color[1], color[2], color[3]);
     gl.drawArrays(glType, 0, vertices.length);
-    //  render();
 }
