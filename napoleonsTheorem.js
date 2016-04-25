@@ -231,7 +231,15 @@ function drawCenteroids(x1, y1, x2, y2, x3, y3) {
 ;//drawCenteroids
 
 function lineIntersection(x1, y1, x2, y2, x3, y3, x4, y4) {
-
+    var a = x2 - x1;
+    var b = x4 - x3;
+    var c = y2 - y1;
+    var d = y4 - y3;
+    var t1 = ((d*x3-b*y3)-d*x1-b*y1)/(a*d-b*c);
+    var t2 = (x3-a*t1-x1)/b;
+    var xInter = (x2-x1)*t1+x1;
+    var yInter = (y2-y1)*t1+y1;
+    drawObject(gl, program, drawPoint(xInter,yInter), centroidColor, gl.TRIANGLE_FAN);
 }
 ;//lineIntersection
 
