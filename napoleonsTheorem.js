@@ -88,10 +88,13 @@ function handleMouseDown(event) {
         console.log("1 point");
         console.log(lastMouseX + ", " + lastMouseY);
         if (p1thres === true) {
+            console.log("point 1");
             currentPoint = 1;
         } else if (p2thres === true) {
+            console.log("point 2");
             currentPoint = 2;
         } else if (p3thres === true) {
+            console.log("point 3");
             currentPoint = 3;
         }
     }
@@ -222,11 +225,11 @@ function drawMidpoint(x1, y1, x2, y2, genCircleColor, genInterColor) {
 function drawCenteroids(x1, y1, x2, y2, x3, y3) {
     var midPoint1 = drawMidpoint(x1, y1, x2, y2, circleColor1, triColor1);
     drawObject(gl, program, drawLine(midPoint1[0], midPoint1[1], x3, y3), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
-    //  var midPoint2 = drawMidpoint(x2, y2, x3, y3, circleColor2, triColor2);
-    // drawObject(gl, program, drawLine(midPoint2[0], midPoint2[1], x1, y1), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
+    var midPoint2 = drawMidpoint(x2, y2, x3, y3, circleColor2, triColor2);
+    drawObject(gl, program, drawLine(midPoint2[0], midPoint2[1], x1, y1), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
     // var midPoint3 = drawMidpoint(x1, y1, x3, y3, circleColor3, triColor3);
     // drawObject(gl, program, drawLine(midPoint3[0], midPoint3[1], x2, y2), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
-    lineIntersection();
+    lineIntersection(midPoint1[0],midPoint1[1],x3,y3,midPoint2[0],midPoint2[1],x1,y1);
 }
 ;//drawCenteroids
 
@@ -239,7 +242,10 @@ function lineIntersection(x1, y1, x2, y2, x3, y3, x4, y4) {
     var t2 = (x3-a*t1-x1)/b;
     var xInter = (x2-x1)*t1+x1;
     var yInter = (y2-y1)*t1+y1;
+    //var xInter = (x4-x3)*t2+x3;
+    //var yInter = (y4-y3)*t2+y3;
     drawObject(gl, program, drawPoint(xInter,yInter), centroidColor, gl.TRIANGLE_FAN);
+    console.log(xInter+", "+ yInter);
 }
 ;//lineIntersection
 
