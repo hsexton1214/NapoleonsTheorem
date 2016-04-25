@@ -61,7 +61,7 @@ function canvasMain() {
 function handleMouseDown(event) {
 
     mouseDown = true;
-    var threshold = 0.1;
+    var threshold = 0.05;
     var lastMouseX = 2 * (event.clientX - 8) / canvas.width - 1;
     var lastMouseY = 2 * (canvas.height - (event.clientY - 80)) / canvas.height - 1;
     var p1thres = false;
@@ -95,6 +95,21 @@ function handleMouseDown(event) {
             currentPoint = 3;
         }
     } else {
+        var actualp1Thres;
+        var actualp2Thres;
+        var actualp3Thres;
+        if(p1thres){
+            actualp1Thres = (lastMouseX - triX1) * (lastMouseX - triX1) + (lastMouseY - triY1) * (lastMouseY - triY1);
+        }
+        if(p2thres){
+            actualp2Thres = (lastMouseX - triX1) * (lastMouseX - triX1) + (lastMouseY - triY1) * (lastMouseY - triY1);
+        }
+        if(p3thres){
+            actualp3Thres = (lastMouseX - triX1) * (lastMouseX - triX1) + (lastMouseY - triY1) * (lastMouseY - triY1);
+        }
+        //pick the point with the least distance
+        
+        
         console.log("multiple points");
         console.log(triX1 + ", " + triY1 + "," + triX2 + "," + triY2 + ", " + triX3 + ", " + triY3);
         console.log(pointCount);
@@ -191,7 +206,7 @@ function drawCenteroids(x1, y1, x2, y2, x3, y3) {
 }
 ;
 
-function lineIntersection(x1,y1,x2,y2){
+function lineIntersection(x1,y1,x2,y2,x3,y3,x4,y4){
     
 };
 
