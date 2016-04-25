@@ -187,16 +187,22 @@ function calculateCircleIntersection(a, b, c, d, genInterColor) {
     var dx = r / 2;
     var initialX = dx;
     var initialY = Math.sqrt(r * r - dx * dx);
-    var finalX = initialX*(dot(v1,v2))-initialY*length(cross(v1,v2));
-    var finalY = initialX*length(cross(v1,v2))+initialY*(dot(v1,v2));
+    var finalX = initialX*(dot(v1,v2))-initialY*(cross2by2(v1,v2));
+    var finalY = initialX*(cross2by2(v1,v2))+initialY*(dot(v1,v2));
     var finalX = finalX + a;
     var finalY = finalY + b;
+    console.log(finalX+"<, "+finalY);
     // drawObject(gl, program, drawPoint(a, 0), [0.0,0.5,0.0,1.0], gl.TRIANGLE_FAN);
     //  drawObject(gl, program, drawPoint(c, 0), [0.0,0.5,0.0,1.0], gl.TRIANGLE_FAN);
     // drawObject(gl, program, drawPoint(initialX, initialY), [0.0,0.5,0.0,1.0], gl.TRIANGLE_FAN);
     drawObject(gl, program, drawPoint(finalX, finalY), genInterColor, gl.TRIANGLE_FAN);
 }
 ;//calculateCircleIntersection
+
+function cross2by2(u,v){
+    var result = u[1]*v[2]-v[1]*u[2];
+    return result;
+};
 
 //this function takes in the endpoints of a line and draws 2 circles with a 
 //radius of the line, with 1 centered at (x1,y1) and the other at (x2,y2), the 
