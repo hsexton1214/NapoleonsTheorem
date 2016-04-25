@@ -208,8 +208,8 @@ function cross2by2(u,v){
 //radius of the line, with 1 centered at (x1,y1) and the other at (x2,y2), the 
 //intersection of those circles, and the midpoint of the line
 function drawMidpoint(x1, y1, x2, y2, genCircleColor, genInterColor) {
-    drawObject(gl, program, drawCircle(x1, y1, x2, y2), genCircleColor, gl.LINE_LOOP);
-    drawObject(gl, program, drawCircle(x2, y2, x1, y1), genCircleColor, gl.LINE_LOOP);
+    drawObject(gl, program, drawCircle(x1, y1, x2, y2), genCircleColor, gl.LINES);
+    drawObject(gl, program, drawCircle(x2, y2, x1, y1), genCircleColor, gl.LINES);
     calculateCircleIntersection(x1, y1, x2, y2, genInterColor);
     var midpointX = (x1 + x2) / 2;
     var midpointY = (y1 + y2) / 2;
