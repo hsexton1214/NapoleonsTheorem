@@ -8,12 +8,9 @@ var program;
 var canvas;
 var pointColor = [0.0, 0.0, 0.0, 1.0];
 var triX1, triY1, triX2, triY2, triX3, triY3;
-//var triangle = [x1,y1,x2,y2,x3,y3];
 currentPoint = -1;
 
 var mouseDown;
-//var lastMouseX;
-//var lastMouseY; 
 
 var lineColor = [0.8, 0.2, 1.0, 1.0];
 var verticesColor = [0.0, 0.8, 1.0, 1.0];
@@ -72,18 +69,6 @@ function handleMouseDown(event) {
     var p3thres = false;
     var pointCount = 0;
 
-//    if (((lastMouseX - threshold) < triX1) && (triX1 < (lastMouseX + threshold)) && ((lastMouseY - threshold)< triY1) && (triY1 < (lastMouseY + threshold))) {
-//        p1thres = true;
-//        pointCount++;fsdfdsvdfdsfddfsdfklsdjfsljdkf
-//    }
-//    if (((lastMouseX - threshold) < triX2) && (triX2 < (lastMouseX + threshold)) && ((lastMouseY - threshold) < triY2) && (triY2 < (lastMouseY + threshold))) {
-//        p2thres = true;
-//        pointCount++;
-//    }
-//    if (((lastMouseX - threshold) < triX3) && (triX3 < (lastMouseX + threshold)) && ((lastMouseY - threshold) < triY3) && (triY3 < (lastMouseY + threshold))) {
-//        p3thres = true;
-//        pointCount++;
-//    }
     if (((lastMouseX - triX1) * (lastMouseX - triX1) + (lastMouseY - triY1) * (lastMouseY - triY1)) < (threshold * threshold)) {
         p1thres = true;
         pointCount++;
@@ -145,27 +130,19 @@ function handleMouseMove(event) {
             drawInitialTriangle(triX1, triY1, triX2, triY2, triX3, triY3);
             drawCenteroids(triX1, triY1, triX2, triY2, triX3, triY3);
         }
-    }else{
+    } else {
         drawInitialTriangle(triX1, triY1, triX2, triY2, triX3, triY3);
-            drawCenteroids(triX1, triY1, triX2, triY2, triX3, triY3);
+        drawCenteroids(triX1, triY1, triX2, triY2, triX3, triY3);
     }
 }
 ;
 function drawInitialTriangle(x1, y1, x2, y2, x3, y3) {
-//    var x1 = vector[0];
-//    var y1 = vector[1];
-//    var x2 = vector[2];
-//    var y2 = vector[3];
-//    var x3 = vector[4];
-//    var y3 = vector[5];
-    var pointColor2 = [1.0, 0.0, 0.0, 1.0];
-    var lineColor = [0.0, 1.0, 0.0, 1.0];
-    drawObject(gl, program, drawPoint(x1, y1), pointColor2, gl.TRIANGLE_FAN);
-    drawObject(gl, program, drawPoint(x2, y2), pointColor2, gl.TRIANGLE_FAN);
-    drawObject(gl, program, drawPoint(x3, y3), pointColor2, gl.TRIANGLE_FAN);
-    drawObject(gl, program, drawLine(x1, y1, x2, y2), lineColor, gl.LINE_STRIP);
-    drawObject(gl, program, drawLine(x2, y2, x3, y3), [0.0, 0.0, 1.0, 1.0], gl.LINE_STRIP);
-    drawObject(gl, program, drawLine(x1, y1, x3, y3), [0.8, 0.6, 0.0, 1.0], gl.LINE_STRIP);
+    drawObject(gl, program, drawPoint(x1, y1), verticesColor, gl.TRIANGLE_FAN);
+    drawObject(gl, program, drawPoint(x2, y2), verticesColor, gl.TRIANGLE_FAN);
+    drawObject(gl, program, drawPoint(x3, y3), verticesColor, gl.TRIANGLE_FAN);
+    drawObject(gl, program, drawLine(x1, y1, x2, y2), triColor1, gl.LINE_STRIP);
+    drawObject(gl, program, drawLine(x2, y2, x3, y3), triColor2, gl.LINE_STRIP);
+    drawObject(gl, program, drawLine(x1, y1, x3, y3), triColor3, gl.LINE_STRIP);
 }
 ; //drawTriangle 
 
@@ -188,14 +165,14 @@ function calculateIntersection(a, b, c, d) {
 }
 ;
 //endpoints of the line segmentdfgdfgfgjlkfd
-function drawMidpoint(x1, y1, x2, y2) {
-    var circleColor = [1.0, 0.0, 0.0, 1.0];
-    drawObject(gl, program, drawCircle(x1, y1, x2, y2), circleColor, gl.LINE_LOOP);
-    drawObject(gl, program, drawCircle(x2, y2, x1, y1), circleColor, gl.LINE_LOOP);
+function drawMidpoint(x1, y1, x2, y2, color) {
+    // var circleColor = [1.0, 0.0, 0.0, 1.0];
+    drawObject(gl, program, drawCircle(x1, y1, x2, y2), color, gl.LINE_LOOP);
+    drawObject(gl, program, drawCircle(x2, y2, x1, y1), color, gl.LINE_LOOP);
     calculateIntersection(x1, y1, x2, y2);
     var midpointX = (x1 + x2) / 2;
     var midpointY = (y1 + y2) / 2;
-    drawObject(gl, program, drawPoint(midpointX, midpointY), pointColor, gl.TRIANGLE_FAN);
+    drawObject(gl, program, drawPoint(midpointX, midpointY), midpointColor, gl.TRIANGLE_FAN);
     return vec2(midpointX, midpointY);
 }
 ; //drawMidpoint
@@ -204,15 +181,20 @@ function drawMidpoint(x1, y1, x2, y2) {
 
 
 function drawCenteroids(x1, y1, x2, y2, x3, y3) {
-    var midPoint1 = drawMidpoint(x1, y1, x2, y2);
+    var midPoint1 = drawMidpoint(x1, y1, x2, y2, circleColor1);
     drawObject(gl, program, drawLine(midPoint1[0], midPoint1[1], x3, y3), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
-    //   var midPoint2 = drawMidpoint(x2, y2, x3, y3);
-//    drawObject(gl, program, drawLine(midPoint2[0], midPoint2[1], x1, y1), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
-//    var midPoint3 = drawMidpoint(x1, y1, x3, y3);
-    //   drawObject(gl, program, drawLine(midPoint3[0], midPoint3[1], x2, y2), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
+    var midPoint2 = drawMidpoint(x2, y2, x3, y3, circleColor2);
+    drawObject(gl, program, drawLine(midPoint2[0], midPoint2[1], x1, y1), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
+    var midPoint3 = drawMidpoint(x1, y1, x3, y3, circleColor3);
+    drawObject(gl, program, drawLine(midPoint3[0], midPoint3[1], x2, y2), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
 
 }
 ;
+
+function lineIntersection(x1,y1,x2,y2){
+    
+};
+
 function drawCircle(x1, y1, x2, y2) {
     var circleVertices = [];
     var inc = 2 * Math.PI / 50;
@@ -258,42 +240,5 @@ function drawObject(gl, program, vertices, color, glType) {
     gl.enableVertexAttribArray(vPosition);
     gl.uniform4f(colorLocation, color[0], color[1], color[2], color[3]);
     gl.drawArrays(glType, 0, vertices.length);
-  //  render();
+    //  render();
 }
-//; //drawObject
-//
-//
-//function render() {
-//    //  gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-//  //  gl.clear( gl.COLOR_BUFFER_BIT );
-//
-//    if (mouseDown) {
-//        if (currentPoint === 1) {
-//            triX1 = 2 * (event.clientX - 8) / canvas.width - 1;
-//            triY1 = 2 * (canvas.height - (event.clientY - 80)) / canvas.height - 1;
-//            drawInitialTriangle(triX1, triY1, triX2, triY2, triX3, triY3);
-//            drawCenteroids(triX1, triY1, triX2, triY2, triX3, triY3);
-//
-//        } else if (currentPoint === 2) {
-//            triX2 = 2 * (event.clientX - 8) / canvas.width - 1;
-//            triY2 = 2 * (canvas.height - (event.clientY - 80)) / canvas.height - 1;
-//            drawInitialTriangle(triX1, triY1, triX2, triY2, triX3, triY3);
-//            drawCenteroids(triX1, triY1, triX2, triY2, triX3, triY3);
-//        } else if (currentPoint === 3) {
-//            triX3 = 2 * (event.clientX - 8) / canvas.width - 1;
-//            triY3 = 2 * (canvas.height - (event.clientY - 80)) / canvas.height - 1;
-//            drawInitialTriangle(triX1, triY1, triX2, triY2, triX3, triY3);
-//            drawCenteroids(triX1, triY1, triX2, triY2, triX3, triY3);
-//        } else if (currentPoint === -1) {
-//            drawInitialTriangle(triX1, triY1, triX2, triY2, triX3, triY3);
-//            drawCenteroids(triX1, triY1, triX2, triY2, triX3, triY3);
-//        }
-//    }//else{
-//   //     drawInitialTriangle(triX1, triY1, triX2, triY2, triX3, triY3);
-//   //         drawCenteroids(triX1, triY1, triX2, triY2, triX3, triY3);
-//   // }
-//
-//    requestAnimFrame(render);
-//}//render
-//
-//
