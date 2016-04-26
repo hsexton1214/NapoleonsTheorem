@@ -186,7 +186,7 @@ function calculateCircleIntersection(a, b, c, d, genInterColor) {
 //    var finalX = (changeX / r) * initialX - (changeY / r) * initialY + (changeX / r) * midpointX - (changeY / r) * midpointY - midpointX;
 //    var finalY = (changeY / r) * initialX + (changeX / r) * initialY + (changeY / r) * midpointX + (changeX / r) * midpointY - midpointY;
     var v1=normalize(vec2(c-a,d-b),false);
-    var v2=normalize(vec2(1-a,-b),false);
+    var v2=normalize(vec2(1,0),false);
     var dx = r / 2;
     var initialX = dx;
     var initialY = Math.sqrt(r * r - dx * dx);
@@ -194,16 +194,15 @@ function calculateCircleIntersection(a, b, c, d, genInterColor) {
     var finalY = initialX*(cross2by2(v1,v2))+initialY*(dot(v1,v2));
     var finalX = finalX + a;
     var finalY = finalY + b;
+    console.log("dot: "+dot(v1,v2));
+    console.log("cross: "+cross2by2(v1,v2));
     console.log(finalX+"<, "+finalY);
-    // drawObject(gl, program, drawPoint(a, 0), [0.0,0.5,0.0,1.0], gl.TRIANGLE_FAN);
-    //  drawObject(gl, program, drawPoint(c, 0), [0.0,0.5,0.0,1.0], gl.TRIANGLE_FAN);
-    // drawObject(gl, program, drawPoint(initialX, initialY), [0.0,0.5,0.0,1.0], gl.TRIANGLE_FAN);
     drawObject(gl, program, drawPoint(finalX, finalY), genInterColor, gl.TRIANGLE_FAN);
 }
 ;//calculateCircleIntersection
 
 function cross2by2(u,v){
-    var result = u[1]*v[2]-v[1]*u[2];
+    var result = u[0]*v[1]-v[0]*u[1];
     return result;
 };
 
