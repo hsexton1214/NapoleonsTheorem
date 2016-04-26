@@ -1,12 +1,14 @@
 /* 
  * Hannah Sexton
  * Natalie Leatherman
+ * CSCI 346 Final Project
+ * Centeroids
+ * April 27, 2016
  */
 
 var gl;
 var program;
 var canvas;
-var pointColor = [0.0, 0.0, 0.0, 1.0];
 var triX1, triY1, triX2, triY2, triX3, triY3;
 currentPoint = -1;
 
@@ -32,7 +34,7 @@ function canvasMain() {
         alert("WebGL isn't available");
     }
     gl.viewport(0, 0, canvas.width, canvas.height);
-    gl.clearColor(1.0, 1.0, 0.8, 1.0);
+    gl.clearColor(1.0, 1.0, 1.0, 1.0);
     program = initShaders(gl, "vertex-shader", "fragment-shader");
     gl.useProgram(program);
     gl.clear(gl.COLOR_BUFFER_BIT);
@@ -245,30 +247,18 @@ function drawCenteroids(x1, y1, x2, y2, x3, y3) {
     drawObject(gl, program, drawLine(midPoint1[0], midPoint1[1], x3, y3), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
     var midPoint2 = drawMidpoint(x2, y2, x3, y3, circleColor2, triColor2);
     drawObject(gl, program, drawLine(midPoint2[0], midPoint2[1], x1, y1), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
-    // var midPoint3 = drawMidpoint(x1, y1, x3, y3, circleColor3, triColor3);
-    // drawObject(gl, program, drawLine(midPoint3[0], midPoint3[1], x2, y2), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
-    lineIntersection(midPoint1[0],midPoint1[1],x3,y3,midPoint2[0],midPoint2[1],x1,y1);
+     var midPoint3 = drawMidpoint(x1, y1, x3, y3, circleColor3, triColor3);
+     drawObject(gl, program, drawLine(midPoint3[0], midPoint3[1], x2, y2), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
+    //lineIntersection(midPoint1[0],midPoint1[1],x3,y3,midPoint2[0],midPoint2[1],x1,y1);
 }
 ;//drawCenteroids
 
 function lineIntersection(x1, y1, x2, y2, x3, y3, x4, y4) {
-//    var a = x2 - x1;
-//    var b = x4 - x3;
-//    var c = y2 - y1;
-//    var d = y4 - y3;
-//    var t1 = ((d*x3-b*y3)-d*x1-b*y1)/(a*d-b*c);
-//    var t2 = (x3-a*t1-x1)/b;
-//    var xInter = (x2-x1)*t1+x1;
-//    var yInter = (y2-y1)*t1+y1;
-//    //var xInter = (x4-x3)*t2+x3;
-//    //var yInter = (y4-y3)*t2+y3;
     var slopeLine1 = (y2-y1)/(x2-x1);
     var slopeLine2 = (y4-y3)/(x4-x3);
     var xInter = (x1*slopeLine1-x3*slopeLine2)/(slopeLine1-slopeLine2);
     var yInter = slopeLine1*(xInter-x1)+y1;
-
     drawObject(gl, program, drawPoint(xInter,yInter), centroidColor, gl.TRIANGLE_FAN);
- //   console.log(xInter+", "+ yInter);
 }
 ;//lineIntersection
 
