@@ -235,7 +235,7 @@ function drawCentroids(x1, y1, x2, y2, x3, y3) {
     drawObject(gl, program, drawLine(midPoint2[0], midPoint2[1], x1, y1), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
     var midPoint3 = drawMidpoint(x1, y1, x3, y3, circleColor3, triColor3);
     drawObject(gl, program, drawLine(midPoint3[0], midPoint3[1], x2, y2), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
-    //lineIntersection(midPoint1[0],midPoint1[1],x3,y3,midPoint2[0],midPoint2[1],x1,y1);
+    //lineIntersection(midPoint1[0], midPoint1[1], x3, y3, midPoint3[0], midPoint3[1], x2, y2);
 }
 ;//drawCentroids
 
