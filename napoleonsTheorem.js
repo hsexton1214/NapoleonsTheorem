@@ -176,7 +176,7 @@ function drawInitialTriangle(x1, y1, x2, y2, x3, y3) {
 ; //drawInitialTriangle 
 
 function calculateCircleIntersection(a, b, c, d, genInterColor) {
-    var r = Math.sqrt((c - a) * (c - a) + (d - b) * (d - b));
+ //   var r = Math.sqrt((c - a) * (c - a) + (d - b) * (d - b));
 //    var midpointX = (c + a) / 2;
 //    var midpointY = (b + d) / 2;
 //    var initialX = midpointX;
@@ -185,19 +185,38 @@ function calculateCircleIntersection(a, b, c, d, genInterColor) {
 //    var changeY = d - b;
 //    var finalX = (changeX / r) * initialX - (changeY / r) * initialY + (changeX / r) * midpointX - (changeY / r) * midpointY - midpointX;
 //    var finalY = (changeY / r) * initialX + (changeX / r) * initialY + (changeY / r) * midpointX + (changeX / r) * midpointY - midpointY;
+    
+    
+    //center0x and center0y are always 0
+    var center2x = c-a;
+    var center2y = d-b;
     var v1=normalize(vec2(c-a,d-b),false);
     var v2=normalize(vec2(1,0),false);
-    var dx = r / 2;
-    var initialX = dx;
-    var initialY = Math.sqrt(r * r - dx * dx);
-    var finalX = initialX*(dot(v1,v2))-initialY*(cross2by2(v1,v2));
-    var finalY = initialX*(cross2by2(v1,v2))+initialY*(dot(v1,v2));
-    var finalX = finalX + a;
-    var finalY = finalY + b;
-    console.log("dot: "+dot(v1,v2));
-    console.log("cross: "+cross2by2(v1,v2));
-    console.log(finalX+"<, "+finalY);
-    drawObject(gl, program, drawPoint(finalX, finalY), genInterColor, gl.TRIANGLE_FAN);
+    //center3x and center3y are always 0
+    var center4x = center2x*(dot(v1,v2))-center2y*(cross2by2(v1,v2));
+    var center4y = center2x*(cross2by2(v1,v2))+center2y*(dot(v1,v2));
+    var r = Math.sqrt(center4x*center4x+center4y*center4y);
+    var initialX1 = r/2;
+    var initialY1 = Math.sqrt(r*r-(r/2)*(r/2));
+    var initialX2 = initialX1;
+    var initialY2 = -1*initialY1;
+    var finalX1 = initialX1*dot(v1,v2)+initialY1*cross2by2(v1,v2)+a;
+    var finalY1 = -initialX1*cross2by2(v1,v2)+initialY1*dot(v1,v2)+b;
+    var finalX2 = initialX2*dot(v1,v2)-initialY2*cross2by2(v1,v2)+a;
+    var finalY2 = -initialX2*cross2by2(v1,v2)-initialY2*dot(v1,v2)+b;
+    
+//    var dx = r / 2;
+//    var initialX = dx;
+//    var initialY = Math.sqrt(r * r - dx * dx);
+//    var finalX = initialX*(dot(v1,v2))-initialY*(cross2by2(v1,v2));
+//    var finalY = initialX*(cross2by2(v1,v2))+initialY*(dot(v1,v2));
+//    var finalX = finalX + a;
+//    var finalY = finalY + b;
+//    console.log("dot: "+dot(v1,v2));
+//    console.log("cross: "+cross2by2(v1,v2));
+//    console.log(finalX+"<, "+finalY);
+   // drawObject(gl, program, drawPoint(finalX1, finalY1), genInterColor, gl.TRIANGLE_FAN);
+    drawObject(gl, program, drawPoint(finalX2, finalY2), genInterColor, gl.TRIANGLE_FAN);
 }
 ;//calculateCircleIntersection
 
@@ -233,18 +252,23 @@ function drawCenteroids(x1, y1, x2, y2, x3, y3) {
 ;//drawCenteroids
 
 function lineIntersection(x1, y1, x2, y2, x3, y3, x4, y4) {
-    var a = x2 - x1;
-    var b = x4 - x3;
-    var c = y2 - y1;
-    var d = y4 - y3;
-    var t1 = ((d*x3-b*y3)-d*x1-b*y1)/(a*d-b*c);
-    var t2 = (x3-a*t1-x1)/b;
-    var xInter = (x2-x1)*t1+x1;
-    var yInter = (y2-y1)*t1+y1;
-    //var xInter = (x4-x3)*t2+x3;
-    //var yInter = (y4-y3)*t2+y3;
+//    var a = x2 - x1;
+//    var b = x4 - x3;
+//    var c = y2 - y1;
+//    var d = y4 - y3;
+//    var t1 = ((d*x3-b*y3)-d*x1-b*y1)/(a*d-b*c);
+//    var t2 = (x3-a*t1-x1)/b;
+//    var xInter = (x2-x1)*t1+x1;
+//    var yInter = (y2-y1)*t1+y1;
+//    //var xInter = (x4-x3)*t2+x3;
+//    //var yInter = (y4-y3)*t2+y3;
+    var slopeLine1 = (y2-y1)/(x2-x1);
+    var slopeLine2 = (y4-y3)/(x4-x3);
+    var xInter = (x1*slopeLine1-x3*slopeLine2)/(slopeLine1-slopeLine2);
+    var yInter = slopeLine1*(xInter-x1)+y1;
+
     drawObject(gl, program, drawPoint(xInter,yInter), centroidColor, gl.TRIANGLE_FAN);
-    console.log(xInter+", "+ yInter);
+ //   console.log(xInter+", "+ yInter);
 }
 ;//lineIntersection
 
