@@ -2,51 +2,60 @@
 <!--
 Hannah Sexton
 Natalie Leatherman
-Napoleon's Theorem
+CSCI 346 Final Project
+Centroids
+April 27, 2016
 -->
 <html>
     <head>
-        <title>Napoleon's Theorem</title>
+        <title>Centroid</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script id="vertex-shader" type="x-shader/x-vertex">
-       attribute vec4 vPosition;
-       void main()
-       {
-           gl_Position = vPosition;
-       }
+            attribute vec4 vPosition;
+            void main()
+            {
+            gl_Position = vPosition;
+            }
         </script>
         <script id="fragment-shader" type="x-shader/x-fragment">
             precision mediump float;
             uniform vec4 uColor;
             void main() {
-                gl_FragColor = uColor;
+            gl_FragColor = uColor;
             }
         </script>
-          <script type="text/javascript" src="http://arden.cs.unca.edu/~cameron/Angel/SourceCode/Common/webgl-utils.js"></script>
+        <script type="text/javascript" src="http://arden.cs.unca.edu/~cameron/Angel/SourceCode/Common/webgl-utils.js"></script>
         <script type="text/javascript" src="http://arden.cs.unca.edu/~cameron/Angel/SourceCode/Common/initShaders.js"></script>
         <script type="text/javascript" src="http://arden.cs.unca.edu/~cameron/Angel/SourceCode/Common/MV.js"></script>
         <script type="text/javascript" src="napoleonsTheorem.js"></script>
-    
+
     </head>
     <body onload="canvasMain()">        
         <div>
-            <h1>Napoleon's Theorem</h1>             
+            <h1 align="center"><u>Centroid</u></h1>             
             <canvas id="gl-canvas" width="512" height="512" style="border:1px solid #000000;float:left">
                 oops... your browser doesn't support the HTML canvas element
             </canvas>           
         </div>          
         <div>
-            <p style="margin-left:550px">
-                    This is a test to see <br>
-                    if this method works.
+            <p style="margin-left:550px; font-size:27px">
+                <b>Theorem:</b> The three medians of a triangle are <br> 
+                concurrent in a point called a centroid.
             </p>
-        </div>
-        <div>
-            <button id= "previousStep"><<</button>
-            <button id= "previousInstruction">Back</button>
-            <button id= "nextInstruction">Next</button>
-            <button id= "nextStep">>></button>
-        </div>       
+            <pre style="font-size:20px">                       ---:::---</pre>
+            <p style="margin-left:550px; font-size:27px">
+                This theorem dates back to Archimedes, where in <br>
+                <i>On the Equilibrium of Planes</i> he states:</p>
+                <p style="margin-left:550px; font-size:27px">
+                <u>Proposition 13:</u> “In any triangle the centre of gravity<br>
+                lies on the straight line joining any angle to the middle <br>
+                point of the opposite side.”<br>
+                <u>Proposition 14:</u> “the centre of gravity of any triangle<br> 
+                is at the intersection of the lines drawn from any two<br>
+                angles to the middle points of the opposite sides respectively.”
+
+            </p>
+        </div>   
     </body>
 </html>

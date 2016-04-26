@@ -2,7 +2,7 @@
  * Hannah Sexton
  * Natalie Leatherman
  * CSCI 346 Final Project
- * Centeroids
+ * Centroids
  * April 27, 2016
  */
 
@@ -11,7 +11,6 @@ var program;
 var canvas;
 var triX1, triY1, triX2, triY2, triX3, triY3;
 currentPoint = -1;
-
 var mouseDown;
 
 //color vectors
@@ -22,7 +21,7 @@ var centroidColor = [0.0, 0.6, 0.2, 1.0];
 var triColor1 = [0.0, 1.0, 0.0, 1.0]; //also use for intersection point of circle1
 var circleColor1 = [1.0, 0.0, 0.0, 1.0];
 var triColor2 = [0.0, 0.0, 1.0, 1.0]; //also use for intersection point of circle2
-var circleColor2 = [1.0, 0.4, 0.0, 1.0];
+var circleColor2 = [0.0, 0.5, 0.5, 1.0];
 var triColor3 = [0.8, 0.6, 0.0, 1.0]; //also use for intersection point of circle3
 var circleColor3 = [0.4, 0.0, 0.4, 1.0];
 
@@ -42,12 +41,12 @@ function canvasMain() {
     //initial location of the triangle
     triX1 = -.25;
     triY1 = -.25;
-    triX2 = .25;
-    triY2 = .25;
+    triX2 = .0;
+    triY2 = .125;
     triX3 = .5;
     triY3 = -.25;
     drawInitialTriangle(triX1, triY1, triX2, triY2, triX3, triY3);
-    drawCenteroids(triX1, triY1, triX2, triY2, triX3, triY3);
+    drawCentroids(triX1, triY1, triX2, triY2, triX3, triY3);
 
     canvas.onmousedown = handleMouseDown;
     canvas.onmouseup = handleMouseUp;
@@ -137,30 +136,30 @@ function handleMouseMove(event) {
             triX1 = 2 * (event.clientX - 8) / canvas.width - 1;
             triY1 = 2 * (canvas.height - (event.clientY - 80)) / canvas.height - 1;
             drawInitialTriangle(triX1, triY1, triX2, triY2, triX3, triY3);
-            drawCenteroids(triX1, triY1, triX2, triY2, triX3, triY3);
+            drawCentroids(triX1, triY1, triX2, triY2, triX3, triY3);
         } else if (currentPoint === 2) {
             triX2 = 2 * (event.clientX - 8) / canvas.width - 1;
             triY2 = 2 * (canvas.height - (event.clientY - 80)) / canvas.height - 1;
             drawInitialTriangle(triX1, triY1, triX2, triY2, triX3, triY3);
-            drawCenteroids(triX1, triY1, triX2, triY2, triX3, triY3);
+            drawCentroids(triX1, triY1, triX2, triY2, triX3, triY3);
         } else if (currentPoint === 3) {
             triX3 = 2 * (event.clientX - 8) / canvas.width - 1;
             triY3 = 2 * (canvas.height - (event.clientY - 80)) / canvas.height - 1;
             drawInitialTriangle(triX1, triY1, triX2, triY2, triX3, triY3);
-            drawCenteroids(triX1, triY1, triX2, triY2, triX3, triY3);
+            drawCentroids(triX1, triY1, triX2, triY2, triX3, triY3);
         }
         //when no point is active the currentPoint is -1. In this case the points
         //will not change until a point becomes active
         else if (currentPoint === -1) {
             drawInitialTriangle(triX1, triY1, triX2, triY2, triX3, triY3);
-            drawCenteroids(triX1, triY1, triX2, triY2, triX3, triY3);
+            drawCentroids(triX1, triY1, triX2, triY2, triX3, triY3);
         }
     }
     //when the mouseDown is false the points will not change change until mouseDown
     //is true and a point is active
     else {
         drawInitialTriangle(triX1, triY1, triX2, triY2, triX3, triY3);
-        drawCenteroids(triX1, triY1, triX2, triY2, triX3, triY3);
+        drawCentroids(triX1, triY1, triX2, triY2, triX3, triY3);
     }
 }
 ; //handleMouseMove
@@ -177,55 +176,41 @@ function drawInitialTriangle(x1, y1, x2, y2, x3, y3) {
 }
 ; //drawInitialTriangle 
 
+//This function requires that the 2 circles have an equal radius and that the 
+//points given in parameter, (a,b) and (c,d), be r distance from one another
 function calculateCircleIntersection(a, b, c, d, genInterColor) {
- //   var r = Math.sqrt((c - a) * (c - a) + (d - b) * (d - b));
-//    var midpointX = (c + a) / 2;
-//    var midpointY = (b + d) / 2;
-//    var initialX = midpointX;
-//    var initialY = Math.sqrt(r * r - (initialX / 2) * (initialX / 2));
-//    var changeX = c - a;
-//    var changeY = d - b;
-//    var finalX = (changeX / r) * initialX - (changeY / r) * initialY + (changeX / r) * midpointX - (changeY / r) * midpointY - midpointX;
-//    var finalY = (changeY / r) * initialX + (changeX / r) * initialY + (changeY / r) * midpointX + (changeX / r) * midpointY - midpointY;
-    
-    
     //center0x and center0y are always 0
-    var center2x = c-a;
-    var center2y = d-b;
-    var v1=normalize(vec2(c-a,d-b),false);
-    var v2=normalize(vec2(1,0),false);
+    var center2x = c - a;
+    var center2y = d - b;
+    var v1 = normalize(vec2(c - a, d - b), false);
+    var v2 = normalize(vec2(1, 0), false);
     //center3x and center3y are always 0
-    var center4x = center2x*(dot(v1,v2))-center2y*(cross2by2(v1,v2));
-    var center4y = center2x*(cross2by2(v1,v2))+center2y*(dot(v1,v2));
-    var r = Math.sqrt(center4x*center4x+center4y*center4y);
-    var initialX1 = r/2;
-    var initialY1 = Math.sqrt(r*r-(r/2)*(r/2));
+    var center4x = center2x * (dot(v1, v2)) - center2y * (cross2by2(v1, v2));
+    var center4y = center2x * (cross2by2(v1, v2)) + center2y * (dot(v1, v2));
+    var r = Math.sqrt(center4x * center4x + center4y * center4y);
+    //calculates x and y if the case were at the origin
+    var initialX1 = r / 2;
+    var initialY1 = Math.sqrt(r * r - (r / 2) * (r / 2));
+    //the second intersection is reflected about the x-axis
     var initialX2 = initialX1;
-    var initialY2 = -1*initialY1;
-    var finalX1 = initialX1*dot(v1,v2)+initialY1*cross2by2(v1,v2)+a;
-    var finalY1 = -initialX1*cross2by2(v1,v2)+initialY1*dot(v1,v2)+b;
-    var finalX2 = initialX2*dot(v1,v2)-initialY2*cross2by2(v1,v2)+a;
-    var finalY2 = -initialX2*cross2by2(v1,v2)-initialY2*dot(v1,v2)+b;
-    
-//    var dx = r / 2;
-//    var initialX = dx;
-//    var initialY = Math.sqrt(r * r - dx * dx);
-//    var finalX = initialX*(dot(v1,v2))-initialY*(cross2by2(v1,v2));
-//    var finalY = initialX*(cross2by2(v1,v2))+initialY*(dot(v1,v2));
-//    var finalX = finalX + a;
-//    var finalY = finalY + b;
-//    console.log("dot: "+dot(v1,v2));
-//    console.log("cross: "+cross2by2(v1,v2));
-//    console.log(finalX+"<, "+finalY);
-   // drawObject(gl, program, drawPoint(finalX1, finalY1), genInterColor, gl.TRIANGLE_FAN);
+    var initialY2 = -1 * initialY1;
+    //rotate the points back to their original theta and translate back to the original location
+    var finalX1 = initialX1 * dot(v1, v2) + initialY1 * cross2by2(v1, v2) + a;
+    var finalY1 = -initialX1 * cross2by2(v1, v2) + initialY1 * dot(v1, v2) + b;
+    var finalX2 = initialX2 * dot(v1, v2) + initialY2 * cross2by2(v1, v2) + a;
+    var finalY2 = -initialX2 * cross2by2(v1, v2) + initialY2 * dot(v1, v2) + b;
+    drawObject(gl, program, drawPoint(finalX1, finalY1), genInterColor, gl.TRIANGLE_FAN);
     drawObject(gl, program, drawPoint(finalX2, finalY2), genInterColor, gl.TRIANGLE_FAN);
+    //drawObject(gl, program, drawLine(finalX1,finalY1,finalX2,finalY2), [0.0,0.0,0.0,1.0], gl.LINE_STRIP);
 }
 ;//calculateCircleIntersection
 
-function cross2by2(u,v){
-    var result = u[0]*v[1]-v[0]*u[1];
+//function that allows the cross product of vec2 
+function cross2by2(u, v) {
+    var result = u[0] * v[1] - v[0] * u[1];
     return result;
-};
+}
+;
 
 //this function takes in the endpoints of a line and draws 2 circles with a 
 //radius of the line, with 1 centered at (x1,y1) and the other at (x2,y2), the 
@@ -241,27 +226,31 @@ function drawMidpoint(x1, y1, x2, y2, genCircleColor, genInterColor) {
 }
 ; //drawMidpoint
 
-//this function takes in the 3 vertices of the original triangle and 
-function drawCenteroids(x1, y1, x2, y2, x3, y3) {
+//this function takes in the 3 vertices of the original triangle, and uses 
+//midpoints to draw the lines for the centroid
+function drawCentroids(x1, y1, x2, y2, x3, y3) {
     var midPoint1 = drawMidpoint(x1, y1, x2, y2, circleColor1, triColor1);
     drawObject(gl, program, drawLine(midPoint1[0], midPoint1[1], x3, y3), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
     var midPoint2 = drawMidpoint(x2, y2, x3, y3, circleColor2, triColor2);
     drawObject(gl, program, drawLine(midPoint2[0], midPoint2[1], x1, y1), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
-     var midPoint3 = drawMidpoint(x1, y1, x3, y3, circleColor3, triColor3);
-     drawObject(gl, program, drawLine(midPoint3[0], midPoint3[1], x2, y2), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
+    var midPoint3 = drawMidpoint(x1, y1, x3, y3, circleColor3, triColor3);
+    drawObject(gl, program, drawLine(midPoint3[0], midPoint3[1], x2, y2), [0.0, 1.0, 1.0, 1.0], gl.LINE_STRIP);
     //lineIntersection(midPoint1[0],midPoint1[1],x3,y3,midPoint2[0],midPoint2[1],x1,y1);
 }
-;//drawCenteroids
+;//drawCentroids
 
+//This function takes in the endpoints of 2 lines and finds the intersection.
+//It currently still has bugs though and is not implempented in the program.
 function lineIntersection(x1, y1, x2, y2, x3, y3, x4, y4) {
-    var slopeLine1 = (y2-y1)/(x2-x1);
-    var slopeLine2 = (y4-y3)/(x4-x3);
-    var xInter = (x1*slopeLine1-x3*slopeLine2)/(slopeLine1-slopeLine2);
-    var yInter = slopeLine1*(xInter-x1)+y1;
-    drawObject(gl, program, drawPoint(xInter,yInter), centroidColor, gl.TRIANGLE_FAN);
+    var slopeLine1 = (y2 - y1) / (x2 - x1);
+    var slopeLine2 = (y4 - y3) / (x4 - x3);
+    var xInter = (x1 * slopeLine1 - x3 * slopeLine2) / (slopeLine1 - slopeLine2);
+    var yInter = slopeLine1 * (xInter - x1) + y1;
+    drawObject(gl, program, drawPoint(xInter, yInter), centroidColor, gl.TRIANGLE_FAN);
 }
 ;//lineIntersection
 
+//This function takes in the center (x1,y1) and a point on the circle (x2,y2)
 function drawCircle(x1, y1, x2, y2) {
     var circleVertices = [];
     var inc = 2 * Math.PI / 50;
@@ -273,6 +262,7 @@ function drawCircle(x1, y1, x2, y2) {
 }
 ; //drawCircle
 
+//This function takes in the endpoints of a line
 function drawLine(x1, y1, x2, y2) {
     var lineVertices = [];
     lineVertices.push(vec2(x1, y1));
@@ -281,6 +271,8 @@ function drawLine(x1, y1, x2, y2) {
 }
 ; //drawLine
 
+//This function takes in point (x,y) and draws a small diamond shape to 
+//represent a point
 function drawPoint(x, y) {
     var pointSize = .02;
     var pointVertices = [
@@ -292,7 +284,6 @@ function drawPoint(x, y) {
     return pointVertices;
 }
 ; //drawPoint
-
 
 function drawObject(gl, program, vertices, color, glType) {
     var colorLocation = gl.getUniformLocation(program, "uColor");
